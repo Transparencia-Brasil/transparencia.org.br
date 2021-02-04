@@ -1,0 +1,52 @@
+language: php
+
+sudo: required
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+
+env:
+  matrix:
+    - DB=mysql db_class='Cake\Database\Driver\Mysql' db_dsn='mysql://travis@0.0.0.0/cakephp_test'
+  global:
+    - DEFAULT=1
+
+matrix:
+  allow_failures:
+    - php: 5.4
+      env: PHPCS=1 DEFAULT=0
+
+  fast_finish: true
+
+  include:
+    - php: 5.4
+      env: PHPCS=1 DEFAULT=0
+
+    - php: 5.4
+      env: COVERALLS=1 DEFAULT=0
+
+before_script:
+  - composer self-update
+  - composer install --prefer-source --no-interaction
+
+  - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi"
+
+  - sh -c "if [ '$PHPCS' = '1' ]; then vendor/bin/phpcs --config-set installed_paths $(pwd)/vendor/cakephp/cakephp-codesniffer ; fi"
+
+  - sh -c "if [ '$COVERALLS' = '1' ]; then composer require --dev satooshi/php-coveralls:dev-master; fi"
+  - sh -c "if [ '$COVERALLS' = '1' ]; then mkdir -p build/logs; fi"
+
+  - phpenv rehash
+  - set +H
+  - cp phpunit.xml.dist phpunit.xml
+
+script:
+  - sh -c "if [ '$COVERALLS' = '1' ]; then phpunit --coverage-clover build/logs/clover.xml; fi"
+  - sh -c "if [ '$COVERALLS' = '1' ]; then php vendor/bin/coveralls -c .coveralls.yml -v; fi"
+  - sh -c "if [ '$DEFAULT' = '1' ]; then phpunit; fi"
+  - sh -c "if [ '$PHPCS' = '1' ]; then vendor/bin/phpcs -p --extensions=php --standard=CakePHP --ignore=vendor --ignore=src/Model/Behavior/CorreiosTrait.php --ignore=Test --ignore=docs . ; fi"
+
+notifications:
+  email: false

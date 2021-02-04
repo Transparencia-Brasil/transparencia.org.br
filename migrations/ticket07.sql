@@ -1,0 +1,1 @@
+UPDATE associados_escolaridade_tipo SET nome = 'Até ensino médio' WHERE Codigo = 1;

@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: 
+Allow: /
+
+Sitemap: https://www.transparencia.org.br/sitemap.xml

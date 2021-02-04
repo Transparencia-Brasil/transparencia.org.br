@@ -1,0 +1,38 @@
+{
+  "name": "jrbasso/cake_ptbr",
+  "type": "cakephp-plugin",
+  "description": "Repositório com arquivos para deixar seu Cake falando português.",
+  "homepage": "http://github.com/jrbasso/cake_ptbr",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Juan Basso",
+      "email": "jrbasso@gmail.com",
+      "homepage": "http://blog.cakephp-brasil.org"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.16",
+    "cakephp/cakephp": "~3.0",
+    "composer/installers": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.5.*",
+    "cakephp/cakephp-codesniffer": "2.*",
+    "symfony/dom-crawler": "2.*",
+    "symfony/css-selector": "2.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "CakePtbr\\": "src",
+      "CakePtbr\\Test\\Fixture\\": "tests\\Fixture",
+      "CakePtbr\\Tests\\App\\": "tests\\App"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "CakePtbr\\Test\\": "tests",
+      "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+    }
+  }
+}

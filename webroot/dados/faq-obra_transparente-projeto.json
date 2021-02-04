@@ -1,0 +1,42 @@
+[
+{
+    "pergunta":"O que é o projeto Obra Transparente?",
+    "resposta":"O Obra Transparente consiste em uma rede de 21 observatórios sociais atuando no monitoramento de obras de escolas e creches financiadas pelo Governo Federal em seus municípios. O projeto é fruto de uma parceria entre a Transparência Brasil e o Observatório Social do Brasil."
+},
+{
+    "pergunta":"Qual é a duração do projeto?",
+    "resposta":"O projeto tem duração prevista de dois anos, de maio de 2017 a abril de 2019."
+},
+{
+    "pergunta":"Quais são as atividades do projeto?",
+    "resposta":"As atividades desenvolvidas buscam fortalecer a atuação dos Observatórios Sociais, por meio de capacitações, assessoria técnica e compartilhamento de experiências e boas práticas. As capacitações incluirão treinamentos online e presenciais em três módulos: editais de obras públicas, execução de obras públicas e análise de risco de fraude e corrupção em contratações públicas. O componente de assessoria técnica será desenvolvido com a implantação de uma Câmara Técnica com engenheiros e assessores jurídicos que auxiliarão os observatórios sociais na análise de editais e documentos relacionados à execução das obras monitoradas. Para o compartilhamento de experiências entre os observatórios participantes, serão realizados encontros periódicos da rede do projeto. Além disso, o projeto envolverá ações para disseminar o conhecimento adquirido durante as atividades de monitoramento, publicando estudos e relatórios periódicos sobre a situação das obras fiscalizadas."
+},
+{
+    "pergunta":"Posso enviar um caso para a Câmara Técnica?",
+    "resposta":"A assessoria direta da Câmara Técnica estará disponível apenas para os Observatórios Sociais participantes do projeto. Contudo, todas as análises produzidas pelos especialistas da Câmara Técnica serão disponibilizadas em uma biblioteca online de casos aberta ao público e podem ser usadas como referência."
+},
+{
+    "pergunta":"Quem financia o projeto?",
+    "resposta":"O projeto Obra Transparente é financiado pelo Fundo das Nações Unidas para a Democracia (United Nations Democracy Fund – UNDEF)."
+},
+{
+    "pergunta":"Quantas obras serão monitoradas pelos observatórios?",
+    "resposta":"O total de obras que serão monitoradas pelos observatórios participantes será de cerca de 140 obras."
+},
+{
+    "pergunta":"Por que só são monitoradas obras de escolas e creches?",
+    "resposta":"O Obra Transparente é uma iniciativa nova de colaboração entre organizações de atuação nacional e local, e busca desenvolver mecanismos para agir em rede de modo a influenciar a implementação de políticas públicas em diferentes níveis de governo. Para testar essa estratégia, o projeto está sendo implementado em formato piloto, com um número reduzido de organizações locais e com um enfoque somente em uma área de políticas públicas. De acordo com a experiência adquirida nessa fase, será possível expandir o foco do projeto para outros tipos de obras no futuro."
+},
+{
+    "pergunta":"Quem poderá participar dos treinamentos?",
+    "resposta":"Os treinamentos serão oferecidos apenas para as equipes das organizações participantes do projeto. Contudo, todo o conteúdo de capacitação desenvolvido, como vídeo-aulas e textos, será disponibilizado ao público na página do projeto."
+},
+{
+    "pergunta":"Quem poderá acessar o material desenvolvido para o projeto?",
+    "resposta":"Os materiais desenvolvidos para o projeto estarão disponíveis para o público na página do projeto. Qualquer pessoa ou organização poderá ter acesso."
+},
+{
+    "pergunta":"Qual é a relação do projeto com o aplicativo Tá de Pé?",
+    "resposta":"O projeto Obra Transparente e o aplicativo Tá de Pé são iniciativas complementares que buscam corrigir e prevenir atrasos em obras de escolas e creches. No caso do Obra Transparente, o projeto busca atingir esse objetivo por meio da cooperação com organizações locais de controle social, fazendo um monitoramento mais próximo e detalhado tanto do processo de contratação como do andamento das obras em um número reduzido de municípios. O Tá de Pé, por outro lado, busca incentivar a participação de cidadãos em todo o Brasil para ajudar a fiscalizar a execução das obras em seus municípios e cobrar do poder público a sua conclusão dentro dos prazos previstos."
+}
+]

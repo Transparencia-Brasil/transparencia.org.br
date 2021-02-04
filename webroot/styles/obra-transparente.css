@@ -1,0 +1,260 @@
+h4 {
+    display: block !important;
+    margin-block-start: 1.33em !important;
+    margin-block-end: 1.33em !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+    font-weight: bold !important;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box !important;
+       -moz-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+    }
+    
+     .ot_bigenvelope{
+        display: block !important;
+        vertical-align: top !important;
+        width: 440px !important;
+        margin:auto !important;
+        box-shadow:0px 5px 3px rgba(184, 184, 182, 0.2) !important; /*padding:auto;*/   /*border: 5px solid rgba(255,1,1,1);*/
+      }
+      
+    /*caixas dos acordioes*/
+    .ot_bigacordion  {  
+      padding:15px 15px 15px 15px !important;
+      margin:2px auto 4px !important;
+      border-left: 10px solid rgba(11,60,73,1) !important;
+      border-top: 0px !important;
+      border-right: 0px !important;
+      border-bottom: 0px !important;
+      color: rgba(255, 255, 255,1) !important;
+      background-color: rgba(11,70,73,0.75) !important;
+      width: 420px !important;
+      text-align: left !important;
+      outline: none !important;
+      display: block !important;
+      cursor: pointer !important;
+      font-size: 20px !important;
+      transition: 0.4s !important;
+      text-transform: uppercase !important;
+      line-height:26px !important;
+    }
+    
+    .ot_acordion  {  
+      padding:12px 15px 12px 15px !important;
+      margin:2px auto 4px !important;
+      border-left: 10px solid rgba(243,156,18,1) !important;
+      border-top: 0px !important;
+      border-right: 0px !important;
+      border-bottom: 0px !important;
+      color: rgba(255, 255, 255,1) !important;
+      background-color: rgba(243,156,18,0.75) !important;
+      width: 400px !important;
+      text-align: left !important;
+      outline: none !important;
+      display: block !important;
+      cursor: pointer !important;
+      font-size: 20px !important;
+      transition: 0.4s !important;
+      text-transform: uppercase !important;
+      line-height:26px !important;
+    }
+    
+    .ot_acordion:hover {
+        background-color:rgba(243,156,18,0.6) !important;
+        border-left: 20px solid rgba(243,156,18,0.9) !important;
+        color: rgba(255, 255, 255,1) !important;
+      }
+    
+    
+    .ot_bigacordion:hover{
+      background-color:rgba(11,60,73,0.4) !important;
+      border-left: 22px solid rgba(11,60,73,0.8) !important;
+      color: rgba(255, 255, 255,1) !important;
+    }
+    
+      .ot_acordion:after, .ot_bigacordion:after {
+        color: rgba(243,156,18,0.9) !important;
+        font-weight: bold !important;
+        float: right !important;
+      }
+      
+      .ot_txtdrop {
+        /*padding:0px 10px 0px;*/
+        margin: 0px auto 10px !important;
+        display:block !important;
+        width:95% !important;
+        border-bottom: 1px solid rgba(2,2,2,0.05) !important; /*border: 0px solid rgba(243,156,18,0.3);  /*color: rgba(30, 60, 69,0.9);*/
+        background-color: rgba(243,156,18,0.0) !important;
+        max-height: 0 !important;
+        font-size: 18px !important;
+        line-height:28px !important;
+        font-weight: 300 !important;
+        overflow: hidden !important;
+        transition: max-height 0.2s ease-out !important; /*width: 150px;*/  
+      }
+      
+      
+      .ot_bigtxtdrop {
+        /*padding:5px 0px 10px;*/
+        /*margin:-10px -10px 0px;  box-shadow:0px 3px 3px rgba(184, 184, 182, 0.2);*/
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.2s ease-out !important; /*width: 380px;  font-size: 18px;  line-height:28px;  font-weight: 300;*/
+        /*border: 5px solid rgba(255,1,1,1);*/
+        margin: auto !important;
+        display:block !important;
+      }
+    /*fim das caixas dos acordioes*/
+    
+      * {
+        font-family: "Lato" !important;
+      }
+    
+      .ot_link{ 
+        text-decoration:none !important;
+        color: rgba(243, 156, 18, 1) !important;
+        font-weight: 700 !important;
+      }
+      .ot_link:hover{ 
+        text-decoration:none !important;
+        color: rgba(243, 156, 18, 0.7) !important;
+        font-weight: 700 !important;
+      }
+         /*base*/
+      .ot_envelope{
+        display: block !important;
+        vertical-align: top !important;
+        width: 420px !important;
+        margin:auto !important;
+        box-shadow:0px 5px 3px rgba(184, 184, 182, 0.2) !important;  /*border: 5px solid rgba(255,1,1,1);*/
+      }
+                
+      .ot_textoacordion {
+        display: block !important;
+        vertical-align: top !important;
+        width:300px !important; /*border: 5px solid rgba(255,1,1,1);*/
+        margin:auto !important;
+      }
+      .ot_img{
+        height: 150px !important;
+        margin:0px 20px 5px 10px !important;  
+        float: right !important;
+        background-color:#fff !important;
+        box-shadow:5px 5px 5px rgba(0, 0, 0, 0.5) !important;
+        display:none !important; /*border: 5px solid rgba(255,1,1,1);*/
+      }
+     
+      .ot_imgc{
+        height: 200px !important;
+        display:block !important;
+        margin:auto !important; /*margin: -10px 20px 0px 10px;  float: right;    */
+        /*border: 5px solid rgba(255,1,1,1);*/
+      }
+      
+      .ot_imgb{
+        width: 150px !important;
+        margin:auto !important;
+        display:block !important;
+        margin-top:20px !important;
+        box-shadow:3px 5px 3px rgba(184, 184, 182, 0.2) !important; /*/*border: 5px solid rgba(255,1,1,1);*/
+      }
+    .ot_imgd{
+        width: 250px !important;
+        margin:auto !important;
+        padding:15px 20px !important;
+        display:block !important;
+        margin-top:20px !important;
+        box-shadow:3px 5px 3px rgba(184, 184, 182, 0.2) !important;/*border: 5px solid rgba(255,1,1,1);*/
+      }
+    
+    
+      .ot_p{
+        display: block !important;
+        padding:10px 10px 10px 10px !important;  
+        margin:auto !important;
+        color: rgba(11, 70, 73,1) !important;  
+        background-color: rgba(243,156,18,0.0) !important;  
+        font-size: 18px !important;
+        line-height:28px !important;
+        font-weight: 400 !important; /*/*border: 5px solid rgba(255,1,1,1);*/  
+      }
+    
+    .ot_ol{
+          display: block !important; /*padding:10px 20px 10px 10px;*/
+        margin:auto !important;
+        color: rgba(11, 70, 73,1) !important;
+        background-color: rgba(243,156,18,0.0) !important;  
+        font-size: 18px !important;
+        font-weight: 300 !important; /*/*border: 5px solid rgba(255,1,1,1);*/  
+      }
+    
+    .ot_ol_main{
+        display: block !important; /*padding:10px 20px 10px 10px;*/
+        margin:auto !important;
+        color: rgba(11, 70, 73,1) !important;
+        background-color: rgba(243,156,18,0.0) !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        line-height: 30px !important;
+        list-style-type: none !important;
+        list-style-position: inside !important; /*/*border: 5px solid rgba(255,1,1,1);*/  
+      }
+      .ot_b{
+        font-size: 18px !important;
+        font-weight: 400 !important;
+      }
+    
+      .ot_beta{
+        font-size: 16px !important;
+        background-color: rgba(243, 156, 18, 1) !important;
+        font-weight: 700 !important;
+        display:inline-block !important;
+        color:#fff !important;
+        padding: 3px 12px !important;
+        margin:4px !important;
+        border-radius: 30% !important;
+      }
+        
+       .ot_caixa{
+       margin: auto !important;
+       width:85% !important;
+       line-height:1.5em !important;
+       padding: 0px 3% !important; /*/*border: 5px solid rgba(255,1,1,1);*/
+        }
+    
+       .ot_sessao{
+        color: rgba(11, 70, 73,1) !important;
+        background-color: rgba(243,156,18,0.0) !important;
+        font-size: 20px !important;
+        line-height:28px !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        text-transform: uppercase !important;
+        font-family: 'Lato' !important;
+        margin-top: 40px !important;
+        margin-bottom: 0px !important;/*border: 5px solid rgba(255,1,1,1);*/
+       } 
+       
+       .ot_video {
+      display:block !important;
+      margin:auto !important;
+      width:560px !important;
+      height:315px !important;
+      padding-top:30px !important; }
+     /* textos */
+    /*celulares*/
+     @media (max-width: 600px) 
+    {
+      .ot_bigenvelope{ width: 100% !important;/*border: 5px solid rgba(255,1,1,1);*/ }
+      .ot_bigacordion  { width: 95% !important;/*border: 5px solid rgba(140,1,1,1);*/}
+      .ot_caixa{width: 100% !important; /*border: 5px solid rgba(255,140,1,1);padding: 6px;*/}
+      .ot_imgc{    height:inherit !important; display:block !important;  margin:auto !important; width: 100% !important;}
+      .ot_sessao{width: 100% !important;/*border: 5px solid rgba(255,1,140,1);*/}
+      .ot_envelope{ width: 100% !important; /*border: 5px solid rgba(255,1,1,1);*/ }
+      .ot_acordion  { width: 95% !important; /*border: 5px solid rgba(140,1,1,1);*/}
+      .ot_video {width:98%; height:200px !important; }
+      .ot_p{ text-align: left !important; }
+    }

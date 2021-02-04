@@ -1,0 +1,15 @@
+node_modules/
+bower_components/
+test/
+logs/
+tmp/
+.tmp/
+.DS_Store
+src/.DS_Store
+src/Controller/Admin/_GeraSenhaController.php
+tmp/debug_kit.sqlite
+logs/debug.log
+webroot/uploads/
+app.php
+bootstrap.php
+.editorconfig

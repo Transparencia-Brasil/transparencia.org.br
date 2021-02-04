@@ -1,0 +1,5 @@
+ALTER TABLE newsletters ADD Cidade VARCHAR(200) NULL;
+ALTER TABLE newsletters ADD UF char(2) NULL;
+ALTER TABLE newsletters ADD Veiculo VARCHAR(200)  NULL;
+ALTER TABLE newsletters ADD Telefone VARCHAR(10) NULL;
+ALTER TABLE newsletters ADD DDD VARCHAR(3) NULL;

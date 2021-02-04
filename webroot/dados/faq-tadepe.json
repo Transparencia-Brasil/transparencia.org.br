@@ -1,0 +1,62 @@
+[
+{
+    "pergunta":"Como eu instalo o aplicativo Tá de Pé?",
+    "resposta":"Vá na Playstore do seu smartphone Android e busque por “tadepe”. Nessa primeira fase o aplicativo ainda não está disponível para sistemas IOS ou Windows Phone."
+},
+{
+    "pergunta":"Quais smartphones conseguem instalar o Tá de Pé?",
+    "resposta":"O Tá de Pé foi desenvolvido para sistemas Android 4.0 ou superior. Ainda não existe previsão para lançamento do aplicativo para smartphones IOS ou Windows Phone."
+},
+{
+    "pergunta":"Eu preciso de 3G para enviar um alerta pelo Tá de Pé?",
+    "resposta":"Não. Você precisa de acesso a Internet para baixar o aplicativo e acessar a lista de escolas pela primeira vez. Depois disso, você poderá abrir o aplicativo já no endereço da escola e tirar quantas fotos quiser. O aplicativo terminará de enviar seu alerta assim que você voltar para um ambiente com internet."
+},
+{
+    "pergunta":"Como eu devo tirar as fotos da obra?",
+    "resposta":"A Transparência Brasil aconselha que os cidadãos não tentem entrar em uma obra, esteja ela parada ou em execução. Você deverá tirar fotos do lado de fora, prestando atenção nas paredes, telhados, colunas, estruturas expostas, janelas, portas e em qualquer coisa que você considere não estar certo naquela obra. Tire também fotos da placa da obra, pois ela pode apresentar irregularidades."
+},
+{
+    "pergunta":"É possível saber a identidade de quem enviou o alerta?",
+    "resposta":"Não. O aplicativo não pede login e não armazenamos nenhum tipo de dado do usuário. Seu alerta é 100% anônimo."
+},
+{
+    "pergunta":"Porque o Tá de Pé só trabalha com obras de escolas e creches?",
+    "resposta":"A Transparência Brasil considera fundamental o acesso a infraestrutura educacional para a melhoria da educação no Brasil, e por isso decidimos escolher esse conjunto de obras para lançar a ferramenta. Futuramente, o Tá de Pé irá trabalhar com outros tipos de obras públicas."
+},
+{
+    "pergunta":"Porque não consigo ver a obra do lado da minha casa?",
+    "resposta":"O Tá de Pé atualmente trabalha com escolas e creches financiadas pelo governo federal em parceria com prefeituras municipais cujos cronogramas estão disponíveis. Se a obra que você procura não está no aplicativo, ou ela não compreende a esses critérios ou ela ainda será adicionada ao aplicativo."
+},
+{
+    "pergunta":"Eu posso incluir uma obra que não está no aplicativo?",
+    "resposta":"Infelizmente ainda não. Mas você pode entrar em contato conosco para incluir uma obra, desde que ela atenda a alguns requisitos."
+},
+{
+    "pergunta":"Quais são os critérios para requisitar que uma obra seja inserida no app?",
+    "resposta":"Nesta fase, a obra precisa ser de uma creche ou escola e ser financiada com recursos do governo federal. Além disso, é preciso ter acesso o cronograma oficial de execução da obra e dados da licitação e data prevista de entrega. A lista de creches e escolas com recursos do governo federal da sua cidade pode ser acessada pelo <a href='http://simec.mec.gov.br/painelObras/index.php' target='_blank' style='text-decoration:underline;'>simec</a>."
+},
+{
+    "pergunta":"O aplicativo só mostra obras nas cidades vizinhas, mas não na minha.",
+    "resposta":"Nem todos os municípios brasileiros têm obras de escolas ou creches financiadas pelo governo federal. Quando isso acontece, o aplicativo mostra as obras mais próximas, que às vezes se encontram em municípios vizinhos."
+},
+{
+    "pergunta":"Posso enviar mais de uma foto por alerta?",
+    "resposta":"Sim. Ao tirar a primeira foto existe uma opção “+” ao lado da miniatura da foto. Clicando ali você conseguirá tirar outra foto e  anexar ao seu alerta e assim por diante."
+},
+{
+    "pergunta":"O que acontece com o alerta que eu enviei?",
+    "resposta":"Seu alerta é encaminhado para os nossos engenheiros voluntários, que irão verificar se elas apresentam ou não indícios de atrasos em relação ao cronograma oficial daquela obra. Caso sejam verificados indícios de atraso, a Transparência Brasil entrará em contato com a prefeitura do seu município, que terá 15 dias para responder. Se  dentro desse prazo a prefeitura não se pronunciar, entraremos em contato com os vereadores do seu município e com o Ministério da Educação, que também têm 15 dias para responder. Se mesmo assim o alerta permanecer sem resposta, a Transparência Brasil acionará a Controladoria-Geral da União (CGU), órgão de controle do governo federal, para tomar as medidas cabíveis."
+},
+{
+    "pergunta":"Como saberei o que aconteceu com o meu alerta?",
+    "resposta":"Para cada ação feita a partir do seu alerta (cobrança da prefeitura, câmara dos vereadores, Ministério da Educação e CGU) será enviada uma notificação por meio do aplicativo Tá de Pé. O mesmo ocorre para as respostas: assim que o seu alerta receber uma resposta você será imediatamente notificado."
+},
+{
+    "pergunta":"Outras pessoas poderão ver as fotos que eu enviei?",
+    "resposta":"Não. Apenas você, os engenheiros e as instâncias notificadas terão acesso a essas fotos (lembrando que nem a Transparência Brasil e nem ninguém terá acesso a sua identidade)."
+},
+{
+    "pergunta":"Outras pessoas terão acesso às respostas que eu recebi para o meu alerta?",
+    "resposta":"Sim. As respostas oficiais da instância estarão públicas para quem buscar mais informações sobre aquela obra no aplicativo Tá de Pé."
+}
+]

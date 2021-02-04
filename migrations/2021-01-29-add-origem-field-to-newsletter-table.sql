@@ -1,0 +1,1 @@
+ALTER TABLE newsletters ADD Origem varchar(50) null;
