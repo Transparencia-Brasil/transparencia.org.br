@@ -55,6 +55,9 @@
 docker-compose up (com visualização de log)
 docker-compose up -d (rodar em background)
 
+# CRIAR PASTA CACHE NA RAIZ DO PROJETO
+mkdir tmp
+sudo chmod -R 777 tmp
 # DESLIGANDO O DOCKER
 
 docker-compose down
