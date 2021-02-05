@@ -15,7 +15,7 @@
 <li><b class="ot_beta">3</b> Compartilhamento de experiências e boas práticas.</li></ol>
 <p class="ot_p">Alcançando cerca de 270 participantes nas atividades de formação (seis edições online e duas presenciais), o projeto ofereceu suporte aos observatórios para o acompanhamento detalhado de um total de <b>135 obras</b> do Programa Nacional de Reestruturação e Aquisição de Equipamentos da Rede Escolar Pública de Educação Infantil (Proinfância) nos municípios participantes.<br></p></div>
 
-
+ 
 
 <div class="ot_caixa"> <p class="ot_sessao">Sobre o Projeto</p>
 </div>
