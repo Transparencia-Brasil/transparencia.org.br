@@ -10,6 +10,6 @@ src/Controller/Admin/_GeraSenhaController.php
 tmp/debug_kit.sqlite
 logs/debug.log
 webroot/uploads/
-app.php
-bootstrap.php
+config/app.php
+config/bootstrap.php
 .editorconfig
