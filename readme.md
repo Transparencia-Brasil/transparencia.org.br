@@ -15,7 +15,7 @@
 -   CLONANDO O SITE DO GITBUCKET
     git clone https://github.com/Transparencia-Brasil/transparencia.org.br.git
 
--   copiar o arquivo app-example.php para app.php
+-   Na pasta config copiar o arquivo app-example.php para app.php
 
 -   no arquivo app.php colocar as credenciais para:
   

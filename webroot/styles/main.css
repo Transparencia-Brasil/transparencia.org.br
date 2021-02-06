@@ -10987,6 +10987,14 @@ footer a:visited {
     font-weight: bold;
     font-size: 1.2em;
 }
+.cta-border-l {
+    border-style: solid;
+    border-color: #f9a521!important;
+    border-bottom: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-width: thin;
+}
 @media (min-width: 992px) {
     .new-social{
         display: flex!important;
@@ -10999,5 +11007,13 @@ footer a:visited {
     .new-social-mobile{
         display: flex!important;
         margin: 1rem 0rem 1rem 0rem;
+    }
+    .cta-border-l {
+        border-style: solid;
+        border-color: #f9a521!important;
+        border-bottom: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-top:2px;
     }
 }
