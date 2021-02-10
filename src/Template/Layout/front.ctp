@@ -41,7 +41,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
   <meta property="og:site_name" content="Transparência Brasil">
   <meta property="og:description" content="Somos uma entidade sem fins lucrativos que depende de doações para manter atividades de monitoramento do poder público e busca por transparência.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="<?= BASE_URL ?>TB-Whatsapp.png">
+  <meta property="og:image" content="<?= BASE_URL ?>favicon.png">
 
 
 
