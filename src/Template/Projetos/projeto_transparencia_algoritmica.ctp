@@ -28,7 +28,7 @@
           Uso de Inteligência Artificial pelo poder público
           </strong>
           <div class="btn-primary">
-            <a href="https://www.transparencia.org.br/downloads/publicacoes/Recomendacoes_Governanca_Uso_IA_PoderPublico.pdf" class="btn">Leia na íntegra</a>
+            <a href="https://www.transparencia.org.br/downloads/publicacoes/Recomendacoes_Governanca_Uso_IA_PoderPublico.pdf" class="btn" target="_blank">Leia na íntegra</a>
           </div>
         </p>
         <p class="pb-5">
@@ -83,7 +83,7 @@
           </p>  
           <h6 class="pt-4">Monitore novas ferramentas de IA usadas pelo setor público por meio de algoritmo de busca automática</h6>
           <p>
-            No nosso <strong><a href="https://www.google.com/url?q=https://github.com/Transparencia-Brasil/algoritmos-brasil&sa=D&source=editors&ust=1612900632226000&usg=AOvVaw3z94Ql8klgYZj9KPYGKJmG" targe="_blank">repositório público do GitHub</a></strong> é possível ter acesso ao código construído pela Transparência Brasil, com apoio da Northwestern University, que visa contribuir para que a sociedade civil possa monitorar novos casos de uso de tecnologias de IA que venham a ter menção em sites governamentais. 
+            No nosso <strong><a href="https://github.com/Transparencia-Brasil/algoritmos-brasil" target="_blank">repositório público do GitHub</a></strong> é possível ter acesso ao código construído pela Transparência Brasil, com apoio da Northwestern University, que visa contribuir para que a sociedade civil possa monitorar novos casos de uso de tecnologias de IA que venham a ter menção em sites governamentais. 
           </p>
       </div>
     </div>
