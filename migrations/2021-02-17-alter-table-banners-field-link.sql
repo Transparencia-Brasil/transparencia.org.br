@@ -1,0 +1,1 @@
+alter table banners modify column Link varchar(250) NULL;
