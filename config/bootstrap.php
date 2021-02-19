@@ -200,4 +200,4 @@ Plugin::loadAll();
 //define('BASE_URL', "http://www.transparencia.org.br/");
 //define('BASE_URL', "http://localhost:9000/");
 //define('BASE_URL', "http://192.168.1.5:9000/");
-define('BASE_URL', "http://localhost:8000/");
+define('BASE_URL', env('APP_URL'));
