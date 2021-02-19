@@ -26,6 +26,7 @@
     * `MYSQL_USERNAME`: usuário do MySQL;
     * `MYSQL_PASSWORD`: senha do MySQL;
     * `MYSQL_DATABASE`: banco de dados do MySQL;
+    * `MYSQL_ATTR_SSL_CA`: certificado SSL para conexão com banco de dados.
     * `MAIL_DRIVER`: 'Smtp' (padrão) ou 'Mail';
     * `MAIL_HOST`: endereço do servidor de email;
     * `MAIL_USERNAME`: usuário do servidor de email;
