@@ -9,7 +9,7 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => env('APP_DEBUG', false),
+    'debug' => true,
 
     /**
      * Configure basic information about the application.
@@ -62,7 +62,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT'),
+        'salt' => '',
     ],
 
     /**
@@ -192,14 +192,14 @@ return [
             'tls' => true,
         ],
         'no-reply' => [
-            'className' => env('MAIL_DRIVER', 'Smtp'),
+            'className' => 'Smtp',
             // The following keys are used in SMTP transports
             'SMTPAuth' => true,
-            'host' => env('MAIL_HOST'),
+            'host' => '',
             'port' => 587,
             'timeout' => 10,
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
+            'username' => 'r',
+            'password' => '',
             'client' => null,
             'tls' => true,
         ]
@@ -231,7 +231,7 @@ return [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
-            'host' => env('MYSQL_HOST'),
+            'host' => '',
             /**
              * CakePHP will use the default DB port based on the driver selected
              * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
@@ -240,9 +240,9 @@ return [
             //'port' => 'nonstandard_port_number',
             // 'username' => 'webapp',
             // 'password' => 'C4zz@_m3r',
-            'username' => env('MYSQL_USERNAME'),
-            'password' => env('MYSQL_PASSWORD'),
-            'database' => env('MYSQL_DATABASE'),
+            'username' => ' e',
+            'password' => '',
+            'database' => '',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
