@@ -33,24 +33,11 @@
 
     * Array Email / no-reply: transport, from, charset, headerCharset
 
-    * `APP_DEBUG`: true ou false (padrão);
-    * `APP_URL`: URL do site terminada com `/` (e.g. `https://www.transparencia.org.br/`);
-    * `SECURITY_SALT`: string que serve de [salt](https://en.wikipedia.org/wiki/Salt_(cryptography));
-    * `MYSQL_HOST`: endereço do servidor de MySQL;
-    * `MYSQL_USERNAME`: usuário do MySQL;
-    * `MYSQL_PASSWORD`: senha do MySQL;
-    * `MYSQL_DATABASE`: banco de dados do MySQL;
-    * `MYSQL_ATTR_SSL_CA`: certificado SSL para conexão com banco de dados.
-    * `MAIL_DRIVER`: 'Smtp' (padrão) ou 'Mail';
-    * `MAIL_HOST`: endereço do servidor de email;
-    * `MAIL_USERNAME`: usuário do servidor de email;
-    * `MAIL_PASSWORD`: senha do servidor de email.
-
 -   copiar ao arquivo bootstrap-example.php para bootstrap.php
 
 -   no arquivo bootstrap.php definir na variável de ambiente a URL da aplicação:
 
-    * define('BASE_URL', "http://localhost:8000/");
+    define('BASE_URL', "http://localhost:8000/");
 
 -   FAZENDO O BUILD
     docker-compose build
