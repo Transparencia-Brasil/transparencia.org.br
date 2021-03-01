@@ -31,12 +31,6 @@
     * `MAIL_HOST`: endereço do servidor de email;
     * `MAIL_USERNAME`: usuário do servidor de email;
     * `MAIL_PASSWORD`: senha do servidor de email.
-  
--   copiar ao arquivo bootstrap-example.php para bootstrap.php
-
--   no arquivo bootstrap.php definir na variável de ambiente a URL da aplicação:
-
-    define('BASE_URL', "http://localhost:8000/");
 
 -   FAZENDO O BUILD
     docker-compose build
