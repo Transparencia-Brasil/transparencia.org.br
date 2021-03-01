@@ -98,7 +98,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
           </button>
           <div class="row new-menu">
             <div class="col-3">
-             <a href="/"><img src="/img/logos/logo.svg?cache=3" class="d-inline-block logo-image"></a>
+             <img src="/img/logos/logo.svg?cache=3" class="d-inline-block logo-image">
             </div>
             <div class="col-lg-9 col-8 pr-0 pt-4">
               <div class="navbar-nav justify-content-end new-social d-none d-lg-block">
