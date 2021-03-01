@@ -246,7 +246,7 @@ return [
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
-
+            'ssl_ca' => env('MYSQL_ATTR_SSL_CA'),
             /**
              * Set identifier quoting to true if you are using reserved words or
              * special characters in your table or column names. Enabling this
