@@ -13,6 +13,18 @@ services:
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=database"
+      - "APP_DEBUG=TRUE"
+      - "APP_URL=http://localhost:8000/"
+      - "SECURITY_SALT=dasfewrvuiofngfdsadsadsadasavunquy32r7831287413"
+      - "MYSQL_HOST=database"
+      - "MYSQL_USERNAME=root"
+      - "MYSQL_PASSWORD=secret"
+      - "MYSQL_DATABASE=tbrasil_site"
+      - "MAIL_DRIVER=Smtp"
+      - "MAIL_HOST="
+      - "MAIL_USERNAME="
+      - "MAIL_PASSWORD="   
+      - "MYSQL_ATTR_SSL_CA="
     ports:
         - 8080:8080
         - 8001:8001
