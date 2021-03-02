@@ -10,7 +10,7 @@
                         if($videocast->count() == 0)
                             echo "<p>Nenhum videocast disponível no momento!</p>";
                         foreach($videocast as $vcast): ?>
-                            <li><a href="<?=BASE_URL?>downloads/midias/<?=$vcast->Arquivo?>" onclick="registrarEvento('videocast', 'clique', '<?=$vcast->Titulo?>')" target="_blank"><strong><?=$vcast->Titulo?></strong> Clique para baixar.<img src="img/ico-download.png" /></a></li>
+                            <li><a href="<?=BASE_URL?>uploads/midias/<?=$vcast->Arquivo?>" onclick="registrarEvento('videocast', 'clique', '<?=$vcast->Titulo?>')" target="_blank"><strong><?=$vcast->Titulo?></strong> Clique para baixar.<img src="img/ico-download.png" /></a></li>
                         <?php endforeach; ?>
                     </ul>                    
                 </div>
@@ -21,7 +21,7 @@
                         if($podcast->count() == 0)
                             echo "<p>Nenhum podcast disponível no momento!</p>";
                         foreach($podcast as $pcast): ?>
-                            <li><a href="<?=BASE_URL?>downloads/midias/<?=$pcast->Arquivo?>" target="_blank" onclick="registrarEvento('podcast', 'clique', '<?=$pcast->Titulo?>')"><strong><?=$pcast->Titulo?></strong> Clique para baixar.<img src="img/ico-download.png" /></a></li>
+                            <li><a href="<?=BASE_URL?>uploads/midias/<?=$pcast->Arquivo?>" target="_blank" onclick="registrarEvento('podcast', 'clique', '<?=$pcast->Titulo?>')"><strong><?=$pcast->Titulo?></strong> Clique para baixar.<img src="img/ico-download.png" /></a></li>
                         <?php endforeach; ?>
                     </ul>                    
                 </div>

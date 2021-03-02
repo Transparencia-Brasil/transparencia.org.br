@@ -25,7 +25,7 @@
 							  <label class="control-label" for="Arquivo">Arquivo *</label>
 							  <div class="controls">
 							  	<?php if (isset($midia->Arquivo)): ?>
-							  		<p><b>Nome do arquivo atual: <a href='<?=$this->Url->build('/downloads/midias/', true)?>'><?=$midia->Arquivo?></a></b></p>
+							  		<p><b>Nome do arquivo atual: <a href='<?=$this->Url->build('/uploads/midias/'.$midia->Arquivo, true)?>' target="_blank"><?=$midia->Arquivo?></a></b></p>
 							  	<?php endif; ?>
 								<?=$this->Form->file('Midias.Arquivo', ['class' => 'span6']);?>
 							  </div>
