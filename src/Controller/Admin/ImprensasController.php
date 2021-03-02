@@ -8,7 +8,7 @@ use Cake\ORM\TableRegistry;
 
 class ImprensasController extends AppController
 {
-    public $PASTA_UPLOAD = WWW_ROOT . 'img/imprensa/';
+    public $PASTA_UPLOAD = WWW_ROOT . 'uploads/imprensa/';
 
 	public function initialize()
 	{

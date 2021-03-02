@@ -34,7 +34,7 @@
                   </div>
                 <?php
                 if(strlen($item->Imagem) > 0):?><div class='crop-height'>
-                  <a href="<?=$item->Link?>" target="_blank" onclick="registrarEvento('veja_mais', 'clique', '<?=$item->Titulo?>')"><img class='card-img-top img-fluid scale' src="<?=BASE_URL?>img/imprensa/<?=$item->Imagem?>" /></a></div>
+                  <a href="<?=$item->Link?>" target="_blank" onclick="registrarEvento('veja_mais', 'clique', '<?=$item->Titulo?>')"><img class='card-img-top img-fluid scale' src="<?=BASE_URL?>uploads/imprensa/<?=$item->Imagem?>" /></a></div>
                 <?php endif; ?>
                 <div class="card-block">
                   <h6 class="card-title">

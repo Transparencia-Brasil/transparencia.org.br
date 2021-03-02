@@ -61,7 +61,7 @@
 							  <label class="control-label" for="Arquivo">Imagem de destaque (tamanho: 600x357) *</label>
 							  <div class="controls">
 							  	<?php if (isset($imprensa->Imagem)): ?>
-							  		<p><b>Nome da imagem atual: <a href='<?=$this->Url->build('/img/imprensa/'. $imprensa->Imagem, true)?>' target="_blank"><?=$imprensa->Imagem?></a></b></p>
+							  		<p><b>Nome da imagem atual: <a href='<?=$this->Url->build('/uploads/imprensa/'. $imprensa->Imagem, true)?>' target="_blank"><?=$imprensa->Imagem?></a></b></p>
 							  	<?php endif; ?>
 								<?=$this->Form->file('Imprensas.Imagem', ['class' => 'span6']);?>
 							  </div>
@@ -78,7 +78,7 @@
 		                                </div>
 		                            </div>
 		                            <div class="bx-img">
-		                                <a href="javascript:void(0);"><img src="<?=BASE_URL?>img/imprensa/img-imprensa-01.jpg" /></a>
+		                                <a href="javascript:void(0);"><img src="<?=BASE_URL?>uploads/imprensa/img-imprensa-01.jpg" /></a>
 		                            </div>
 		                            <div class="bx-txt">
 		                                <h4 name="titulo">Título</h4>
