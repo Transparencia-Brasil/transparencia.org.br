@@ -104,7 +104,7 @@
                   <div class="card-block text-center">
                       <h4 class="card-title">associe-se</h4>
                       <p class="card-text fix-h">Ao se associar, você fortalece uma das mais respeitadas organizações de combate à corrupção.</p>
-                      <div class="btn-primary"><a href="https://www.transparencia.org.br/apoie" class="btn" onclick="registrarEvento(\'destaque_principal_bolinhas\', \'clique\', \'reportagem\')">Veja Mais</a></div>
+                      <div class="btn-primary"><a href="<?=$this->Url->build('apoie'.$midia->Arquivo, true)?>" class="btn" onclick="registrarEvento(\'destaque_principal_bolinhas\', \'clique\', \'reportagem\')">Veja Mais</a></div>
                   </div>
                 </div>
               </div>
