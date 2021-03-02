@@ -84,6 +84,9 @@ webroot/
         projetos/
         publicacoes/
         quemsomos/
+        financiamentos/
+        auditoriascontabilidade/
+        relatoriosatividades/
 ```
 
 ## SYMLINK PARA PUBLICAÇÕES (MANTEM URL /downloads/publicacoes/)
