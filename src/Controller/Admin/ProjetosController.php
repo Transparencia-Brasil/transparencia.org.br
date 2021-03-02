@@ -12,7 +12,7 @@ use Cake\I18n\Time;
 class ProjetosController extends AppController {
 
     public $helpers = ['Ativo'];
-    public $PASTA_UPLOAD = WWW_ROOT . 'img/projetos/';
+    public $PASTA_UPLOAD = WWW_ROOT . 'uploads/projetos/';
 
 	public function initialize()
 	{

@@ -102,7 +102,7 @@
 							  <label class="control-label" for="Imagem_logo">Logotipo</label>
 							  <div class="controls">
 							  	<?php if (isset($projeto->Imagem_logo)): ?>
-							  		<p><b>Nome do logotipo atual: <a href='<?=$this->Url->build('/images/projetos/'.$projeto->Imagem_logo, true)?>' target="_blank"><?=$projeto->Imagem_logo?></a></b></p>
+							  		<p><b>Nome do logotipo atual: <a href='<?=$this->Url->build('/uploads/projetos/'.$projeto->Imagem_logo, true)?>' target="_blank"><?=$projeto->Imagem_logo?></a></b></p>
 							  	<?php endif; ?>
 								<?=$this->Form->file('Projetos.Imagem_logo', ['class' => 'span3', 'readonly' => 'readonly']);?>
 							  </div>
@@ -111,7 +111,7 @@
 							  <label class="control-label" for="Imagem">Imagem de fundo</label>
 							  <div class="controls">
 							  	<?php if (isset($projeto->Imagem)): ?>
-							  		<p><b>Nome da imagem de fudo atual: <a href='<?=$this->Url->build('/images/projetos/'.$projeto->Imagem, true)?>' target="_blank"><?=$projeto->Imagem?></a></b></p>
+							  		<p><b>Nome da imagem de fudo atual: <a href='<?=$this->Url->build('/uploads/projetos/'.$projeto->Imagem, true)?>' target="_blank"><?=$projeto->Imagem?></a></b></p>
 							  	<?php endif; ?>
 								<?=$this->Form->file('Projetos.Imagem', ['class' => 'span3', 'readonly' => 'readonly']);?>
 							  </div>

@@ -30,8 +30,8 @@
                   ?>
             <?php foreach($projetosAtivos as $key=>$projeto):
               $url = $projeto['Link'];
-              $imagemLogo = $this->Url->build('/') . 'img/projetos/' . $projeto['Imagem_logo'];
-              $imagemBg = $this->Url->build('/') . 'img/projetos/' . $projeto['Imagem'];
+              $imagemLogo = $this->Url->build('/') . 'uploads/projetos/' . $projeto['Imagem_logo'];
+              $imagemBg = $this->Url->build('/') . 'uploads/projetos/' . $projeto['Imagem'];
               ?>
               <?php if ($count == false) {
                 echo '<div class="card-group">';
