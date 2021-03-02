@@ -30,7 +30,7 @@
                         $active = "active";
 
                     if($banner['CodigoBannerTipo'] == 1 && strlen($banner['Imagem']) > 0){ // tipo imagem com link
-                        $imagem = $this->Url->build('/') . 'img/banners/' . $banner['Imagem'];
+                        $imagem = $this->Url->build('/') . 'uploads/banners/' . $banner['Imagem'];
                         $target = $banner['CodigoTargetTipo'] == 1 ? "" : "target='_blank'";
                         echo '<div class="carousel-item crop-height-carousel ' . $active . '"><a href="' . $banner['Link'] . '" ' . $target . ' onclick="registrarEvento(\'destaque_intermediario_home\', \'clique\', \'' . $banner['Nome'] . '\')"><img src="' . $imagem . '" title="' . $banner['Nome'] . '" class="d-block img-fluid" /></a></div>';
                     }else{ // tipo video
