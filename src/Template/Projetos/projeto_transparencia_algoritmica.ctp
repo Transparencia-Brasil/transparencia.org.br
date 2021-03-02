@@ -34,16 +34,16 @@
         <p class="pb-5">
           O documento apresenta as recomendações da ​Transparência Brasil para o desenvolvimento e uso de tecnologias relacionadas à Inteligência Artificial pelo setor público, elaboradas de  forma colaborativa com organizações da sociedade civil, atuantes na promoção de diferentes causas e direitos. O policy paper  traz uma análise de impactos negativos a direitos fundamentais para, ao final, oferecer recomendações de governança quanto à aplicação de sistemas de IA no setor público.
         </p>  
-        <!-- <hr>
+        <hr>
         <p class="pt-2">
           <strong>Estrutura de avaliação de riscos a direitos e de transparência no uso de algoritmos de inteligência artificial no setor público</strong>
           <div class="btn-primary">
-            <a href="#" class="btn">Leia na íntegra</a>
+            <a href="https://www.transparencia.org.br/downloads/publicacoes/Estrutura_Avaliacao_Risco.pdf" target="_blank" class="btn">Leia na íntegra</a>
           </div>
         </p>
         <p class="pb-5">
           O documento apresenta uma proposta para avaliação de riscos no uso de algoritmos de inteligência artificial pelo setor público, numa busca de alinhamento entre promoção de inovação e tecnologia e responsabilidade pública e transparência.
-        </p>   -->
+        </p>  
       </div>
     </div>
     <div class="row py-3 cta h-100">
