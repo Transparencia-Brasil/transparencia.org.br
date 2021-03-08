@@ -71,3 +71,25 @@ php -S localhost:8000 -t \var\www\html\webroot (caminho da aplicação\webroot)
 ## SENHA DO ADMIN AMBIENTE DEV:
 usuario: teste
 senha: teste
+
+## PASTAS PARA UPLOAD DE ARQUIVOS DINÂMICOS (PUBLICADOS PELO ADMIN) 
+* Necessário permissão de leitura e escrita a partir da pasta uploads
+  
+```
+webroot/
+    uploads/
+        banners/
+        imprensa/
+        midias/
+        projetos/
+        publicacoes/
+        quemsomos/
+        financiamentos/
+        auditoriascontabilidade/
+        relatoriosatividades/
+```
+
+## SYMLINK PARA PUBLICAÇÕES (MANTEM URL /downloads/publicacoes/)
+```
+ln -s uploads downloads
+```

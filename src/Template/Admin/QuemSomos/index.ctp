@@ -34,7 +34,7 @@
 
           ?>
           <?php $count = $count + 1;
-          $imagem = $this->Url->build('/') . 'img/quemsomos/' . $quemsomositem['Imagem'];
+          $imagem = $this->Url->build('/') . 'uploads/quemsomos/' . $quemsomositem['Imagem'];
           ?>
 
         <li class='' id='item_<?php echo $quemsomositem->Codigo; ?>' style='display:block; margin:20px 0; border:1px solid #ccc; padding:10px; background:#eee; position:relative;'>

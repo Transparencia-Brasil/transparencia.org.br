@@ -28,7 +28,7 @@
           Uso de Inteligência Artificial pelo poder público
           </strong>
           <div class="btn-primary">
-            <a href="https://www.transparencia.org.br/downloads/publicacoes/Recomendacoes_Governanca_Uso_IA_PoderPublico.pdf" class="btn" target="_blank">Leia na íntegra</a>
+            <a href="/downloads/publicacoes/Recomendacoes_Governanca_Uso_IA_PoderPublico.pdf" class="btn" target="_blank">Leia na íntegra</a>
           </div>
         </p>
         <p class="pb-5">
@@ -38,7 +38,7 @@
         <p class="pt-2">
           <strong>Estrutura de avaliação de riscos a direitos e de transparência no uso de algoritmos de inteligência artificial no setor público</strong>
           <div class="btn-primary">
-            <a href="https://www.transparencia.org.br/downloads/publicacoes/Estrutura_Avaliacao_Risco.pdf" target="_blank" class="btn">Leia na íntegra</a>
+            <a href="/downloads/publicacoes/Estrutura_Avaliacao_Risco.pdf" target="_blank" class="btn">Leia na íntegra</a>
           </div>
         </p>
         <p class="pb-5">

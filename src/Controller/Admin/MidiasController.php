@@ -9,7 +9,7 @@ use Cake\ORM\TableRegistry;
 class MidiasController extends AppController
 {
 	
-	public $PASTA_UPLOAD = WWW_ROOT . 'downloads/midias/';
+	public $PASTA_UPLOAD = WWW_ROOT . 'uploads/midias/';
 
 	public function initialize()
 	{

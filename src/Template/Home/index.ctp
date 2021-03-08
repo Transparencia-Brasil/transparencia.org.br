@@ -30,7 +30,7 @@
                         $active = "active";
 
                     if($banner['CodigoBannerTipo'] == 1 && strlen($banner['Imagem']) > 0){ // tipo imagem com link
-                        $imagem = $this->Url->build('/') . 'img/banners/' . $banner['Imagem'];
+                        $imagem = $this->Url->build('/') . 'uploads/banners/' . $banner['Imagem'];
                         $target = $banner['CodigoTargetTipo'] == 1 ? "" : "target='_blank'";
                         echo '<div class="carousel-item crop-height-carousel ' . $active . '"><a href="' . $banner['Link'] . '" ' . $target . ' onclick="registrarEvento(\'destaque_intermediario_home\', \'clique\', \'' . $banner['Nome'] . '\')"><img src="' . $imagem . '" title="' . $banner['Nome'] . '" class="d-block img-fluid" /></a></div>';
                     }else{ // tipo video
@@ -104,7 +104,7 @@
                   <div class="card-block text-center">
                       <h4 class="card-title">associe-se</h4>
                       <p class="card-text fix-h">Ao se associar, você fortalece uma das mais respeitadas organizações de combate à corrupção.</p>
-                      <div class="btn-primary"><a href="https://www.transparencia.org.br/apoie" class="btn" onclick="registrarEvento(\'destaque_principal_bolinhas\', \'clique\', \'reportagem\')">Veja Mais</a></div>
+                      <div class="btn-primary"><a href="<?=$this->Url->build('apoie'.$midia->Arquivo, true)?>" class="btn" onclick="registrarEvento(\'destaque_principal_bolinhas\', \'clique\', \'reportagem\')">Veja Mais</a></div>
                   </div>
                 </div>
               </div>

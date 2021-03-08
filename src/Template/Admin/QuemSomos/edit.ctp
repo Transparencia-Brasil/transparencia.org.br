@@ -37,7 +37,7 @@
           <div class="controls">
             <?php if (isset($quem_somos->Imagem)): ?>
               <p><b>Nome da imagem atual:
-              <a href="<?=BASE_URL.'img/quemsomos/'.$quem_somos->Imagem?>" target="_blank"><?=$quem_somos->Imagem?></a></b></p>
+              <a href="<?=BASE_URL.'uploads/quemsomos/'.$quem_somos->Imagem?>" target="_blank"><?=$quem_somos->Imagem?></a></b></p>
             <?php endif; ?>
           <?=$this->Form->file('QuemSomos.Imagem', ['class' => 'span6', 'readonly' => 'readonly']);?>
           </div>

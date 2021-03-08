@@ -10,7 +10,7 @@ class QuemSomosController extends AppController
 {
 
 
-	public $PASTA_UPLOAD = WWW_ROOT . 'img/quemsomos/';
+	public $PASTA_UPLOAD = WWW_ROOT . 'uploads/quemsomos/';
 
 	public function initialize(){
         parent::initialize();

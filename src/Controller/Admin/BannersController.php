@@ -10,7 +10,7 @@ use Cake\I18n\Time;
 class BannersController extends AppController
 {
 
-	public $PASTA_UPLOAD = WWW_ROOT . 'img/banners/';
+	public $PASTA_UPLOAD = WWW_ROOT . 'uploads/banners/';
 
 	public function initialize()
 	{

@@ -64,7 +64,7 @@
 ?>
 
                             <div class="row">
-                                <?= !empty($value['Imagem']) ? "<div class='col-md-2 col-sm-4 my-3'><img class='full-w' src='".$this->Url->build('/') . 'img/quemsomos/' .$value['Imagem']."'></div>" : ""?>
+                                <?= !empty($value['Imagem']) ? "<div class='col-md-2 col-sm-4 my-3'><img class='full-w' src='".$this->Url->build('/') . 'uploads/quemsomos/' .$value['Imagem']."'></div>" : ""?>
                                     <div class="col-md-10 col-sm-8 my-3">
                                         <h6>
                                             <?=$value['Nome']?>

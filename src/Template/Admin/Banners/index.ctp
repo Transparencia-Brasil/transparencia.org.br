@@ -23,7 +23,7 @@
           <?php $count=0;?>
           <?php foreach($banners as $banner): ?>
             <?php $count = $count + 1;
-            $imagem = $this->Url->build('/') . 'img/banners/' . $banner['Imagem'];
+            $imagem = $this->Url->build('/') . 'uploads/banners/' . $banner['Imagem'];
             ?>
         <li class='' id='item_<?php echo $banner->Codigo; ?>' style='display:block; margin:20px 0; border:1px solid #ccc; padding:10px; background:#eee; position:relative;'>
           <span style="display: none;" id="id<?php echo $count; ?>">Nome:<?=$banner->Nome?></span>

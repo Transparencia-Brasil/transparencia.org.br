@@ -38,7 +38,7 @@
 							  <div class="controls">
 							  	<?php if (isset($banner->Imagem)): ?>
 							  		<p><b>Nome da imagem atual: 
-							  		<a href="<?=BASE_URL.'img/banners/'.$banner->Imagem?>" target="_blank"><?=$banner->Imagem?></a></b></p>
+							  		<a href="<?=BASE_URL.'uploads/banners/'.$banner->Imagem?>" target="_blank"><?=$banner->Imagem?></a></b></p>
 							  	<?php endif; ?>
 								<?=$this->Form->file('Banners.Imagem', ['class' => 'span6', 'readonly' => 'readonly']);?>
 								<p>*Tamanho ideal: 1280x746 px.</p>
