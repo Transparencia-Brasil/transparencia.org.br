@@ -175,52 +175,51 @@
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				<h4 class="title-pages" id="Normas">Normas para associação à Transparência Brasil</h4>
 			</div>
-			<div class="content">
+			<div class="content mb-3">
+  			    <h3 class="title-pages mt-3">CAPÍTULO II: DOS ASSOCIADOS</h3>
+				<h5 class="title-pages pt-2 pb-0 m-0" style="font-size:1.32rem">Artigo 3º</h5>
+				<p class="mt-0">São associados da Transparência Brasil as pessoas, entidades e empresas nela regularmente inscritas, em qualquer das seguintes categorias:</p>
 				<ul>
-					<li>
-						<p>Artigo 1º – Constitui condição prévia para associação à Transparência Brasil manifestação expressa de tal intenção,
-							em que também se declarem:<br /> a) compromisso de cooperar para a consecução das finalidades sociais da entidade;<br
-							/> b) ciência quanto ao Código da Ética da entidade e manifestação de que obedecerá a ele;<br /> c) conhecimento a
-							respeito das estipulações da presente norma.</p>
-					</li>
-
-					<li>
-						<p>Artigo 2º – Em conformidade com o Artigo 3° do estatuto da entidade, a admissão de novos sócios é condicionada à aprovação
-							do Conselho Deliberativo.</p>
-					</li>
-
-					<li>
-						<p>Artigo 3° – Os associados participarão, na forma prevista pelos órgãos competentes, das atividades da entidade. § Único
-							– Os associados contarão com uma conta de correio eletrônico no domínio da entidade. O uso dessa conta será regulado
-							por Norma dada a conhecimento dos associados quando de sua admissão.</p>
-					</li>
-
-					<li>
-						<p>Artigo 4° – Os associados participantes e institucionais pagarão contribuições estipuladas conforme o procedimento
-							estatutário correspondente.</p>
-					</li>
-
-					<li>
-						<p>Artigo 5° – Os associados participantes e os representantes autorizados de associados institucionais terão direito
-							de voto e de ser votados na Convenção da Transparência Brasil.</p>
-						<ul>
-							<li>
-								<p>§ 1º – O direito de voto vigorará a partir do 6º (sexto) mês de associação do sócio, desde que satisfeita a condição
-									expressa no § 3º do presente artigo.</p>
-							</li>
-							<li>
-								<p>§ 2º – Os associados enquadrados nas condições expressas no Art. 35 do Estatuto da entidade são isentos da condição
-									expressa no parágrafo anterior.</p>
-							</li>
-							<li>
-								<p>§ 3º – O direito de voto é condicionado ao pagamento de todas as mensalidades porventura devidas.</p>
-							</li>
-							<li>
-								<p>§ 4º – O presidente do Conselho Deliberativo poderá, após consulta aos demais membros do órgão, estipular anistias
-									de forma a adequar o estipulado no parágrafo anterior às circunstâncias do momento econômico da entidade e do país.</p>
-							</li>
+  					<li><p class="mt-0">associados participantes: pessoas físicas, com direito a voz e voto na Convenção;</p></li>
+					<li><p class="mt-0">associados institucionais: organizações da sociedade civil, cujos representantes credenciados têm direito a voz e voto na Convenção;</p></li>
+					<li><p class="mt-0">associados apoiadores: empresas, sem direito a voto em Convenção.</p>
+  						<ul>
+						  <li><p class="mt-0">1º Os associados participantes e os representantes de associados institucionais têm direito a ocupar cargos nos órgãos eletivos da Transparência Brasil.</p></li>
+						  <li><p class="mt-0">2º Para ingressar no quadro de associados da Transparência Brasil, o interessado deverá ser aprovado pelo Conselho Deliberativo. Em nenhuma hipótese, em caso de rejeição, serão comunicadas as razões da recusa.</p></li>
+						  <li><p class="mt-0">3º No ato de solicitação de associação, os associados institucionais designarão representantes credenciados; a substituição de representante credenciado de associado institucional em qualquer tempo se fará por comunicação à Transparência Brasil.</p></li>
 						</ul>
 					</li>
+				</ul>
+				<h5 class="title-pages pt-2 pb-0 m-0" style="font-size:1.32rem">Artigo 4º</h5>
+				<p class="mt-0">São considerados fundadores os signatários do ato constitutivo da Transparência Brasil e os que aderiram a esse ato até 4 (quatro) meses a partir da data de sua criação.</p>
+				<h5 class="title-pages pt-2 pb-0 m-0" style="font-size:1.32rem">Artigo 5º</h5>
+				<p class="mt-0">São requisitos para a admissão de associado:</p>
+				<ul>
+  					<li><p class="mt-0">I estar comprometido com a finalidade da Transparência Brasil;</p></li>
+					<li><p class="mt-0">II obrigar-se a contribuir para o alcance dos objetivos da Transparência Brasil;</p></li>
+					<li><p class="mt-0">III apresentar manifestação de intenção de associar-se, em que esteja expressa concordância em efetuar contribuição financeira periódica à Transparência Brasil.</p></li>
+				</ul>
+				<h5 class="title-pages pt-2 pb-0 m-0" style="font-size:1.32rem">Artigo 6º</h5>
+				<p class="mt-0">São direitos dos associados:</p>
+				<ul>
+  					<li><p class="mt-0">I participar, na forma prevista pelos órgãos competentes, das atividades da Transparência;</p></li>
+					<li><p class="mt-0">II desligar-se da Transparência Brasil, mediante solicitação dirigida ao Conselho;</p></li>
+					<li><p class="mt-0">III ter acesso a informações pertinentes à Transparência Brasil.</p></li>
+				</ul>
+				<h5 class="title-pages pt-2 pb-0 m-0" style="font-size:1.32rem">Artigo 7º</h5>
+				<p class="mt-0">São deveres dos associados:</p>
+				<ul>
+  					<li><p class="mt-0">I cumprir as disposições estatutárias;</p></li>
+					<li><p class="mt-0">II estar comprometido com os objetivos da Transparência Brasil, cooperando para a consecução dos fins sociais;</p></li>
+					<li><p class="mt-0">III pagar as contribuições devidas;</p></li>
+					<li><p class="mt-0">IV manter atualizadas as suas informações cadastrais.</p><h5 class="title-pages pt-2 pb-0 m-0" style="font-size:1.32rem">Parágrafo Único</h5><p class="mt-0">Os associados não respondem, nem mesmo subsidiariamente, pelas obrigações da Transparência Brasil.</p></li>
+				</ul>
+				<h5 class="title-pages pt-2 pb-0 m-0" style="font-size:1.32rem">Artigo 8º</h5>
+				<p class="mt-0">O associado poderá ser excluído quando:</p>
+				<ul>
+  					<li><p class="mt-0">I infringir as disposições estatutárias, regimentos ou qualquer decisão dos órgãos da Transparência Brasil;</p></li>
+					<li><p class="mt-0">II deixar de cumprir seus deveres de associado;</p></li>
+					<li><p class="mt-0">III praticar ato prejudicial ao patrimônio ou à imagem da Transparência Brasil.</p><h5 class="title-pages pt-2 pb-0 m-0" style="font-size:1.32rem">Parágrafo Único</h5><p class="mt-0">A exclusão de associado se fará pelo Conselho Deliberativo, cabendo recurso à Convenção.</p></li>
 				</ul>
 			</div>
 		</div>
