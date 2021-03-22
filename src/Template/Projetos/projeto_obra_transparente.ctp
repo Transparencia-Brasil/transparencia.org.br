@@ -475,10 +475,10 @@
                     Checklists para Detecção de Fraudes em Licitações (2019)
                   </div>
                   <div class="ot_txtdrop">
-                         <a class="ot_link" title="Checklists para Detecção de Fraudes em Licitações (2019)" target="_blank" href="/downloads/publicacoes/Casos%20Obra%20Transparente%20-%20Pelotas%20-%20completo.pdf"><img class="ot_imgb" src="https://www.transparencia.org.br/blog/wp-content/uploads/2019/09/capa-Checklists-fraudes.png" title=""></a>
+                         <a class="ot_link" title="Checklists para Detecção de Fraudes em Licitações (2019)" target="_blank" href="/downloads/publicacoes/Checklists%20detecção%20fraudes.pdf"><img class="ot_imgb" src="https://www.transparencia.org.br/blog/wp-content/uploads/2019/09/capa-Checklists-fraudes.png" title=""></a>
                          <p class="ot_p">Listas de verificação com pontos relevantes para a identificação de fraudes em licitações públicas.
             <br><br>
-                   <b class="ot_b">Acesse: <a class="ot_link" title="Checklists para Detecção de Fraudes em Licitações (2019)" target="_blank" href="/downloads/publicacoes/Casos%20Obra%20Transparente%20-%20Pelotas%20-%20completo.pdf">Checklists para Detecção de Fraudes em Licitações (2019)</a>.</b>
+                   <b class="ot_b">Acesse: <a class="ot_link" title="Checklists para Detecção de Fraudes em Licitações (2019)" target="_blank" href="/downloads/publicacoes/Checklists%20detecção%20fraudes.pdf">Checklists para Detecção de Fraudes em Licitações (2019)</a>.</b>
                   </p></div>
 
 
