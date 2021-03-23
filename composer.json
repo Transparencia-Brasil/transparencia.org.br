@@ -35,7 +35,8 @@
         "post-install-cmd": "App\\Console\\Installer::postInstall",
         "post-autoload-dump": "Cake\\Composer\\Installer\\PluginInstaller::postAutoloadDump",
         "post-create-project-cmd": [
-            "@/bin/ln -s /home/site/wwwroot/webroot/uploads /home/site/wwwroot/webroot/downloads"
+            "@/bin/ln -s /home/site/wwwroot/webroot/uploads /home/site/wwwroot/webroot/downloads",
+            "@/bin/ln -s /home/site/wwwroot/webroot/images /home/site/wwwroot/webroot/img"
         ]
     },
     "minimum-stability": "dev",
