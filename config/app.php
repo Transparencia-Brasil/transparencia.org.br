@@ -180,18 +180,6 @@ return [
      */
     'EmailTransport' => [
         'default' => [
-            'className' => 'Smtp',
-            // The following keys are used in SMTP transports
-            'SMTPAuth' => true,
-            'host' => '',
-            'port' => 587,
-            'timeout' => 10,
-            'username' => '',
-            'password' => '',
-            'client' => null,
-            'tls' => true,
-        ],
-        'no-reply' => [
             'className' => env('MAIL_DRIVER', 'Smtp'),
             // The following keys are used in SMTP transports
             'SMTPAuth' => true,
@@ -200,6 +188,18 @@ return [
             'timeout' => 10,
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
+            'client' => null,
+            'tls' => true,
+        ],
+        'no-reply' => [
+            'className' => 'Smtp',
+            // The following keys are used in SMTP transports
+            'SMTPAuth' => true,
+            'host' => '',
+            'port' => 587,
+            'timeout' => 10,
+            'username' => '',
+            'password' => '',
             'client' => null,
             'tls' => true,
         ]
