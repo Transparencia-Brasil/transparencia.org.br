@@ -22,7 +22,7 @@ class BannersController extends AppController
 
 	public function index($id = null)
 	{
-        $banners = $this->Banners->find('all')->where(['ativo' => true])->contain(['BannersTipo'])->order(['Banners.ordem' => 'ASC', 'Banners.Criacao' => 'DESC']);
+        $banners = $this->Banners->find('all')->where(['Ativo' => true])->contain(['BannersTipo'])->order(['Banners.Ordem' => 'ASC', 'Banners.Criacao' => 'DESC']);
 		$this->set('banners', $banners);
 	}
 
@@ -36,7 +36,7 @@ class BannersController extends AppController
                     for($i=0;$count_ordem_array>$i;$i++) {
                         $bannertemp = new Banner();
                         $bannertemp->Codigo = (int) $ordem_array[$i];
-                        $bannertemp->ordem = $i;
+                        $bannertemp->Ordem = $i;
                         $this->Banners->save($bannertemp);
 												$this->Flash->success('Ordem de Banners salva com sucesso!');
                     }
@@ -50,7 +50,7 @@ class BannersController extends AppController
 
 	public function edit($id = null)
 	{
-		$banner = isset($id) ? $this->Banners->find('all')->where(['codigo' => $id])->first() : new Banner();
+		$banner = isset($id) ? $this->Banners->find('all')->where(['Codigo' => $id])->first() : new Banner();
 		$tipos = TableRegistry::get('BannersTipo')->find('list', ['keyField' => 'Codigo', 'valueField' => 'Nome']);
 		$targets = TableRegistry::get('TargetsTipo')->find('list', ['keyField' => 'Codigo', 'valueField' => 'Nome']);
 
