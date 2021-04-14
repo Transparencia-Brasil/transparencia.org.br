@@ -23,20 +23,18 @@ class UsuariosAdminController extends AppController {
 	
 	public function index()
     {
-    	$usuarios = $this->UsuariosAdmin->find('all')->where(['ativo' => true])->order(['Criacao' => 'DESC']);
+    	$usuarios = $this->UsuariosAdmin->find('all')->where(['Ativo' => true])->order(['Criacao' => 'DESC']);
         $this->set('usuarios', $usuarios);
     }
 
     // cria um novo ou edita um usuário
     public function edit($id = null)
     {
-        $usuario = isset($id) ? $this->UsuariosAdmin->find()->where(['codigo' => $id, 'ativo' => true])->first() : new UsuarioAdmin();
+        $usuario = isset($id) ? $this->UsuariosAdmin->find()->where(['Codigo' => $id, 'Ativo' => true])->first() : new UsuarioAdmin();
+
+
         if ($this->request->is(['post', 'put'])) {
             $senha_antiga = $usuario->Senha;
-
-            $this->UsuariosAdmin->patchEntity($usuario, $this->request->data);
-            $usuario->Bloqueado = $this->request->data["UsuariosAdmin"]["Bloqueado"] == 1 ? 1 : 0;
-
             // se usuário não for novo não permitir alteração de senha
             if($usuario->Codigo > 0){
                 $usuario->unsetProperty('Senha');
@@ -44,6 +42,10 @@ class UsuariosAdminController extends AppController {
             }else{
                 $usuario->Senha = (new DefaultPasswordHasher)->hash($usuario->Senha);
             }
+
+            $this->UsuariosAdmin->patchEntity($usuario, $this->request->data);
+
+            $usuario->Bloqueado = $this->request->data["UsuariosAdmin"]["Bloqueado"] == "1" ? (bool)1 :(bool)0;
 
             if($this->UsuariosAdmin->save($usuario)){
                 $this->Flash->success('Usuário salvo com sucesso!');
@@ -59,6 +61,7 @@ class UsuariosAdminController extends AppController {
             $usuario->Senha = "";
             $usuario->UltimoAcesso = !is_null($usuario->UltimoAcesso) ? $this->UData->ConverterDataBrasil($usuario->UltimoAcesso, true) : null;
         }
+
         $this->set('usuario', $usuario);
     }
 

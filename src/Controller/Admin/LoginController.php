@@ -39,8 +39,7 @@ class LoginController extends AppController
 
             $usuario_update = $user_conn->find()->where(["login" => $login])->first();
             $usuario = new UsuarioAdmin(array('login' => $login, 'senha' => $senha));
-
-            if($usuario_update->Bloqueado === true){
+            if((bool)$usuario_update->Bloqueado === (bool)1){
                 $this->Flash->error(__('Usuário bloqueado. Entre em contato com o administrador do sistema.'), 'default',[], 'auth');
             }
             // else if($login == "transparencia" && $senha = "q2w3e4Trans123")
@@ -63,7 +62,7 @@ class LoginController extends AppController
 
         // bloqueia usuário se tiver 5 tentativas inválidas de login
         if($contadorLogin >= 5){
-            $usuario_update->Bloqueado = 1;
+            $usuario_update->Bloqueado = (bool)0;
             $user_conn->save($usuario_update);
             $sessao->write('contadorLogin', 0);
         }
