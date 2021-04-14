@@ -58,6 +58,8 @@ class UEmailComponent extends Component
 
 		$conteudo = str_replace("{NOME}", $nome, $conteudo);
 		$conteudo = str_replace("{EMAIL}", $email, $conteudo);
+		
+
 		return UEmailComponent::EnviarEmail("", $email_destino, $assuntoEmail, $conteudo, true, $replyEmail, 'default');
 	}
 
@@ -76,7 +78,7 @@ class UEmailComponent extends Component
 		$conteudo = str_replace("{NOME}", $nome, $conteudo);
 		$conteudo = str_replace("{EMAIL}", $email, $conteudo);
 		$conteudo = str_replace("{TOKEN}", $token, $conteudo);
-		return UEmailComponent::EnviarEmail("", $email_destino, $assuntoEmail, $conteudo, true, $replyEmail, 'no-reply');		
+		return UEmailComponent::EnviarEmail("", $email_destino, $assuntoEmail, $conteudo, true, $replyEmail, 'default');		
 	}
 }
 
