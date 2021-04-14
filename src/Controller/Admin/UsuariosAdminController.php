@@ -35,6 +35,8 @@ class UsuariosAdminController extends AppController {
 
         if ($this->request->is(['post', 'put'])) {
             $senha_antiga = $usuario->Senha;
+            $this->UsuariosAdmin->patchEntity($usuario, $this->request->data);
+            $usuario->Bloqueado = $this->request->data["UsuariosAdmin"]["Bloqueado"] == "1" ? (bool)1 :(bool)0;
             // se usuário não for novo não permitir alteração de senha
             if($usuario->Codigo > 0){
                 $usuario->unsetProperty('Senha');
@@ -42,11 +44,6 @@ class UsuariosAdminController extends AppController {
             }else{
                 $usuario->Senha = (new DefaultPasswordHasher)->hash($usuario->Senha);
             }
-
-            $this->UsuariosAdmin->patchEntity($usuario, $this->request->data);
-
-            $usuario->Bloqueado = $this->request->data["UsuariosAdmin"]["Bloqueado"] == "1" ? (bool)1 :(bool)0;
-
             if($this->UsuariosAdmin->save($usuario)){
                 $this->Flash->success('Usuário salvo com sucesso!');
                 $this->redirect(array('action' => 'index'));
