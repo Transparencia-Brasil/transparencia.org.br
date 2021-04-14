@@ -55,7 +55,7 @@ class UEmailComponent extends Component
 		$conteudo = $file->read();
 
 		$file->close();
-
+		$conteudo = str_replace("{URL}",BASE_URL."painel-ctl",$conteudo);
 		$conteudo = str_replace("{NOME}", $nome, $conteudo);
 		$conteudo = str_replace("{EMAIL}", $email, $conteudo);
 		
@@ -74,7 +74,7 @@ class UEmailComponent extends Component
 		$conteudo = $file->read();
 
 		$file->close();
-
+		$conteudo = str_replace("{URL}",BASE_URL,$conteudo);
 		$conteudo = str_replace("{NOME}", $nome, $conteudo);
 		$conteudo = str_replace("{EMAIL}", $email, $conteudo);
 		$conteudo = str_replace("{TOKEN}", $token, $conteudo);
