@@ -44,7 +44,6 @@ class PublicacoesController extends AppController
             // Pega tudo o que estiver na tabela publicacoes que está ativo e ordenado decrescente pela data de publicacao
             $retorno = $conn_Publicacoes->find('all')
                         ->andwhere(['ativo' => true])
-                        ->andWhere(['CodigoCategoria' => 5])
                         ->order(['DataPublicacao' => 'Desc']);
         }catch(Exception $ex){
             //Se der erro, retorna mensagem

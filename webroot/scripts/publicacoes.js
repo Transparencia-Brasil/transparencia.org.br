@@ -29,7 +29,7 @@ function pesquisarPublicacoes(a) {
     })
 }
 $(document).ready(function() {
-    pesquisarPublicacoes(0), $("#Categoria").val("5"), $("#Categoria").change(function() {
+    pesquisarPublicacoes(0), $("#Categoria").change(function() {
         pesquisarPublicacoes(1)
     }), $("#Ano").change(function() {
         pesquisarPublicacoes(1)
