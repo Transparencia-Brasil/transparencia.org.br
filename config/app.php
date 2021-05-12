@@ -9,7 +9,7 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => env('APP_DEBUG', false),
+    'debug' => false,
 
     /**
      * Configure basic information about the application.
