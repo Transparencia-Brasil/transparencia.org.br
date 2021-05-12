@@ -82,6 +82,7 @@ Router::connect('/codigo-de-etica', array('controller' => 'Associados', 'action'
 
 Router::connect('/politica-de-privacidade', array('controller' => 'PoliticaDePrivacidade', 'action' => 'index'));
 Router::connect('/apoie/doacoes', array('controller' => 'Doacoes', 'action' => 'index'));
+Router::connect('/apoie/doacoes/confirmacao', array('controller' => 'Doacoes', 'action' => 'confirmacao'));
 Router::connect('/apoie/doacoes/doar', array('controller' => 'Doacoes', 'action' => 'create'));
 Router::connect('/apoie/associados', array('controller' => 'Associados', 'action' => 'index'));
 Router::connect('/apoie/associados/associar-se', array('controller' => 'Associados', 'action' => 'create'));

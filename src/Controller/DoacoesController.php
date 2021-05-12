@@ -19,5 +19,9 @@ class DoacoesController extends AppController
 
     }
 
+    public function confirmacao() {
+
+    }
+
 }
 ?>
