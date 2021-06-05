@@ -44,12 +44,20 @@
           <label>
         </div>
         <div class="col-12 pd10">
-          <button type="submit" class="btn-primary ">Enviar</button>
+          <button class="g-recaptcha btn-primary" 
+            id="grecaptcha-btn" 
+            data-formid="#frmContato"
+            data-sitekey="<?=$grsiteKey?>" 
+            data-callback='onSubmitRecaptcha' 
+            data-actionOrigem = "contato"
+            data-action='submit'>Enviar</button>
         </div>
       <?=$this->Form->end();?>
 
       </div>
+      <script src="https://www.google.com/recaptcha/api.js"></script>
       <script src="/scripts/contato.js"></script>
+      <script src="/scripts/recaptcha.js"></script>
       <script type="text/javascript">
           $(document).ready(function(){
               <?php

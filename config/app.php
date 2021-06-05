@@ -344,4 +344,15 @@ return [
     'Session' => [
         'defaults' => 'php',
     ],
+
+    /*
+    * Configurações do Recaptcha 
+    */
+    'Recaptcha' => [
+        'siteKey' => '6LdPTAYbAAAAACAa96NLzmb5AfAD7o1c_pdH4I6H',
+        // Secret Key do Recaptcha
+        'secretKey' => '6LdPTAYbAAAAALVvAUc-pQW1GdydntHFVPHEovad',
+        // Score Mínimo para a Aceitação
+        'minScore' => 0.5
+    ]
 ];

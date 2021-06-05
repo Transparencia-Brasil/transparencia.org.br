@@ -25,20 +25,19 @@ class NewsletterController extends AppController
         $this->loadComponent('UNumero');
     }
 
-	public function index()
+    public function index()
     {
         $newsletter = new Newsletter();
         $guid = $this->UString->guid();
         $estados = $this->UString->SelectEstados();
         $this->set('guid', $guid);
         $this->set('contato', $newsletter);
-        $this->set('estados', $estados);
+        $this->set('estados', $estados);        
     }
 
-    public function novoContato(){
-
-    	if ($this->request->is(['post', 'put'])) {
-
+    public function novoContato()
+    {
+        if ($this->request->is(['post', 'put'])) {
             $dados = $this->request->data;
 
             $newsletter = new Newsletter();
@@ -55,39 +54,46 @@ class NewsletterController extends AppController
             $newsletter->Veiculo = $this->UString->AntiXSSComLimite($dados["Veiculo"], 100);
             $newsletter->Telefone = $this->UString->AntiXSSComLimite($dados["Telefone"], 10);
             $newsletter->DDD = $this->UString->AntiXSSComLimite($dados["DDD"], 3);
-		$erro = false;
-		if($newsletter != null)
-		{
-			if ($newsletter->Optin_newsletter == 0 && $newsletter->Optin_press == 0) {
-				$mensagem = "Você precisa selecionar pelo menos uma assinatura.";
-			} else {
-				$erros = $newsletter->errors();
-				if(count($erros) > 0){
-					$erro = true;
-					$mensagem = 'Erro ao cadastrar email para newsletter.[1]';
-				}else{
-                    // insere um novo usuário de newsletter
-                    $token = $this->createDoubleOptinToken($newsletter->Email);
-					$email_encontrado = TableRegistry::get('Newsletters')->inserir($newsletter->Nome, $newsletter->Email,$newsletter->Optin_newsletter,$newsletter->Optin_press,$newsletter->Cidade,$newsletter->UF,$newsletter->Veiculo,$newsletter->Telefone,$newsletter->DDD,$token,$newsletter->Origem);
+            $erro = false;
+        
+            // Valida a Recaptcha
+            if ($this->Recaptcha->ValidarToken($dados["token"],$dados["actionOrigem"],"pagina-newsletter")) {
+                // - Continua com a Newsletter
+                if ($newsletter != null) {
+                    if ($newsletter->Optin_newsletter == 0 && $newsletter->Optin_press == 0) {
+                        $mensagem = "Você precisa selecionar pelo menos uma assinatura.";
+                    } else {
+                        $erros = $newsletter->errors();
+                        if (count($erros) > 0) {
+                            $erro = true;
+                            $mensagem = 'Erro ao cadastrar email para newsletter.[1]';
+                        } else {
+                            // insere um novo usuário de newsletter
+                            $token = $this->createDoubleOptinToken($newsletter->Email);
+                            $email_encontrado = TableRegistry::get('Newsletters')->inserir($newsletter->Nome, $newsletter->Email, $newsletter->Optin_newsletter, $newsletter->Optin_press, $newsletter->Cidade, $newsletter->UF, $newsletter->Veiculo, $newsletter->Telefone, $newsletter->DDD, $token, $newsletter->Origem);
 
-					if ($email_encontrado) {
-						$mensagem = 'Seu email já está cadastrado na nossa newsletter.';
-					} else {
-                        //dispara email
-                        UEmailComponent::EmailNewsletterDoubleOptin($newsletter->Nome, $newsletter->Email,$token);
-						$mensagem = 'Enviamos um email para ' .$newsletter->Email . '.<br><br>Acesse sua caixa de entrada ou de spam para finalizar a assinatura da newsletter.';
-					}
+                            if ($email_encontrado) {
+                                $mensagem = 'Seu email já está cadastrado na nossa newsletter.';
+                            } else {
+                                //dispara email
+                                UEmailComponent::EmailNewsletterDoubleOptin($newsletter->Nome, $newsletter->Email, $token);
+                                $mensagem = 'Enviamos um email para ' .$newsletter->Email . '.<br><br>Acesse sua caixa de entrada ou de spam para finalizar a assinatura da newsletter.';
+                            }
 
-					//evita reenvio de dados
-					$this->request->session()->write('guidContatoEnviado', $guid);
-					$this->request->data = [];
-				}
-			}
-		}else{
-			$erro = true;
-			$mensagem = 'Erro ao cadastrar email para newsletter.[2]';
-		}
-    	}else{
+                            //evita reenvio de dados
+                            $this->request->session()->write('guidContatoEnviado', $guid);
+                            $this->request->data = [];
+                        }
+                    }
+                } else {
+                    $erro = true;
+                    $mensagem = 'Erro ao cadastrar email para newsletter.[2]';
+                }
+            } else {
+                $erro = true;
+                $mensagem = 'Por favor, complete a validação anti-robo.[2]';
+            }
+        } else {
             $this->redirect(['action' => 'index']);
             return;
         }
@@ -102,11 +108,11 @@ class NewsletterController extends AppController
         $this->render('index');
     }
 
-    public function novoContatoAjax(){
+    public function novoContatoAjax()
+    {
         $erro = false;
         $sucesso = 0;
-    	if ($this->request->is(['post', 'put'])) {
-
+        if ($this->request->is(['post', 'put'])) {
             $dados = $this->request->data;
 
             $newsletter = new Newsletter();
@@ -136,25 +142,31 @@ class NewsletterController extends AppController
             $newsletter->Email = $this->UString->AntiXSSComLimite($dados["email"], 100);
             $newsletter->Optin_newsletter = $this->UNumero->ValidarNumero($dados["optin_newsletter"]) > 0 ? 1 : 0;
             $newsletter->Optin_press = $this->UNumero->ValidarNumero($dados["optin_press"]) > 0 ? 1 : 0;
+
+            if (!$this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "ajax-newsletter")) {
+                $erro = true;
+                $mensagem = 'Por favor, complete a validação anti-robo.[2]';
+            }
+
+
             if (!$error) {
-                if($newsletter != null)
-                {
+                if ($newsletter != null) {
                     if ($newsletter->Optin_newsletter == 0 && $newsletter->Optin_press == 0) {
                         $mensagem = "Você precisa selecionar pelo menos uma assinatura.";
                     } else {
                         $erros = $newsletter->errors();
-                        if(count($erros) > 0){
+                        if (count($erros) > 0) {
                             $erro = true;
                             $mensagem = 'Erro ao cadastrar email para newsletter.';
-                        }else{
+                        } else {
                             // insere um novo usuário de newsletter
                             $token = $this->createDoubleOptinToken($newsletter->Email);
-                            $email_encontrado = TableRegistry::get('Newsletters')->inserir($newsletter->Nome, $newsletter->Email,$newsletter->Optin_newsletter,$newsletter->Optin_press,null,null,null,null,null,$token,$newsletter->Origem);
+                            $email_encontrado = TableRegistry::get('Newsletters')->inserir($newsletter->Nome, $newsletter->Email, $newsletter->Optin_newsletter, $newsletter->Optin_press, null, null, null, null, null, $token, $newsletter->Origem);
                             if ($email_encontrado) {
                                 $mensagem = 'Seu email já está cadastrado na nossa newsletter.';
                             } else {
                                 //dispara email
-                                UEmailComponent::EmailNewsletterDoubleOptin($newsletter->Nome, $newsletter->Email,$token);
+                                UEmailComponent::EmailNewsletterDoubleOptin($newsletter->Nome, $newsletter->Email, $token);
                                 $mensagem = 'Enviamos um email para ' .$newsletter->Email . '.<br><br>Acesse sua caixa de entrada ou de spam para finalizar a assinatura da newsletter.';
                                 $sucesso = 1;
                             }
@@ -163,12 +175,12 @@ class NewsletterController extends AppController
                             $this->request->data = [];
                         }
                     }
-                }else{
+                } else {
                     $erro = true;
                     $mensagem = 'Erro ao cadastrar email para newsletter.[2]';
                 }
             }
-    	}else{
+        } else {
             $this->redirect(['action' => 'index']);
             return;
         }
@@ -181,23 +193,20 @@ class NewsletterController extends AppController
         return $this->response;
     }
 
-    public function validateDoubleOptinEmail(){
-        
-    	if ($this->request->is(['get'])) {
-            
+    public function validateDoubleOptinEmail()
+    {
+        if ($this->request->is(['get'])) {
             $token = $this->request->query['t'];
             $token = $this->UString->AntiXSSComLimite($token, 250);
             $update = TableRegistry::get('Newsletters')->updateDoubleOptin($token);
             $erro = false;
-            if(!$update)
-            {
+            if (!$update) {
                 $erro = true;
                 $mensagem = "Erro: A validação do email não foi concluída. O token expirou ou não existe.";
-            }else{
-            
+            } else {
                 $mensagem = 'Validação do email efetuada com sucesso! Você agora está assinando nossa newsletter.';
             }
-    	}else{
+        } else {
             $this->redirect(['action' => 'index']);
             return;
         }
@@ -208,11 +217,11 @@ class NewsletterController extends AppController
         $this->render('index');
     }
 
-    private function createDoubleOptinToken($email) {
+    private function createDoubleOptinToken($email)
+    {
         //token generator
         $timeStr = str_replace("0.", "", microtime());
         $timeStr = str_replace(" ", "", $timeStr);
-        return sha1( $email.'_'.$timeStr);
+        return sha1($email.'_'.$timeStr);
     }
 }
-?>
