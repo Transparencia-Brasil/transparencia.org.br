@@ -23,6 +23,7 @@ class RelatoriosAtividadesController extends AppController
 		$this->layout = 'admin';
 		$this->loadComponent('Flash');
         $this->loadComponent('UData');
+        $this->loadComponent('UString');
 	}
 
 	public function index($id = null)
@@ -58,15 +59,25 @@ class RelatoriosAtividadesController extends AppController
         $arquivos = $this->request->data['files'][0];
         $possuiArquivo = strlen($arquivos['name']) == 0 ? false : true;
         $boolArquivoOk = false;
+        $temErro = false;
+        $retMensagem = "";
         
         if($possuiArquivo){
             $dir = new Folder($this->PASTA_UPLOAD);
             $file = $dir->find($arquivos['name']);
             if (count($file) <= 0) {
-                $boolArquivoOk = move_uploaded_file($arquivos['tmp_name'], $this->PASTA_UPLOAD . $arquivos['name']);   
-                $arquivo_duplicado = false;
+                if ($arquivos['size'] >= 20971520) {
+                    $retMensagem = 'Erro ao salvar. O Tamanho do Arquivo é superior há 20MB. (' . 
+                        $this->UString->BytesParaHumano($arquivos['size'])  . ')';
+                    $temErro = true;
+                } 
+                else {
+                    $boolArquivoOk = move_uploaded_file($arquivos['tmp_name'], $this->PASTA_UPLOAD . $arquivos['name']);
+                    $temErro = false;
+                }                
             }  else { 
-                $arquivo_duplicado = true;
+                $temErro = true;
+                $retMensagem = "Nome do arquivo repetido.";
             }
         }else{
             $financiamento->unsetProperty('files');
@@ -77,10 +88,10 @@ class RelatoriosAtividadesController extends AppController
         $size = $arquivos['size'];
         $deleteURL = "delete_file";
         
-        if (!$arquivo_duplicado)
+        if (!$temErro)
             echo '{"files":[{"url":"'.$url.'","name":"'.$name.'","type":"'.$type.'","size":'.$size.',"deleteUrl":"'.$deleteURL.'","deleteType":"DELETE"}]}';
         else 
-            echo '{"files":[{"url":"","name":"ERRO: Nome do arquvio repetido.","type":"ERRO","size":"","deleteUrl":"'.$deleteURL.'","deleteType":"DELETE"}]}';
+            echo '{"files":[{"url":"","name":"ERRO: ' . $retMensagem . '","type":"ERRO","size":"","deleteUrl":"'.$deleteURL.'","deleteType":"DELETE"}]}';
 
         $this->autoRender = false;
     }

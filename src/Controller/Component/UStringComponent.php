@@ -14,6 +14,13 @@ class UStringComponent extends Component
         return array("NA"=>"Não Aplicável","AC"=>"AC","AL"=>"AL","AM"=>"AM","AP"=>"AP","BA"=>"BA","CE"=>"CE","DF"=>"DF","ES"=>"ES","GO"=>"GO","MA"=>"MA","MT"=>"MT","MS"=>"MS","MG"=>"MG","PA"=>"PA","PB"=>"PB","PR"=>"PR","PE"=>"PE","PI"=>"PI","RJ"=>"RJ","RN"=>"RN","RO"=>"RO","RS"=>"RS","RR"=>"RR","SC"=>"SC","SE"=>"SE","SP"=>"SP","TO"=>"TO");
     }
 
+    public static function BytesParaHumano($bytes, $dec = 2){       
+        $size   = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+        $factor = floor((strlen($bytes) - 1) / 3);
+    
+        return sprintf("%.{$dec}f", $bytes / pow(1024, $factor)) . @$size[$factor];       
+    }
+
     // remove caracteres especiais
     public static function AntiXSS($valor){
     	$valor = !UStringComponent::VazioOuNulo($valor) ? htmlspecialchars($valor) : "";
