@@ -63,8 +63,9 @@ class FinanciamentosController extends AppController
         $retMensagem = "";
 
         if($possuiArquivo){
+            $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivos['name']);
             $dir = new Folder($this->PASTA_UPLOAD);
-            $file = $dir->find($arquivos['name']);
+            $file = $dir->find($nomeArquivo);
             if (count($file) <= 0) {
                 if ($arquivos['size'] >= 20971520) {
                     $retMensagem = 'Erro ao salvar. O Tamanho do Arquivo é superior há 20MB. (' . 
@@ -72,7 +73,7 @@ class FinanciamentosController extends AppController
                     $temErro = true;
                 } 
                 else {
-                    $boolArquivoOk = move_uploaded_file($arquivos['tmp_name'], $this->PASTA_UPLOAD . $arquivos['name']);
+                    $boolArquivoOk = move_uploaded_file($arquivos['tmp_name'], $this->PASTA_UPLOAD .  $nomeArquivo);
                     $temErro = false;
                 }                
             }  else { 
@@ -83,8 +84,8 @@ class FinanciamentosController extends AppController
             $financiamento->unsetProperty('files');
         }
 
-        $url = BASE_URL . $this->PASTA_UPLOAD_RELATIVA . $arquivos['name'];
-        $name = $arquivos['name'];
+        $url = BASE_URL . $this->PASTA_UPLOAD_RELATIVA .  $nomeArquivo;
+        $name =  $nomeArquivo;
         $type = $arquivos['type'];
         $size = $arquivos['size'];
         $deleteURL = "delete_file";

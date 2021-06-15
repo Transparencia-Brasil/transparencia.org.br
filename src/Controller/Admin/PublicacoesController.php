@@ -56,12 +56,14 @@ class PublicacoesController extends AppController {
             $boolArquivoOk = false;
 
             if(isset($arquivo) && !empty($arquivo['name']) ){
+                $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivo['name']);
                 if ($arquivo['size'] >= 20971520) {
                     $retMensagem = 'Erro ao salvar. O Tamanho do Logo é superior há 20MB. (' . $this->UString->BytesParaHumano($arquivoLogo['size'])  . ')';
                     $temErro = true;
                 } else {
-                    $publicacao->Arquivo = $arquivo['name'];
-                    $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $arquivo['name']);
+                    $publicacao->Arquivo = $nomeArquivo;
+                    $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $nomeArquivo);
+                    $temErro = false;
                 }
                 // var_dump($boolArquivoOk);
                 // echo $this->PASTA_UPLOAD . $arquivo['name'];
