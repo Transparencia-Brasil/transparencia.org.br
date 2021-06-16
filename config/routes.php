@@ -95,6 +95,8 @@ Router::connect('/associados/auth', array('controller' => 'Associados', 'action'
 Router::connect('/newsletter/validacao', array('controller' => 'Newsletter', 'action' => 'validateDoubleOptinEmail'));
 
 Router::connect('/projetos/transparencia-algoritmica', array('controller' => 'Projetos', 'action' => 'transparenciaAlgoritmica'));
+Router::connect('/projetos/tadepe/politica-de-privacidade', array('controller' => 'Projetos', 'action' => 'tdpPrivacy'));
+
 // atalho SEO para Projetos
 //Router::connect('/projetos/tadepe', array('controller' => 'Projetos', 'action' => 'tadepe'));
 
