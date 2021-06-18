@@ -344,4 +344,15 @@ return [
     'Session' => [
         'defaults' => 'php',
     ],
+
+    /*
+    * Configurações do Recaptcha 
+    */
+    'Recaptcha' => [
+        'siteKey' => env('GOOGLE_RECAPTCHA_KEY'),
+        // Secret Key do Recaptcha
+        'secretKey' => env('GOOGLE_RECAPTCHA_SECRET'),
+        // Score Mínimo para a Aceitação
+        'minScore' => 0.5
+    ]
 ];

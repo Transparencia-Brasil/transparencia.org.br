@@ -11,20 +11,22 @@ services:
     volumes:
       - ./:/var/www
     environment:
-      - "DB_PORT=3306"
-      - "DB_HOST=database"
-      - "APP_DEBUG=TRUE"
-      - "APP_URL=http://localhost:8000/"
-      - "SECURITY_SALT=dasfewrvuiofngfdsadsadsadasavunquy32r7831287413"
-      - "MYSQL_HOST=database"
-      - "MYSQL_USERNAME=root"
-      - "MYSQL_PASSWORD=secret"
-      - "MYSQL_DATABASE=tbrasil_site"
-      - "MAIL_DRIVER=Smtp"
-      - "MAIL_HOST="
-      - "MAIL_USERNAME="
-      - "MAIL_PASSWORD="   
-      - "MYSQL_ATTR_SSL_CA="
+      - "DB_PORT=${DB_PORT}"
+      - "DB_HOST=${MYSQL_HOST}"
+      - "APP_DEBUG=${MYSQL_HOST}"
+      - "APP_URL=${APP_URL}"
+      - "SECURITY_SALT=${SECURITY_SALT}"
+      - "MYSQL_HOST=${MYSQL_HOST}"
+      - "MYSQL_USERNAME=${MYSQL_USERNAME}"
+      - "MYSQL_PASSWORD=${MYSQL_PASSWORD}"
+      - "MYSQL_DATABASE=${MYSQL_DATABASE}"
+      - "MAIL_DRIVER=${MAIL_DRIVER}"
+      - "MAIL_HOST=${MAIL_HOST}"
+      - "MAIL_USERNAME=${MAIL_USERNAME}"
+      - "MAIL_PASSWORD=${MAIL_PASSWORD}"   
+      - "MYSQL_ATTR_SSL_CA=${MYSQL_ATTR_SSL_CA}"
+      - "GOOGLE_RECAPTCHA_KEY=${GOOGLE_RECAPTCHA_KEY}"
+      - "GOOGLE_RECAPTCHA_SECRET=${GOOGLE_RECAPTCHA_SECRET}"
     ports:
         - 8080:8080
         - 8001:8001
@@ -48,10 +50,10 @@ services:
       - dbdata:/var/lib/mysql
       - /app/node_modules
     environment:
-      - "MYSQL_DATABASE=tbrasil_site"
-      - "MYSQL_USER=root"
-      - "MYSQL_PASSWORD=secret"
-      - "MYSQL_ROOT_PASSWORD=secret"
+      - "MYSQL_DATABASE=${MYSQL_DATABASE}"
+      - "MYSQL_USER=${MYSQL_USER}"
+      - "MYSQL_PASSWORD=${MYSQL_PASSWORD}"
+      - "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}"
     ports:
         - "33061:3306"
 volumes:
