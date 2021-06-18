@@ -52,6 +52,8 @@ class AppController extends Controller
                  ]
              ]);
        
+        $this->loadComponent('Recaptcha');
+        $this->set('grsiteKey', $this->Recaptcha->getSiteKey());
     }
 
     public function beforeFilter(Event $event) {

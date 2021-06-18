@@ -20,7 +20,7 @@ class ContatoController extends AppController
         $this->loadComponent('Flash');
         $this->loadComponent('Auth');
         $this->loadComponent('UString');
-        $this->loadComponent('UNumero');
+        $this->loadComponent('UNumero');        
     }
 
     public $assuntos = [
@@ -69,56 +69,60 @@ class ContatoController extends AppController
             $guid_anterior = $this->request->session()->read('guidContatoEnviado');
             $guid = $this->UString->AntiXSSComLimite($dados["guid"], 100);
 
+            if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "contato")) {
+
             // tentativa de reenvio de formulário
-            if($guid == null || ($guid_anterior != null && $guid == $guid_anterior)){
-                $erro = true;
-                $mensagem = 'Erro ao enviar contato.[3]';
-                $this->request->data = [];
-            }else{
-       		
-                $contatos = TableRegistry::get('Contatos');
-                $dados = $this->request->data;
-
-                $contato->Nome = $this->UString->AntiXSSComLimite($dados["nome"], 100);
-                $contato->Email = $this->UString->AntiXSSComLimite($dados["email"], 100);
-                $contato->CodigoAssunto = $this->UNumero->ValidarNumero($dados["codigoassunto"]);
-                $contato->Mensagem = $this->UString->AntiXSSComLimite($dados["mensagem"], 800);
-
-                // $novidades = $this->UNumero->ValidarNumero($dados["novidades"]) > 0 ? 1 : 0;
-
-                $mensagem = "";
-                $erro = false;
-        		if($contato != null)
-        		{
-        			$erros = $contato->errors();
-        			if(count($erros) > 0){
-                        $erro = true;
-        				$mensagem = 'Erro ao enviar contato.[1]';
-        			}else{
-        				$contato->Respondido = 0;
-        				if($contatos->save($contato))
-        				{
-                            // insere um novo usuário de newsletter
-                            if($novidades)
-                                TableRegistry::get('Newsletters')->inserir($contato->Nome, $contato->Email,$novidades,0);
-
-                            // evita reenvio de dados
-                            $this->request->session()->write('guidContatoEnviado', $guid);
-
-                            $contato = new Contato();
-                            $this->request->data = [];
-                            $mensagem = 'Mensagem enviada com sucesso.';
-        				}
-        			}
-        		}else{
+                if ($guid == null || ($guid_anterior != null && $guid == $guid_anterior)) {
                     $erro = true;
-                    $mensagem = 'Erro ao enviar contato.[2]';
-        		}
+                    $mensagem = 'Erro ao enviar contato.[3]';
+                    $this->request->data = [];
+                } else {
+                    $contatos = TableRegistry::get('Contatos');
+                    $dados = $this->request->data;
+
+                    $contato->Nome = $this->UString->AntiXSSComLimite($dados["nome"], 100);
+                    $contato->Email = $this->UString->AntiXSSComLimite($dados["email"], 100);
+                    $contato->CodigoAssunto = $this->UNumero->ValidarNumero($dados["codigoassunto"]);
+                    $contato->Mensagem = $this->UString->AntiXSSComLimite($dados["mensagem"], 800);
+
+                    $novidades = $this->UNumero->ValidarNumero($dados["novidades"]) > 0 ? 1 : 0;
+
+                    $mensagem = "";
+                    $erro = false;
+                    if ($contato != null) {
+                        $erros = $contato->errors();
+                        if (count($erros) > 0) {
+                            $erro = true;
+                            $mensagem = 'Erro ao enviar contato.[1]';
+                        } else {
+                            $contato->Respondido = 0;
+                            if ($contatos->save($contato)) {
+                                // insere um novo usuário de newsletter
+                                if ($novidades) {
+                                    TableRegistry::get('Newsletters')->inserir($contato->Nome, $contato->Email, $novidades, 0);
+                                }
+                                // evita reenvio de dados
+                                $this->request->session()->write('guidContatoEnviado', $guid);
+
+                                $contato = new Contato();
+                                $this->request->data = [];
+                                $mensagem = 'Mensagem enviada com sucesso.';
+                            }
+                        }
+                    } else {
+                        $erro = true;
+                        $mensagem = 'Erro ao enviar contato.[2]';
+                    }
+                }
+            } else {
+                $erro = true;
+                $mensagem = 'Por favor, complete a validação anti-robo.[2]';
             }
     	}else{
             $this->redirect(['action' => 'index']);
             return;
         }
+        
         $this->set('guid', $guid);
         $this->set('erro', $erro);
         $this->set('mensagem', $mensagem);
