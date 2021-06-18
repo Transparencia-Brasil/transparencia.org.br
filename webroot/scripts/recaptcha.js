@@ -1,9 +1,7 @@
 function onSubmitRecaptcha(token) {
   var formId = $('#grecaptcha-btn').attr("data-formid");
   var action = $('#grecaptcha-btn').attr("data-actionOrigem");
-
-  console.log("submit")
-  console.log(token)
+  
   $(formId).prepend(
     '<input type="hidden" name="token" value="' + token + '">'
   );
