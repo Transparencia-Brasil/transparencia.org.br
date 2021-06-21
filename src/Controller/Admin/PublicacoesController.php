@@ -56,7 +56,7 @@ class PublicacoesController extends AppController {
             $boolArquivoOk = false;
 
             if(isset($arquivo) && !empty($arquivo['name']) ){
-                if ($arquivo['size'] >= 20971520) {
+                if ($arquivo['size'] >= 20971520  || $arquivo['error'] == 1) {
                     $retMensagem = 'Erro ao salvar. O Tamanho do Logo é superior há 20MB. (' . $this->UString->BytesParaHumano($arquivoLogo['size'])  . ')';
                     $temErro = true;
                 } else {
