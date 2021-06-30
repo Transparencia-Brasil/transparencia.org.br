@@ -78,7 +78,7 @@ class AssociadosController extends AppController
             $aceiteObjetivos = $this->UNumero->ValidarNumero($dados["AceiteObjetivos"]);
             $aceiteNormas = $this->UNumero->ValidarNumero($dados["AceiteNormas"]);
             $aceiteJustica = $this->UNumero->ValidarNumero($dados["AceiteDeclaracaoNaoCondenado"]);
-
+        
             $novoAssociado->Telefone = $this->UString->AntiXSSComLimite($dados["Telefone"], 15);
             $novoAssociado->TelefoneDDD = $this->UString->AntiXSSComLimite($dados["TelefoneDDD"], 3);
             $novoAssociado->Celular  = $this->UString->AntiXSSComLimite($dados["Celular"], 15);
@@ -86,6 +86,9 @@ class AssociadosController extends AppController
             $novoAssociado->UF = $this->UString->AntiXSSComLimite($dados["UF"], 2);
             $novoAssociado->Cidade = $this->UString->AntiXSSComLimite($dados["Cidade"], 200);
             $novoAssociado->Motivo = $this->UString->AntiXSSComLimite($dados["Motivo"], 2000);
+
+            $novoAssociado->AceiteRadarTb = $this->request->data["Associados"]["AceiteRadarTb"] == 1 ? 1 : 0;
+			$novoAssociado->AceiteNovidades = $this->request->data["Associados"]["AceiteNovidades"] == 1 ? 1 : 0;
 
             $tipo_id = $this->get_id_como_conheceu_tipo($dados["CodigoComoConheceuTB"]);
             if ($tipo_id) {
@@ -165,8 +168,8 @@ class AssociadosController extends AppController
                     }
     		    	else if($this->Associados->save($novoAssociado)){
 
-                        if($novoAssociado->AceiteNovidades)
-                            TableRegistry::get('Newsletters')->inserir($novoAssociado->Nome, $novoAssociado->Email);
+                        if($novoAssociado->AceiteNovidades || $novoAssociado->AceiteRadarTb)
+                            TableRegistry::get('Newsletters')->inserir($novoAssociado->Nome, $novoAssociado->Email,$novoAssociado->AceiteNovidades,0,null,null,null,null,null,null,null,$novoAssociado->AceiteRadarTb);
 
                         // enviar e-mail
                         UEmailComponent::EmailAdmAvisoNovoAssociado($novoAssociado->Nome, $novoAssociado->Email);
@@ -299,6 +302,7 @@ class AssociadosController extends AppController
 			$associado->CelularDDD = $this->UNumero->SomenteNumeros($associadoRequest->CelularDDD);
 			$associado->Celular = $this->UNumero->SomenteNumeros($associadoRequest->Celular);
 
+            $associado->AceiteRadarTb = $this->request->data["Associados"]["AceiteRadarTb"] == 1 ? 1 : 0;
 			$associado->AceiteNovidades = $this->request->data["Associados"]["AceiteNovidades"] == 1 ? 1 : 0;
 			$associado->AceiteLembreteDoacao = $this->request->data["Associados"]["AceiteLembreteDoacao"] == 1 ? 1 : 0;
             $associado->ExibeLista = $this->request->data["Associados"]["ExibeLista"] == 1 ? 1 : 0;

@@ -38,6 +38,12 @@
           <?=$this->Form->textarea('mensagem', ['id' => 'mensagem', 'value' => $contato->Mensagem, 'class' =>'form-control col-md-6 col-sm-8 full-w', 'rows'=> '5' ]) ?>
         </div>
         <div class="col-12 pd10">
+        <label for="novidades" class="form-check-label">
+          <?=$this->Form->checkbox('optin_radar_tb', ['id' => 'optin_radar_tb', 'value' => 1, 'class' => 'form-check-input', 'checked'=>true]) ?>
+          Autorizo receber a comunicação da Transparência Brasil relativa à curadoria de conteúdo e eventos.
+        <label>
+      </div>
+        <div class="col-12 pd10">
           <label for="novidades" class="form-check-label">
             <?=$this->Form->checkbox('novidades', ['id' => 'novidades', 'value' => 1, 'class' => 'form-check-input' ]) ?>
             Aceito receber comunicações da Transparência Brasil.

@@ -50,6 +50,7 @@ class NewsletterController extends AppController
             $newsletter->Email = $this->UString->AntiXSSComLimite($dados["email"], 100);
             $newsletter->Optin_newsletter = $this->UNumero->ValidarNumero($dados["optin_newsletter"]) > 0 ? 1 : 0;
             $newsletter->Optin_press = $this->UNumero->ValidarNumero($dados["optin_press"]) > 0 ? 1 : 0;
+            $newsletter->optin_radar_tb = $this->UNumero->ValidarNumero($dados["optin_radar_tb"]) > 0 ? 1 : 0;            
             $newsletter->Cidade = $this->UString->AntiXSSComLimite($dados["Cidade"], 200);
             $newsletter->UF = $this->UString->AntiXSSComLimite($dados["UF"], 2);
             $newsletter->Veiculo = $this->UString->AntiXSSComLimite($dados["Veiculo"], 100);
@@ -68,7 +69,7 @@ class NewsletterController extends AppController
 				}else{
                     // insere um novo usuário de newsletter
                     $token = $this->createDoubleOptinToken($newsletter->Email);
-					$email_encontrado = TableRegistry::get('Newsletters')->inserir($newsletter->Nome, $newsletter->Email,$newsletter->Optin_newsletter,$newsletter->Optin_press,$newsletter->Cidade,$newsletter->UF,$newsletter->Veiculo,$newsletter->Telefone,$newsletter->DDD,$token,$newsletter->Origem);
+					$email_encontrado = TableRegistry::get('Newsletters')->inserir($newsletter->Nome, $newsletter->Email,$newsletter->Optin_newsletter,$newsletter->Optin_press,$newsletter->Cidade,$newsletter->UF,$newsletter->Veiculo,$newsletter->Telefone,$newsletter->DDD,$token,$newsletter->Origem,$newsletter->optin_radar_tb);
 
 					if ($email_encontrado) {
 						$mensagem = 'Seu email já está cadastrado na nossa newsletter.';
@@ -136,6 +137,8 @@ class NewsletterController extends AppController
             $newsletter->Email = $this->UString->AntiXSSComLimite($dados["email"], 100);
             $newsletter->Optin_newsletter = $this->UNumero->ValidarNumero($dados["optin_newsletter"]) > 0 ? 1 : 0;
             $newsletter->Optin_press = $this->UNumero->ValidarNumero($dados["optin_press"]) > 0 ? 1 : 0;
+            $newsletter->optin_radar_tb = $this->UNumero->ValidarNumero($dados["optin_radar_tb"]) > 0 ? 1 : 0;
+            
             if (!$error) {
                 if($newsletter != null)
                 {
@@ -149,7 +152,7 @@ class NewsletterController extends AppController
                         }else{
                             // insere um novo usuário de newsletter
                             $token = $this->createDoubleOptinToken($newsletter->Email);
-                            $email_encontrado = TableRegistry::get('Newsletters')->inserir($newsletter->Nome, $newsletter->Email,$newsletter->Optin_newsletter,$newsletter->Optin_press,null,null,null,null,null,$token,$newsletter->Origem);
+                            $email_encontrado = TableRegistry::get('Newsletters')->inserir($newsletter->Nome, $newsletter->Email,$newsletter->Optin_newsletter,$newsletter->Optin_press,null,null,null,null,null,$token,$newsletter->Origem,$newsletter->optin_radar_tb);
                             if ($email_encontrado) {
                                 $mensagem = 'Seu email já está cadastrado na nossa newsletter.';
                             } else {

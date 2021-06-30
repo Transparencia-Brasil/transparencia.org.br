@@ -283,6 +283,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
           url: "/newsletter/novoContatoAjax",
           data: {
             optin_press: 1,
+            optin_radar_tb: 1,
             optin_newsletter: 1,
             nome: _nome,
             email: _email,

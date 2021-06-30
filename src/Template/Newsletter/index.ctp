@@ -28,6 +28,13 @@
 
       <div class="col-12 pd10">
         <label for="novidades" class="form-check-label">
+          <?=$this->Form->checkbox('optin_radar_tb', ['id' => 'novidades', 'value' => 1, 'class' => 'form-check-input', 'checked'=>true]) ?>
+          Autorizo receber a comunicação da Transparência Brasil relativa à curadoria de conteúdo e eventos.
+        <label>
+      </div>
+
+      <div class="col-12 pd10">
+        <label for="novidades" class="form-check-label">
           <?=$this->Form->checkbox('optin_newsletter', ['id' => 'novidades', 'value' => 1, 'class' => 'form-check-input', 'checked'=>true]) ?>
           Autorizo receber as comunicações da Transparência Brasil relativas às suas atividades e projetos.
         <label>
