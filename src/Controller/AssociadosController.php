@@ -9,6 +9,7 @@ use App\Model\Entity\TransacaoUsuarioDado;
 use App\Model\Entity\AssociadosComoConheceuTipo;
 use Cake\I18n\Time;
 use App\Controller\Component\UEmailComponent;
+use Cake\Log\Log;
 
 class AssociadosController extends AppController
 {
@@ -165,12 +166,14 @@ class AssociadosController extends AppController
                                 TableRegistry::get('Newsletters')->inserir($novoAssociado->Nome, $novoAssociado->Email);
                             }
 
-                            // enviar e-mail
-                            UEmailComponent::EmailAdmAvisoNovoAssociado($novoAssociado->Nome, $novoAssociado->Email);
-             
-                            $this->Flash->success('Informações salvas com sucesso! Você será redirecionado para o site do PagSeguro para fazer sua doação. Obrigado!');
-                        
-                    
+                            try {
+                                // enviar e-mail
+                                UEmailComponent::EmailAdmAvisoNovoAssociado($novoAssociado->Nome, $novoAssociado->Email);
+                            } catch (\Exception $ex) {
+                                Log::write('error', "Falha ao Enviar o Email: " .  $e->getMessage());
+                            }
+
+                            $this->Flash->success('Informações salvas com sucesso! Você será redirecionado para o site do PagSeguro para fazer sua doação. Obrigado!');                    
                             $this->set('redirectDoacao', true);
                             // cria nova transaçação
                             try {
