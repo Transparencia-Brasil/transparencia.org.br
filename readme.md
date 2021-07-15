@@ -19,6 +19,8 @@
 
 -   configurar as variáveis de ambiente:
 
+    Copiar .env.example para .env
+
     * `APP_DEBUG`: true ou false (padrão);
     * `APP_URL`: URL do site terminada com `/` (e.g. `https://www.transparencia.org.br/`);
     * `SECURITY_SALT`: string que serve de [salt](https://en.wikipedia.org/wiki/Salt_(cryptography));

@@ -349,9 +349,9 @@ return [
     * Configurações do Recaptcha 
     */
     'Recaptcha' => [
-        'siteKey' => '6LdPTAYbAAAAACAa96NLzmb5AfAD7o1c_pdH4I6H',
+        'siteKey' => env('GOOGLE_RECAPTCHA_KEY'),
         // Secret Key do Recaptcha
-        'secretKey' => '6LdPTAYbAAAAALVvAUc-pQW1GdydntHFVPHEovad',
+        'secretKey' => env('GOOGLE_RECAPTCHA_SECRET'),
         // Score Mínimo para a Aceitação
         'minScore' => 0.5
     ]

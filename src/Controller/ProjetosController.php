@@ -61,6 +61,10 @@ class ProjetosController extends AppController
         ini_set("allow_url_fopen", 1);
         $this->render('projeto_transparencia_algoritmica');
     }
+    public function tdpPrivacy(){
+        ini_set("allow_url_fopen", 1);
+        $this->render('politica_de_privacidade');
+    }
 
     public function obratransparente(){
         ini_set("allow_url_fopen", 1);

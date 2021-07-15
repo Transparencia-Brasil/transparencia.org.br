@@ -98,7 +98,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
           </button>
           <div class="row new-menu">
             <div class="col-3">
-             <a href="/"><img src="/img/logos/logo.svg?cache=3" class="d-inline-block logo-image"></a>
+             <a href="/"><img src="/img/logos/logo-tb.svg?cache=3" class="d-inline-block logo-image"></a>
             </div>
             <div class="col-lg-9 col-8 pr-0 pt-4">
               <div class="navbar-nav justify-content-end new-social d-none d-lg-block">
@@ -176,7 +176,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
         <div class="container py-2">
           <div class="row pb-3">
             <!-- Form   -->
-            <?= $this->Form->create(null, ['url' => '/newsletter/novoContato', "id" => "frmContato", "class" => "form-inline contact-form col-12"]) ?>
+            <?= $this->Form->create(null, ['url' => '/newsletter/novoContato', "id" => "frmNewsletter", "class" => "form-inline contact-form col-12"]) ?>
             <div class="col-12 col-lg-4 details">
               ASSINE NOSSA NEWSLETTER MENSAL
             </div>
@@ -191,10 +191,10 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
             <div class="col-12 col-lg-auto text-center">
               <input type="hidden" name="origem" value="rodape">
               <button class="g-recaptcha btn-secondary bt_send_newsletter" 
-                  id="grecaptcha-btn" 
-                  data-formid="#frmContato"
+                  id="grecaptcha-btn-news" 
+                  data-formid="#frmNewsletter"
                   data-sitekey="<?=$grsiteKey?>"   
-                  data-callback='onSubmitRecaptcha' 
+                  data-callback='onSubmitRecaptchaNewsltter' 
                   data-actionOrigem = "ajax-newsletter"
                   data-action='submit'>Enviar</button>
             </div>
@@ -281,7 +281,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
       });
 
 
-      $('#frmContato').on('submit', function(e) {
+      $('#frmNewsletter').on('submit', function(e) {
         e.preventDefault();
         var _nome =  this.parentElement.parentElement.getElementsByClassName("nome")[0].value;
         var _email = this.parentElement.parentElement.getElementsByClassName("email")[0].value;

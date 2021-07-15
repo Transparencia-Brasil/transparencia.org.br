@@ -398,6 +398,7 @@ class AssociadosController extends AppController
         $Cpf = $this->UNumero->SomenteNumeros($this->request->data['Cpf']);
 
         if ($this->request->is(['post', 'put'])) {
+            $dados = $this->request->data;
             if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "associados-entrar")) {
                 $Cpf_db = TableRegistry::get('associados')->find()->where(['CPF' => $Cpf])->first();
                 if (empty($Cpf_db)) {
@@ -407,7 +408,7 @@ class AssociadosController extends AppController
                     $this->redirect('/associados/pagamento/'.$id);
                 }
             } else {
-                $this->set('mensagemErro', "Por favor, complete a validação anti-robo.");
+                $this->redirect('/associados/login?err=2');
             }
         }
         return;
@@ -419,6 +420,10 @@ class AssociadosController extends AppController
         $mensagemErro = "";
         if ($erro == 1) {
             $mensagemErro = "CPF não encontrado.";
+        }
+
+        if ($erro == 2) {
+            $mensagemErro = "Por favor, complete a validação anti-robo.";
         }
 
         $this->set('mensagemErro', $mensagemErro);

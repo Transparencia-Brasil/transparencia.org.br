@@ -85,7 +85,7 @@ class ContatoController extends AppController
                     $contato->CodigoAssunto = $this->UNumero->ValidarNumero($dados["codigoassunto"]);
                     $contato->Mensagem = $this->UString->AntiXSSComLimite($dados["mensagem"], 800);
 
-                    // $novidades = $this->UNumero->ValidarNumero($dados["novidades"]) > 0 ? 1 : 0;
+                    $novidades = $this->UNumero->ValidarNumero($dados["novidades"]) > 0 ? 1 : 0;
 
                     $mensagem = "";
                     $erro = false;
@@ -101,7 +101,6 @@ class ContatoController extends AppController
                                 if ($novidades) {
                                     TableRegistry::get('Newsletters')->inserir($contato->Nome, $contato->Email, $novidades, 0);
                                 }
-
                                 // evita reenvio de dados
                                 $this->request->session()->write('guidContatoEnviado', $guid);
 

@@ -67,7 +67,7 @@ class RelatoriosAtividadesController extends AppController
             $dir = new Folder($this->PASTA_UPLOAD);
             $file = $dir->find($nomeArquivo);
             if (count($file) <= 0) {
-                if ($arquivos['size'] >= 20971520) {
+                if ($arquivos['size'] >= 20971520  || $arquivos['error'] == 1) {
                     $retMensagem = 'Erro ao salvar. O Tamanho do Arquivo é superior há 20MB. (' . 
                         $this->UString->BytesParaHumano($arquivos['size'])  . ')';
                     $temErro = true;
