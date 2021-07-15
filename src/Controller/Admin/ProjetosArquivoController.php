@@ -51,8 +51,9 @@ class ProjetosArquivoController extends AppController {
             $boolArquivoOk = false;
 
             if(isset($arquivo)){
-                $projetoArquivo->Arquivo = $arquivo['name'];
-                $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $arquivo['name']);
+                $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivo['name']);
+                $projetoArquivo->Arquivo =  $nomeArquivo;
+                $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD .  $nomeArquivo);
             }else{
                 $projetoArquivo->clean('Arquivo');
             }

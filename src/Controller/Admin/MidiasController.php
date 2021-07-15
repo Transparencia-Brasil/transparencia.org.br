@@ -37,8 +37,9 @@ class MidiasController extends AppController
             $boolArquivoOk = false;
 
             if($possuiArquivo){
-                $midia->Arquivo = $arquivo['name'];
-                $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $arquivo['name']);
+                $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivo['name']);
+                $midia->Arquivo =   $nomeArquivo;
+                $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD .   $nomeArquivo);
             }else{
                 $midia->unsetProperty('Arquivo');
             }

@@ -43,10 +43,11 @@ class BlogsController extends AppController
             
             $possuiArquivo = strlen($arquivo['name']) == 0 ? false : true;
             $boolArquivoOk = false;
-
+            
             if($possuiArquivo){
-                $blog->ImagemResumo = $arquivo['name'];
-                $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $arquivo['name']);
+                $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivo['name']);
+                $blog->ImagemResumo = $nomeArquivo;
+                $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $nomeArquivo);
             }else{
                 $blog->unsetProperty('ImagemResumo');
             }

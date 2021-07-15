@@ -65,12 +65,14 @@ class QuemSomosController extends AppController
             $boolArquivoOk = false;
 
             if ($possuiArquivo) {
+                $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivo['name']);
                 if ($arquivo['size'] >= 2097152) {
                     $retMensagem = 'Erro ao salvar. O Tamanho da Imagem é superior há 2MB. (' . $this->UString->BytesParaHumano($arquivo['size'])  . ')';
                     $temErro = true;
                 } else {
-                    $quemsomos->Imagem = $arquivo['name'];
-                    $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $arquivo['name']);
+                    $quemsomos->Imagem = $nomeArquivo;
+                    $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $nomeArquivo);
+                    $temErro = false;
                 }
             } else {
                 $quemsomos->unsetProperty('Imagem');

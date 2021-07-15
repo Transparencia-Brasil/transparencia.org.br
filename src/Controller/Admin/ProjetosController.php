@@ -72,12 +72,14 @@ class ProjetosController extends AppController {
             $boolArquivoLogoOk = false;
 
             if($possuiArquivoLogo){
+                $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivoLogo['name']);
                 if ($arquivoLogo['size'] >= 2097152) {
                     $retMensagem = 'Erro ao salvar. O Tamanho do Logo é superior há 2MB. (' . $this->UString->BytesParaHumano($arquivoLogo['size'])  . ')';
                     $temErro = true;
                 } else {
-                    $projeto->Imagem_logo = "logo_".$arquivoLogo['name'];
-                    $boolArquivoLogoOk = move_uploaded_file($arquivoLogo['tmp_name'], $this->PASTA_UPLOAD . "logo_".$arquivoLogo['name']);
+                    $projeto->Imagem_logo = "logo_".$nomeArquivo;
+                    $boolArquivoLogoOk = move_uploaded_file($arquivoLogo['tmp_name'], $this->PASTA_UPLOAD . "logo_".$nomeArquivo);
+                    $temErro = false;
                 }
             }else{
                 $projeto->unsetProperty('Imagem_logo');
@@ -88,12 +90,14 @@ class ProjetosController extends AppController {
             $boolArquivoOk = false;
 
             if($possuiArquivo){
+                $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivo['name']);
                 if ($arquivo['size'] >= 2097152) {
                     $retMensagem = 'Erro ao salvar. O Tamanho da Imagem de Fundo é superior há 2MB. (' . $this->UString->BytesParaHumano($arquivo['size'])  . ')';
                     $temErro = true;
                 } else {
-                    $projeto->Imagem = $arquivo['name'];
-                    $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $arquivo['name']);
+                    $projeto->Imagem =  $nomeArquivo;
+                    $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD .  $nomeArquivo);
+                    $temErro = false;
                 }
             }else{
                 $projeto->unsetProperty('Imagem');
