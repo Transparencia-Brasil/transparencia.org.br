@@ -29,6 +29,9 @@ class ImprensasController extends AppController
 	{
 		$imprensa = isset($id) ? $this->Imprensas->find('all')->where(['codigo' => $id, 'ativo' => true])->first() : new Imprensa();
 
+        $temErro = false;
+        $retMensagem = "";
+
 		if ($this->request->is(['post', 'put'])) {
             
             $this->Imprensas->patchEntity($imprensa, $this->request->data);
@@ -39,30 +42,45 @@ class ImprensasController extends AppController
             $boolArquivoOk = false;
 
             if($possuiArquivo){
-                $imprensa->Imagem = $arquivo['name'];
-                $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $arquivo['name']);
+                $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivo['name']);
+                if ($arquivo['size'] >= 2097152) {
+                    $retMensagem = 'Erro ao salvar. O Tamanho da Imagem de Destaque é superior há 2MB. (' . $this->UString->BytesParaHumano($arquivo['size'])  . ')';
+                    $temErro = true;
+                } else {
+                    $imprensa->Imagem =  $nomeArquivo;
+                    $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD .  $nomeArquivo);
+                }
             }else{
                 $imprensa->unsetProperty('Imagem');
             }
-            // se der erro ao mover o arquivo, retornar mensagem de erro
-            if(!$boolArquivoOk && $possuiArquivo)
-            {
-                $this->Flash->error('Erro ao salvar imagem!');
-            }else{
 
-                $imprensa->DataPublicacao = $this->UData->ConverterMySQL($imprensa->DataPublicacao);
-                if($imprensa->errors())
-                    $this->Flash->error('Erro ao salvar banner. Verifique os campos obrigatórios.<br/>' . debug($imprensa->errors()));
-                else{
-                    if($this->Imprensas->save($imprensa)){
-
-                        $this->Flash->success('Clipping salvo com sucesso!');
-                        $this->redirect(array('action' => 'index'));
-                    }else
-                    {
-                        $this->Flash->error('Erro ao salvar mídia!');
+            if (!$temErro) {
+                // se der erro ao mover o arquivo, retornar mensagem de erro
+                if (!$boolArquivoOk && $possuiArquivo) {
+                    $retMensagem = 'Erro ao salvar imagem!';
+                    $temErro = true;
+                } else {
+                    $imprensa->DataPublicacao = $this->UData->ConverterMySQL($imprensa->DataPublicacao);
+                    if ($imprensa->errors()) {
+                        $retMensagem = 'Erro ao salvar banner. Verifique os campos obrigatórios.<br/>' . debug($imprensa->errors());
+                        $temErro = true;
+                    } else {
+                        if ($this->Imprensas->save($imprensa)) {
+                            $retMensagem = 'Clipping salvo com sucesso!';                            
+                            $temErro = false;
+                        } else {
+                            $retMensagem = 'Erro ao salvar mídia!';
+                            $temErro = true;
+                        }
                     }
                 }
+            }
+
+            if ($temErro) {
+                $this->Flash->error($retMensagem);
+            } else {
+                $this->Flash->success($retMensagem);                
+                $this->redirect(array('action' => 'index'));
             }
         }
         if($imprensa->DataPublicacao)

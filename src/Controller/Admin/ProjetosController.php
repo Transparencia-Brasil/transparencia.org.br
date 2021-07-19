@@ -20,6 +20,7 @@ class ProjetosController extends AppController {
 		$this->layout = 'admin';
         $this->loadComponent('Flash');
         $this->loadComponent('UData');
+        $this->loadComponent('UString');
 	}
 
 	public function index($id = null)
@@ -58,6 +59,9 @@ class ProjetosController extends AppController {
     public function edit($id = null)
     {
         $projeto = isset($id) ? $this->Projetos->find()->where(['codigo' => $id, 'ativo' => true])->first() : new Projeto();
+        
+        $temErro = false;
+        $retMensagem = "";
 
         if ($this->request->is(['post', 'put'])) {
 
@@ -68,8 +72,15 @@ class ProjetosController extends AppController {
             $boolArquivoLogoOk = false;
 
             if($possuiArquivoLogo){
-                $projeto->Imagem_logo = "logo_".$arquivoLogo['name'];
-                $boolArquivoLogoOk = move_uploaded_file($arquivoLogo['tmp_name'], $this->PASTA_UPLOAD . "logo_".$arquivoLogo['name']);
+                $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivoLogo['name']);
+                if ($arquivoLogo['size'] >= 2097152) {
+                    $retMensagem = 'Erro ao salvar. O Tamanho do Logo é superior há 2MB. (' . $this->UString->BytesParaHumano($arquivoLogo['size'])  . ')';
+                    $temErro = true;
+                } else {
+                    $projeto->Imagem_logo = "logo_".$nomeArquivo;
+                    $boolArquivoLogoOk = move_uploaded_file($arquivoLogo['tmp_name'], $this->PASTA_UPLOAD . "logo_".$nomeArquivo);
+                    $temErro = false;
+                }
             }else{
                 $projeto->unsetProperty('Imagem_logo');
             }
@@ -79,25 +90,41 @@ class ProjetosController extends AppController {
             $boolArquivoOk = false;
 
             if($possuiArquivo){
-                $projeto->Imagem = $arquivo['name'];
-                $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $arquivo['name']);
+                $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivo['name']);
+                if ($arquivo['size'] >= 2097152) {
+                    $retMensagem = 'Erro ao salvar. O Tamanho da Imagem de Fundo é superior há 2MB. (' . $this->UString->BytesParaHumano($arquivo['size'])  . ')';
+                    $temErro = true;
+                } else {
+                    $projeto->Imagem =  $nomeArquivo;
+                    $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD .  $nomeArquivo);
+                    $temErro = false;
+                }
             }else{
                 $projeto->unsetProperty('Imagem');
             }
 
-            $projeto->Data = $this->UData->ConverterMySQL($projeto->Data);
-
-            // se der erro ao mover o arquivo, retornar mensagem de erro
-            if ($projeto->errors()) {
-              $this->Flash->error('Erro ao salvar. Verifique os campos obrigatórios.');
-            } else {
-                if($this->Projetos->save($projeto)){
-                    $this->Flash->success('Projeto salvo com sucesso!');
-                    $this->redirect(array('action' => 'index'));
-                }else
-                {
-                    $this->Flash->error('Erro ao salvar projeto!');
+            if (!$temErro) {
+                $projeto->Data = $this->UData->ConverterMySQL($projeto->Data);
+                // se der erro ao mover o arquivo, retornar mensagem de erro
+                if ($projeto->errors()) {
+                    $retMensagem = 'Erro ao salvar. Verifique os campos obrigatórios.';
+                    $temErro = true;
+                } else {
+                    if ($this->Projetos->save($projeto)) {
+                        $retMensagem = 'Projeto salvo com sucesso!';
+                        $temErro = false;
+                    } else {
+                        $retMensagem = 'Erro ao salvar o projeto!';
+                        $temErro = true;
+                    }
                 }
+            }
+
+            if ($temErro) {
+                $this->Flash->error($retMensagem);
+            } else {
+                $this->Flash->success($retMensagem);                
+                $this->redirect(array('action' => 'index'));
             }
         }
 

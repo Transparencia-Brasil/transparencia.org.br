@@ -46,7 +46,6 @@ class UEmailComponent extends Component
 	{
 		
 		$email_destino = "contato@transparencia.org.br";
-		// $email_destino = "paulo.campos@studiocuboweb.com.br";
 		$assuntoEmail = " [transparencia.org.br] Novo associado para moderação: " . $nome;
 		$replyEmail = $email;
 
@@ -64,7 +63,7 @@ class UEmailComponent extends Component
 		return UEmailComponent::EnviarEmail("", $email_destino, $assuntoEmail, $conteudo, true, $replyEmail, 'default');
 	}
 
-	public static function EmailNewsletterDoubleOptin($nome, $email, $token)
+	public static function EmailNewsletterDoubleOptin($nome, $email, $token, $replyEmail=null)
 	{
 		$email_destino = $email;
 		$assuntoEmail = "Confirme o seu email para assinar a newsletter";

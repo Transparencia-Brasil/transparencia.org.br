@@ -148,7 +148,13 @@
 						</div>
 					</div>
 					<div class="col-4 px-0">
-						<button type="submit" class="btn btn-warning mobile-fix" value="Associar-se" id="Associar-se" />Associar-se</button>
+						<button class="g-recaptcha btn btn-warning mobile-fix" 
+						id="grecaptcha-btn" 
+						data-formid="#frmAssociado"
+						data-sitekey="<?=$grsiteKey?>" 
+						data-callback='onSubmitRecaptcha' 
+						data-actionOrigem = "associados-novo"
+						data-action='submit'>Associar-se</button>
 					</div>
 			</div>
 		</div>
@@ -159,7 +165,8 @@
 </div>
 </div>
 <!-- Conteudo -->
-
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="/scripts/recaptcha.js"></script>
 <script type="text/javascript">
     $("#CodigoComoConheceuTB").on('change',function(ev) {
     //Se está checado faz aparecer os campos, caso contrário esconda os campos

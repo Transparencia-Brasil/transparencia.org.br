@@ -33,7 +33,13 @@
 					<?=$this->Form->input('Cpf', ['id' => 'Cpf', 'label'=>'CPF', 'class' => 'form-control col-12', 'tabindex' => '2']) ?>
 				</div>
 				<div class="col-12 px-0 py-3">
-					<button type="submit" class="btn btn-warning mobile-fix" id="Entrar" />Entrar</button>
+					<button class="g-recaptcha btn btn-warning mobile-fix" 
+						id="grecaptcha-btn" 
+						data-formid="#frmAssociado"
+						data-sitekey="<?=$grsiteKey?>" 
+						data-callback='onSubmitRecaptcha' 
+						data-actionOrigem = "associados-entrar"
+						data-action='submit'>Entrar</button>
 				</div>
 			</div>
 		
@@ -41,6 +47,8 @@
 			<!-- Form -->
 	</div>
 </div>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="/scripts/recaptcha.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
       <?php 

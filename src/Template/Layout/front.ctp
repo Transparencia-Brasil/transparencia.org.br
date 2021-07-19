@@ -98,7 +98,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
           </button>
           <div class="row new-menu">
             <div class="col-3">
-             <a href="/"><img src="/img/logos/logo.svg?cache=3" class="d-inline-block logo-image"></a>
+             <a href="/"><img src="/img/logos/logo-tb.svg?cache=3" class="d-inline-block logo-image"></a>
             </div>
             <div class="col-lg-9 col-8 pr-0 pt-4">
               <div class="navbar-nav justify-content-end new-social d-none d-lg-block">
@@ -176,7 +176,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
         <div class="container py-2">
           <div class="row pb-3">
             <!-- Form   -->
-            <?= $this->Form->create(null, ['url' => '/newsletter/novoContato', "id" => "frmContato", "class" => "form-inline contact-form col-12"]) ?>
+            <?= $this->Form->create(null, ['url' => '/newsletter/novoContato', "id" => "frmNewsletter", "class" => "form-inline contact-form col-12"]) ?>
             <div class="col-12 col-lg-4 details">
               ASSINE NOSSA NEWSLETTER MENSAL
             </div>
@@ -190,7 +190,13 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
 
             <div class="col-12 col-lg-auto text-center">
               <input type="hidden" name="origem" value="rodape">
-              <button type="submit" class="btn-secondary bt_send_newsletter">Enviar</button>
+              <button class="g-recaptcha btn-secondary bt_send_newsletter" 
+                  id="grecaptcha-btn-news" 
+                  data-formid="#frmNewsletter"
+                  data-sitekey="<?=$grsiteKey?>"   
+                  data-callback='onSubmitRecaptchaNewsltter' 
+                  data-actionOrigem = "ajax-newsletter"
+                  data-action='submit'>Enviar</button>
             </div>
             <?= $this->Form->end(); ?>
           </div>
@@ -224,6 +230,8 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
   </footer>
   <!-- footer -->
 
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script src="/scripts/recaptcha.js"></script>
   <script src="/scripts/plugins.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous"></script>
 
@@ -273,10 +281,13 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
       });
 
 
-      $('.bt_send_newsletter').on('click', function(e) {
+      $('#frmNewsletter').on('submit', function(e) {
+        e.preventDefault();
         var _nome =  this.parentElement.parentElement.getElementsByClassName("nome")[0].value;
         var _email = this.parentElement.parentElement.getElementsByClassName("email")[0].value;
         var origem = this.parentElement.parentElement.querySelector('[name="origem"]').value;
+        var token = this.parentElement.parentElement.querySelector('[name="token"]').value;
+        var actionOrigem = this.parentElement.parentElement.querySelector('[name="actionOrigem"]').value;
         var this_click = this
         $.ajax({
           method: "POST",
@@ -287,7 +298,9 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
             optin_newsletter: 1,
             nome: _nome,
             email: _email,
-            origem: origem
+            origem: origem,
+            actionOrigem: actionOrigem,
+            token: token
           }
         }).done(function(response) {
           if (response.sucesso == 1) {

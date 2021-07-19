@@ -20,6 +20,7 @@ class PublicacoesController extends AppController {
 		$this->layout = 'admin';
         $this->loadComponent('Flash');
         $this->loadComponent('UData');
+        $this->loadComponent('UString');
 	}
 	
 	public function index($id = null)
@@ -43,6 +44,9 @@ class PublicacoesController extends AppController {
         $publicacao = isset($id) ? $this->Publicacoes->find()->where(['codigo' => $id, 'ativo' => true])->first() : new Publicacao();
         $categorias = TableRegistry::get('PublicacoesCategoria')->find('list', ['keyField' => 'Codigo', 'valueField' => 'Nome']);
 
+        $temErro = false;
+        $retMensagem = "";
+
         if ($this->request->is(['post', 'put'])) {
             
             $this->Publicacoes->patchEntity($publicacao, $this->request->data);
@@ -52,8 +56,15 @@ class PublicacoesController extends AppController {
             $boolArquivoOk = false;
 
             if(isset($arquivo) && !empty($arquivo['name']) ){
-                $publicacao->Arquivo = $arquivo['name'];
-                $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $arquivo['name']);
+                $nomeArquivo =  $this->UString->ValidarNomeArquivo($arquivo['name']);
+                if ($arquivo['size'] >= 20971520  || $arquivo['error'] == 1) {
+                    $retMensagem = 'Erro ao salvar. O Tamanho do Logo é superior há 20MB. (' . $this->UString->BytesParaHumano($arquivoLogo['size'])  . ')';
+                    $temErro = true;
+                } else {
+                    $publicacao->Arquivo = $nomeArquivo;
+                    $boolArquivoOk = move_uploaded_file($arquivo['tmp_name'], $this->PASTA_UPLOAD . $nomeArquivo);
+                    $temErro = false;
+                }
                 // var_dump($boolArquivoOk);
                 // echo $this->PASTA_UPLOAD . $arquivo['name'];
                 // print_r ($boolArquivoOk);
@@ -62,22 +73,29 @@ class PublicacoesController extends AppController {
                 $publicacao->unsetProperty('Arquivo');
             }
 
-            // se der erro ao mover o arquivo, retornar mensagem de erro
-            if(!$boolArquivoOk && $possuiArquivo)
-            {
-                $this->Flash->error('Erro ao salvar o arquivo!');
-                
-            }else{
+            if (!$temErro) {
+                // se der erro ao mover o arquivo, retornar mensagem de erro
+                if (!$boolArquivoOk && $possuiArquivo) {
+                    $retMensagem = 'Erro ao salvar a publicação.';
+                    $temErro = true;
+                } else {
+                    $publicacao->DataPublicacao = $this->UData->ConverterMySQL($publicacao->DataPublicacao);
 
-                $publicacao->DataPublicacao = $this->UData->ConverterMySQL($publicacao->DataPublicacao);
-
-                if($this->Publicacoes->save($publicacao)){
-                    $this->Flash->success('Publicação salva com sucesso!');
-                    $this->redirect(array('action' => 'index', $idCategoria));
-                }else
-                {
-                    $this->Flash->error('Erro ao salvar publicação!');
+                    if ($this->Publicacoes->save($publicacao)) {
+                        $retMensagem = 'Publicação salva com sucesso!';
+                        $temErro = false;
+                    } else {
+                        $retMensagem = 'Erro ao salvar a publicação.';
+                        $temErro = true;
+                    }
                 }
+            }
+
+            if ($temErro) {
+                $this->Flash->error($retMensagem);
+            } else {
+                $this->Flash->success($retMensagem);                
+                $this->redirect(array('action' => 'index', $idCategoria));
             }
         }
 
