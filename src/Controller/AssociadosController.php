@@ -87,8 +87,8 @@ class AssociadosController extends AppController
             $novoAssociado->Cidade = $this->UString->AntiXSSComLimite($dados["Cidade"], 200);
             $novoAssociado->Motivo = $this->UString->AntiXSSComLimite($dados["Motivo"], 2000);
 
-            $novoAssociado->AceiteRadarTb = $this->request->data["Associados"]["AceiteRadarTb"] == 1 ? 1 : 0;
-			$novoAssociado->AceiteNovidades = $this->request->data["Associados"]["AceiteNovidades"] == 1 ? 1 : 0;
+            $novoAssociado->AceiteRadarTb = $this->UNumero->ValidarNumero($dados["AceiteRadarTb"]) > 0 ? 1 : 0;
+			$novoAssociado->AceiteNovidades = $this->UNumero->ValidarNumero($dados["aceiteNovidades"]) > 0 ? 1 : 0;
 
             $tipo_id = $this->get_id_como_conheceu_tipo($dados["CodigoComoConheceuTB"]);
             if ($tipo_id) {
@@ -167,9 +167,9 @@ class AssociadosController extends AppController
                         $this->set('erros', $erros);
                     }
     		    	else if($this->Associados->save($novoAssociado)){
-
-                        if($novoAssociado->AceiteNovidades || $novoAssociado->AceiteRadarTb)
+                        if($novoAssociado->AceiteNovidades || $novoAssociado->AceiteRadarTb) {
                             TableRegistry::get('Newsletters')->inserir($novoAssociado->Nome, $novoAssociado->Email,$novoAssociado->AceiteNovidades,0,null,null,null,null,null,null,null,$novoAssociado->AceiteRadarTb);
+                        }
 
                         // enviar e-mail
                         UEmailComponent::EmailAdmAvisoNovoAssociado($novoAssociado->Nome, $novoAssociado->Email);
