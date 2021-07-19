@@ -10,6 +10,8 @@ services:
     working_dir: /var/www
     volumes:
       - ./:/var/www
+    env_file:
+      - .env
     environment:
       - "DB_PORT=${DB_PORT}"
       - "DB_HOST=${MYSQL_HOST}"

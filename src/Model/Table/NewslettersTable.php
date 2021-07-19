@@ -30,7 +30,7 @@ class NewslettersTable extends Table
         return $validator;
     }
 
-    public function inserir($nome,$email,$optin_newsletter,$optin_press,$cidade,$uf,$veiculo,$telefone,$ddd,$token,$origem){
+    public function inserir($nome,$email,$optin_newsletter,$optin_press,$cidade,$uf,$veiculo,$telefone,$ddd,$token,$origem,$optin_radar_tb){
         try{
             // insere novo usuário na tabela de newsletter
             $newsletter = new Newsletter();
@@ -49,6 +49,7 @@ class NewslettersTable extends Table
                 $newsletter->DDD = $ddd;
                 $newsletter->double_optin_token = $token;
                 $newsletter->Origem = $origem;
+                $newsletter->optin_radar_tb = $optin_radar_tb;
                 $this->save($newsletter);
                 return false;
             } else {
