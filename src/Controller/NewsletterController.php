@@ -59,7 +59,7 @@ class NewsletterController extends AppController
 		$erro = false;
 		if($newsletter != null)
 		{
-			if ($newsletter->Optin_newsletter == 0 && $newsletter->Optin_press == 0) {
+			if ($newsletter->Optin_newsletter == 0 && $newsletter->optin_radar_tb == 0) {
 				$mensagem = "Você precisa selecionar pelo menos uma assinatura.";
 			} else {
 				$erros = $newsletter->errors();
@@ -142,7 +142,7 @@ class NewsletterController extends AppController
             if (!$error) {
                 if($newsletter != null)
                 {
-                    if ($newsletter->Optin_newsletter == 0 && $newsletter->Optin_press == 0) {
+                    if ($newsletter->Optin_newsletter == 0 && $newsletter->optin_radar_tb == 0) {
                         $mensagem = "Você precisa selecionar pelo menos uma assinatura.";
                     } else {
                         $erros = $newsletter->errors();
