@@ -11,3 +11,4 @@ tmp/debug_kit.sqlite
 logs/debug.log
 webroot/uploads/
 .editorconfig
+.env
