@@ -133,8 +133,14 @@
 							</label>
 						</div>
 						<div class="form-check">
+							<label for="AceiteRadarTb" class="form-check-label">
+							<?=$this->Form->checkbox('AceiteRadarTb', ['id' => 'AceiteRadarTb', 'class' => 'form-check-input', 'tabindex' => '17']) ?>
+							Autorizo receber a comunicação da Transparência Brasil relativa à curadoria de conteúdo e eventos.
+							</label>
+						</div>
+						<div class="form-check">
 							<label for="AceiteNovidades" class="form-check-label">
-							<?=$this->Form->checkbox('Associados.aceiteNovidades', ['id' => 'AceiteNovidades', 'class' => 'form-check-input', 'tabindex' => '17']) ?>
+							<?=$this->Form->checkbox('Associados.AceiteNovidades', ['id' => 'AceiteNovidades', 'class' => 'form-check-input', 'tabindex' => '17']) ?>
 							Quero receber comunicações da Transparência Brasil
 							</label>
 						</div>

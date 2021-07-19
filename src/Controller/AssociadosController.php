@@ -9,6 +9,7 @@ use App\Model\Entity\TransacaoUsuarioDado;
 use App\Model\Entity\AssociadosComoConheceuTipo;
 use Cake\I18n\Time;
 use App\Controller\Component\UEmailComponent;
+use Cake\Log\Log;
 
 class AssociadosController extends AppController
 {
@@ -80,6 +81,10 @@ class AssociadosController extends AppController
             $aceiteNormas = $this->UNumero->ValidarNumero($dados["AceiteNormas"]);
             $aceiteJustica = $this->UNumero->ValidarNumero($dados["AceiteDeclaracaoNaoCondenado"]);
         
+            $novoAssociado->AceiteObjetivos = $aceiteObjetivos;
+            $novoAssociado->AceiteNormas = $aceiteNormas;
+            $novoAssociado->AceiteDeclaracaoNaoCondenado = $aceiteJustica;
+
             $novoAssociado->Telefone = $this->UString->AntiXSSComLimite($dados["Telefone"], 15);
             $novoAssociado->TelefoneDDD = $this->UString->AntiXSSComLimite($dados["TelefoneDDD"], 3);
             $novoAssociado->Celular  = $this->UString->AntiXSSComLimite($dados["Celular"], 15);
@@ -87,6 +92,12 @@ class AssociadosController extends AppController
             $novoAssociado->UF = $this->UString->AntiXSSComLimite($dados["UF"], 2);
             $novoAssociado->Cidade = $this->UString->AntiXSSComLimite($dados["Cidade"], 200);
             $novoAssociado->Motivo = $this->UString->AntiXSSComLimite($dados["Motivo"], 2000);
+            $novoAssociado->Endereco = $this->UString->AntiXSSComLimite($dados["Endereco"], 2000);
+            $novoAssociado->Profissao = $this->UString->AntiXSSComLimite($dados["Profissao"], 200);
+            $novoAssociado->EntidadeEmpregadora = $this->UString->AntiXSSComLimite($dados["EntidadeEmpregadora"], 200);
+            
+
+            $novoAssociado->CodigoEscolaridadeTipo = $this->UNumero->ValidarNumero($dados["CodigoEscolaridadeTipo"]);
 
             $novoAssociado->AceiteRadarTb = $this->UNumero->ValidarNumero($dados["AceiteRadarTb"]) > 0 ? 1 : 0;
 			$novoAssociado->AceiteNovidades = $this->UNumero->ValidarNumero($dados["aceiteNovidades"]) > 0 ? 1 : 0;
@@ -162,7 +173,6 @@ class AssociadosController extends AppController
                     $erros = $novoAssociado->errors();
                     // senão existir, gravar novo usuário
                     if (!$jaExiste) {
-
                     // sem erros de validação da entidade
                     if(count($erros) > 0)
                     {
@@ -174,12 +184,14 @@ class AssociadosController extends AppController
                             TableRegistry::get('Newsletters')->inserir($novoAssociado->Nome, $novoAssociado->Email,$novoAssociado->AceiteNovidades,0,null,null,null,null,null,null,null,$novoAssociado->AceiteRadarTb);
                         }
 
-                        // enviar e-mail
-                        UEmailComponent::EmailAdmAvisoNovoAssociado($novoAssociado->Nome, $novoAssociado->Email);
-             
-                            $this->Flash->success('Informações salvas com sucesso! Você será redirecionado para o site do PagSeguro para fazer sua doação. Obrigado!');
-                        
-                    
+                            try {
+                                // enviar e-mail
+                                UEmailComponent::EmailAdmAvisoNovoAssociado($novoAssociado->Nome, $novoAssociado->Email);
+                            } catch (\Exception $ex) {
+                                Log::write('error', "Falha ao Enviar o Email: " .  $ex->getMessage());
+                            }
+
+                            $this->Flash->success('Informações salvas com sucesso! Você será redirecionado para o site do PagSeguro para fazer sua doação. Obrigado!');                    
                             $this->set('redirectDoacao', true);
                             // cria nova transaçação
                             try {
@@ -236,7 +248,6 @@ class AssociadosController extends AppController
         $aceiteJustica = $this->UNumero->ValidarNumero($this->request->data['Associados']["AceiteDeclaracaoNaoCondenado"]);
         $associado = isset($id) ? $this->Associados->find('all')->where(['Codigo' => $id])->first() : new Associado();
 
-
         if ($associado == null && $id != null) {
             $this->Flash->error('Associado não encontrado');
             $this->redirect(array('action' => 'index'));
@@ -285,7 +296,7 @@ class AssociadosController extends AppController
             }
 
 			$associadoRequest = $this->Associados->newEntity($this->request->data);	
-			
+
 			if($associado->isNew()){
 				$associado->DataCadastro = Time::now();
 			}else{
@@ -301,11 +312,19 @@ class AssociadosController extends AppController
 			$associado->CelularDDD = $this->UNumero->SomenteNumeros($associadoRequest->CelularDDD);
 			$associado->Celular = $this->UNumero->SomenteNumeros($associadoRequest->Celular);
 
-            $associado->AceiteRadarTb = $this->request->data["Associados"]["AceiteRadarTb"] == 1 ? 1 : 0;
-			$associado->AceiteNovidades = $this->request->data["Associados"]["AceiteNovidades"] == 1 ? 1 : 0;
-			$associado->AceiteLembreteDoacao = $this->request->data["Associados"]["AceiteLembreteDoacao"] == 1 ? 1 : 0;
+            $associado->AceiteObjetivos = $this->UNumero->ValidarNumero($associadoRequest->AceiteObjetivos);
+            $associado->AceiteNormas = $this->UNumero->ValidarNumero($associadoRequest->AceiteNormas);
+            $associado->AceiteDeclaracaoNaoCondenado = $this->UNumero->ValidarNumero($associadoRequest->AceiteDeclaracaoNaoCondenado);
+
+			$associado->AceiteNovidades = $this->UNumero->SomenteNumeros($associadoRequest->AceiteNovidades) == 1 ? 1 : 0;
+			$associado->AceiteLembreteDoacao = $this->UNumero->ValidarNumero($associadoRequest->AceiteLembreteDoacao) == 1 ? 1 : 0;
+            $associado->AceiteRadarTb = $this->UNumero->ValidarNumero($this->request->data["AceiteRadarTb"]) == 1 ? 1 : 0;
+
             $associado->ExibeLista = $this->request->data["Associados"]["ExibeLista"] == 1 ? 1 : 0;
-            
+            $associado->CodigoEscolaridadeTipo = $this->UNumero->ValidarNumero($associadoRequest->CodigoEscolaridadeTipo);
+            $associado->Endereco = $this->UString->AntiXSSComLimite($associadoRequest->Endereco, 2000);
+            $associado->Profissao = $this->UString->AntiXSSComLimite($associadoRequest->Profissao, 200);
+            $associado->EntidadeEmpregadora = $this->UString->AntiXSSComLimite($associadoRequest->EntidadeEmpregadora, 200);
 
             $tipo_id = $this->get_id_como_conheceu_tipo($this->request->data["Associados"]["CodigoComoConheceuTB"]);
             if ($tipo_id) {
@@ -323,6 +342,9 @@ class AssociadosController extends AppController
                     $this->Flash->success('Erro ao salvar associado. Verifique os campos obrigatórios.');
                 } else {
                     if ($this->Associados->save($associado)) {
+                        
+                        TableRegistry::get('Newsletters')->update($associado->Nome, $associado->Email,$associado->AceiteNovidades,0,null,null,null,null,null,null,null,$associado->AceiteRadarTb);
+
                         $this->Flash->success('Associado salvo com sucesso!');
                         $redirect = $this->request->query['r'];
                         if ($redirect == 'pg') {
