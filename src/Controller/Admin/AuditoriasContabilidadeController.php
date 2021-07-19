@@ -45,11 +45,11 @@ class AuditoriasContabilidadeController extends AppController
         $path = $this->PASTA_UPLOAD_RELATIVA . $this->request->query['file'];
 
         if (isset($this->request->query['id']) && !empty($this->request->query['id'])) {
-            $financiamentoArquivos = TableRegistry::get('FinanciamentosArquivos');
-            $arquivo = $financiamentoArquivos->get($this->request->query['id']);
-            $financiamentoArquivos->delete($arquivo);
+            $arquivos = TableRegistry::get('AuditoriasContabilidadeArquivos');
+            $arquivo = $arquivos->get($this->request->query['id']);
+            $arquivos->delete($arquivo);
 
-            return $this->redirect('/admin/AuditoriasContabilidade/edit/'.$arquivo->CodigoAuditoriaContabilidade);
+            return $this->redirect('/admin/AuditoriasContabilidade/edit/'. $arquivo->CodigoAuditoriaContabilidade);
         }
         echo '{"'.$path.'":true}';
         $this->autoRender = false;
