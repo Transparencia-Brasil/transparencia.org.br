@@ -64,6 +64,32 @@ class NewslettersTable extends Table
         }
     }
 
+    public function update($nome,$email,$optin_newsletter,$optin_press,$cidade,$uf,$veiculo,$telefone,$ddd,$token,$origem,$optin_radar_tb){
+        try{
+            // insere novo usuário na tabela de newsletter
+            $newsletter = new Newsletter();
+
+            $encontrado = $this->find()->where(["email" => $email])->first();
+
+            if($encontrado != null){
+                $encontrado->Nome = $nome;
+                $encontrado->Email = $email;
+                $encontrado->Optin_newsletter = $optin_newsletter;
+                $encontrado->optin_radar_tb = $optin_radar_tb;
+                $this->save($encontrado);
+                return false;
+            } else {
+                return true;
+            }
+
+        }catch(Exception $ex){
+        // logar erro
+        echo erro;
+        die();
+
+        }
+    }
+
     public function updateDoubleOptin($token) {
         $registro = $this->find()->where(["double_optin_token" => $token])->first();
         if ($registro !== null) {

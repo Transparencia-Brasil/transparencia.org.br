@@ -1,0 +1,4 @@
+ALTER TABLE associados MODIFY AceiteDeclaracaoNaoCondenado tinyint(4) NOT NULL;
+ALTER TABLE associados MODIFY AceiteNormas tinyint(4) NOT NULL;
+ALTER TABLE associados MODIFY AceiteObjetivos tinyint(4) NOT NULL;
+ALTER TABLE associados MODIFY AceiteLembreteDoacao tinyint(4);
