@@ -72,31 +72,40 @@ class AssociadosController extends AppController
             if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "associados-novo")) {
                 $novoAssociado = new Associado();
             
-                $this->Associados->patchEntity($novoAssociado, $this->request->data);
-            
-                // busca dados e valida informações
-                $novoAssociado->Nome = $this->UString->AntiXSSComLimite($dados["Nome"], 150);
-                $novoAssociado->CPF = $this->UString->AntiXSSComLimite($dados["Cpf"], 15);
-                $novoAssociado->Email = $this->UString->AntiXSSComLimite($dados["Email"], 100);
+            // busca dados e valida informações
+            $novoAssociado->Nome = $this->UString->AntiXSSComLimite($dados["Nome"], 150);
+            $novoAssociado->CPF = $this->UString->AntiXSSComLimite($dados["Cpf"], 15);
+            $novoAssociado->Email = $this->UString->AntiXSSComLimite($dados["Email"], 100);
 
-                $aceiteObjetivos = $this->UNumero->ValidarNumero($dados["AceiteObjetivos"]);
-                $aceiteNormas = $this->UNumero->ValidarNumero($dados["AceiteNormas"]);
-                $aceiteJustica = $this->UNumero->ValidarNumero($dados["AceiteDeclaracaoNaoCondenado"]);
+            $aceiteObjetivos = $this->UNumero->ValidarNumero($dados["AceiteObjetivos"]);
+            $aceiteNormas = $this->UNumero->ValidarNumero($dados["AceiteNormas"]);
+            $aceiteJustica = $this->UNumero->ValidarNumero($dados["AceiteDeclaracaoNaoCondenado"]);
+        
+            $novoAssociado->Telefone = $this->UString->AntiXSSComLimite($dados["Telefone"], 15);
+            $novoAssociado->TelefoneDDD = $this->UString->AntiXSSComLimite($dados["TelefoneDDD"], 3);
+            $novoAssociado->Celular  = $this->UString->AntiXSSComLimite($dados["Celular"], 15);
+            $novoAssociado->CelularDDD = $this->UString->AntiXSSComLimite($dados["CelularDDD"], 3);
+            $novoAssociado->UF = $this->UString->AntiXSSComLimite($dados["UF"], 2);
+            $novoAssociado->Cidade = $this->UString->AntiXSSComLimite($dados["Cidade"], 200);
+            $novoAssociado->Motivo = $this->UString->AntiXSSComLimite($dados["Motivo"], 2000);
 
-                $novoAssociado->Telefone = $this->UString->AntiXSSComLimite($dados["Telefone"], 15);
-                $novoAssociado->TelefoneDDD = $this->UString->AntiXSSComLimite($dados["TelefoneDDD"], 3);
-                $novoAssociado->Celular  = $this->UString->AntiXSSComLimite($dados["Celular"], 15);
-                $novoAssociado->CelularDDD = $this->UString->AntiXSSComLimite($dados["CelularDDD"], 3);
-                $novoAssociado->UF = $this->UString->AntiXSSComLimite($dados["UF"], 2);
-                $novoAssociado->Cidade = $this->UString->AntiXSSComLimite($dados["Cidade"], 200);
-                $novoAssociado->Motivo = $this->UString->AntiXSSComLimite($dados["Motivo"], 2000);
+            $novoAssociado->CodigoEscolaridadeTipo = $this->UNumero->ValidarNumero($dados["CodigoEscolaridadeTipo"]);
 
-                $tipo_id = $this->get_id_como_conheceu_tipo($dados["CodigoComoConheceuTB"]);
-                if ($tipo_id) {
-                    $novoAssociado->CodigoComoConheceuTB = $tipo_id;
-                } else {
-                    $mensagemErro = "O campo Outros deve ser preenchido";
-                }
+            $novoAssociado->AceiteRadarTb = $this->UNumero->ValidarNumero($dados["AceiteRadarTb"]) > 0 ? 1 : 0;
+			$novoAssociado->AceiteNovidades = $this->UNumero->ValidarNumero($dados["aceiteNovidades"]) > 0 ? 1 : 0;
+
+            $tipo_id = $this->get_id_como_conheceu_tipo($dados["CodigoComoConheceuTB"]);
+            if ($tipo_id) {
+                $novoAssociado->CodigoComoConheceuTB = $tipo_id;
+            } else {
+                $mensagemErro = "O campo Outros deve ser preenchido";
+            }
+
+            // verifica se já existe um usuário com e-mail ou CPF digitados
+            $usuario_jaExiste = $this->Associados->find('all')->where(['Email' => $novoAssociado->Email])->first();
+            $mensagemErro = "";
+            $jaExiste = false;
+            $erroValidacao = false;
 
                 // verifica se já existe um usuário com e-mail ou CPF digitados
                 $usuario_jaExiste = $this->Associados->find('all')->where(['Email' => $novoAssociado->Email])->first();
@@ -156,21 +165,22 @@ class AssociadosController extends AppController
                     $erros = $novoAssociado->errors();
                     // senão existir, gravar novo usuário
                     if (!$jaExiste) {
-
                     // sem erros de validação da entidade
-                        if (count($erros) > 0) {
-                            $mensagemErro .= 'Erro ao salvar associado [1].';
-                            $this->set('erros', $erros);
-                        } elseif ($this->Associados->save($novoAssociado)) {
-                            if ($novoAssociado->AceiteNovidades) {
-                                TableRegistry::get('Newsletters')->inserir($novoAssociado->Nome, $novoAssociado->Email);
-                            }
+                    if(count($erros) > 0)
+                    {
+                        $mensagemErro .= 'Erro ao salvar associado [1].';
+                        $this->set('erros', $erros);
+                    }
+    		    	else if($this->Associados->save($novoAssociado)){
+                        if($novoAssociado->AceiteNovidades || $novoAssociado->AceiteRadarTb) {
+                            TableRegistry::get('Newsletters')->inserir($novoAssociado->Nome, $novoAssociado->Email,$novoAssociado->AceiteNovidades,0,null,null,null,null,null,null,null,$novoAssociado->AceiteRadarTb);
+                        }
 
                             try {
                                 // enviar e-mail
                                 UEmailComponent::EmailAdmAvisoNovoAssociado($novoAssociado->Nome, $novoAssociado->Email);
                             } catch (\Exception $ex) {
-                                Log::write('error', "Falha ao Enviar o Email: " .  $e->getMessage());
+                                Log::write('error', "Falha ao Enviar o Email: " .  $ex->getMessage());
                             }
 
                             $this->Flash->success('Informações salvas com sucesso! Você será redirecionado para o site do PagSeguro para fazer sua doação. Obrigado!');                    
@@ -278,26 +288,28 @@ class AssociadosController extends AppController
                     break;
             }
 
-            $associadoRequest = $this->Associados->newEntity($this->request->data);
-            
-            if ($associado->isNew()) {
-                $associado->DataCadastro = Time::now();
-            } else {
-                $associadoRequest->DataCadastro = $associado->DataCadastro;
-            }
+			$associadoRequest = $this->Associados->newEntity($this->request->data);	
+			
+			if($associado->isNew()){
+				$associado->DataCadastro = Time::now();
+			}else{
+				$associadoRequest->DataCadastro = $associado->DataCadastro;
+			}
 
-            $this->Associados->patchEntity($associado, $this->request->data);
+			$this->Associados->patchEntity($associado, $this->request->data);
 
-            // validações
-            $associado->CPF = $this->UNumero->SomenteNumeros($associadoRequest->CPF);
-            $associado->TelefoneDDD = $this->UNumero->SomenteNumeros($associadoRequest->TelefoneDDD);
-            $associado->Telefone = $this->UNumero->SomenteNumeros($associadoRequest->Telefone);
-            $associado->CelularDDD = $this->UNumero->SomenteNumeros($associadoRequest->CelularDDD);
-            $associado->Celular = $this->UNumero->SomenteNumeros($associadoRequest->Celular);
+			// validações
+			$associado->CPF = $this->UNumero->SomenteNumeros($associadoRequest->CPF);
+			$associado->TelefoneDDD = $this->UNumero->SomenteNumeros($associadoRequest->TelefoneDDD);
+			$associado->Telefone = $this->UNumero->SomenteNumeros($associadoRequest->Telefone);
+			$associado->CelularDDD = $this->UNumero->SomenteNumeros($associadoRequest->CelularDDD);
+			$associado->Celular = $this->UNumero->SomenteNumeros($associadoRequest->Celular);
 
-            $associado->AceiteNovidades = $this->request->data["Associados"]["AceiteNovidades"] == 1 ? 1 : 0;
-            $associado->AceiteLembreteDoacao = $this->request->data["Associados"]["AceiteLembreteDoacao"] == 1 ? 1 : 0;
+            $associado->AceiteRadarTb = $this->request->data["Associados"]["AceiteRadarTb"] == 1 ? 1 : 0;
+			$associado->AceiteNovidades = $this->UNumero->SomenteNumeros($associadoRequest->AceiteNovidades) == 1 ? 1 : 0;
+			$associado->AceiteLembreteDoacao = $this->request->data["Associados"]["AceiteLembreteDoacao"] == 1 ? 1 : 0;
             $associado->ExibeLista = $this->request->data["Associados"]["ExibeLista"] == 1 ? 1 : 0;
+            $associado->CodigoEscolaridadeTipo = $this->UNumero->ValidarNumero($dados["CodigoEscolaridadeTipo"]);
             
 
             $tipo_id = $this->get_id_como_conheceu_tipo($this->request->data["Associados"]["CodigoComoConheceuTB"]);
