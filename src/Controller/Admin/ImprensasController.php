@@ -83,7 +83,7 @@ class ImprensasController extends AppController
                 $this->redirect(array('action' => 'index'));
             }
         }
-        if($imprensa->DataPublicacao)
+        if($imprensa->DataPublicacao && !$temErro)
             $imprensa->DataPublicacao = $this->UData->ConverterDataBrasil($imprensa->DataPublicacao);
 
         $categorias = TableRegistry::get('ImprensasCategoria')->find('list', ['keyField' => 'Codigo', 'valueField' => 'Nome']);
