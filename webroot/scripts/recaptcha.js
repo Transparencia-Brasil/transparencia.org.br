@@ -27,3 +27,9 @@ function onSubmitRecaptchaNewsltter(token) {
 
   $(formId).submit();
 }
+
+$(function() {
+    $("form").prepend(
+      '<input type="text" class="campoOculto" name="apelido" value="">'
+    );
+});

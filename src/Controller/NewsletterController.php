@@ -139,9 +139,15 @@ class NewsletterController extends AppController
             $newsletter->optin_radar_tb = $this->UNumero->ValidarNumero($dados["optin_radar_tb"]) > 0 ? 1 : 0;
             
             if (!$this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "ajax-newsletter")) {
-                $erro = true;
+                $error = true;
                 $mensagem = 'Por favor, complete a validação anti-robo.[2]';
             }
+
+            if(strlen(trim($dados["apelido"])) > 0) {
+                $error = true;
+                $mensagem = 'Você não passou na validação anti-robo.[2]';
+            }
+
             if (!$error) {
                 if($newsletter != null)
                 {
