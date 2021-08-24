@@ -165,8 +165,6 @@
 </div>
 </div>
 <!-- Conteudo -->
-<script src="https://www.google.com/recaptcha/api.js"></script>
-<script src="/scripts/recaptcha.js"></script>
 <script type="text/javascript">
     $("#CodigoComoConheceuTB").on('change',function(ev) {
     //Se está checado faz aparecer os campos, caso contrário esconda os campos

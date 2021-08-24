@@ -58,31 +58,36 @@ class NewsletterController extends AppController
 		$erro = false;
 		if($newsletter != null)
 		{
-			if ($newsletter->Optin_newsletter == 0 && $newsletter->optin_radar_tb == 0) {
-				$mensagem = "Você precisa selecionar pelo menos uma assinatura.";
-			} else {
-				$erros = $newsletter->errors();
-				if(count($erros) > 0){
-					$erro = true;
-					$mensagem = 'Erro ao cadastrar email para newsletter.[1]';
-				}else{
-                    // insere um novo usuário de newsletter
-                    $token = $this->createDoubleOptinToken($newsletter->Email);
-					$email_encontrado = TableRegistry::get('Newsletters')->inserir($newsletter->Nome, $newsletter->Email,$newsletter->Optin_newsletter,$newsletter->Optin_press,$newsletter->Cidade,$newsletter->UF,$newsletter->Veiculo,$newsletter->Telefone,$newsletter->DDD,$token,$newsletter->Origem,$newsletter->optin_radar_tb);
+            if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "pagina-newsletter") && strlen(trim($dados["apelido"])) <= 0) {
+                if ($newsletter->Optin_newsletter == 0 && $newsletter->optin_radar_tb == 0) {
+                    $mensagem = "Você precisa selecionar pelo menos uma assinatura.";
+                } else {
+                    $erros = $newsletter->errors();
+                    if(count($erros) > 0){
+                        $erro = true;
+                        $mensagem = 'Erro ao cadastrar email para newsletter.[1]';
+                    }else{
+                        // insere um novo usuário de newsletter
+                        $token = $this->createDoubleOptinToken($newsletter->Email);
+                        $email_encontrado = TableRegistry::get('Newsletters')->inserir($newsletter->Nome, $newsletter->Email,$newsletter->Optin_newsletter,$newsletter->Optin_press,$newsletter->Cidade,$newsletter->UF,$newsletter->Veiculo,$newsletter->Telefone,$newsletter->DDD,$token,$newsletter->Origem,$newsletter->optin_radar_tb);
 
-					if ($email_encontrado) {
-						$mensagem = 'Seu email já está cadastrado na nossa newsletter.';
-					} else {
-                        //dispara email
-                        UEmailComponent::EmailNewsletterDoubleOptin($newsletter->Nome, $newsletter->Email,$token);
-						$mensagem = 'Enviamos um email para ' .$newsletter->Email . '.<br><br>Acesse sua caixa de entrada ou de spam para finalizar a assinatura da newsletter.';
-					}
+                        if ($email_encontrado) {
+                            $mensagem = 'Seu email já está cadastrado na nossa newsletter.';
+                        } else {
+                            //dispara email
+                            UEmailComponent::EmailNewsletterDoubleOptin($newsletter->Nome, $newsletter->Email,$token);
+                            $mensagem = 'Enviamos um email para ' .$newsletter->Email . '.<br><br>Acesse sua caixa de entrada ou de spam para finalizar a assinatura da newsletter.';
+                        }
 
-					//evita reenvio de dados
-					$this->request->session()->write('guidContatoEnviado', $guid);
-					$this->request->data = [];
-				}
-			}
+                        //evita reenvio de dados
+                        $this->request->session()->write('guidContatoEnviado', $guid);
+                        $this->request->data = [];
+                    }
+                }
+            } else {
+                $erro = true;
+                $mensagem = 'Por favor, complete a validação anti-robo.[2]';
+            }
 		}else{
 			$erro = true;
 			$mensagem = 'Erro ao cadastrar email para newsletter.[2]';
@@ -142,7 +147,6 @@ class NewsletterController extends AppController
                 $error = true;
                 $mensagem = 'Por favor, complete a validação anti-robo.[2]';
             }
-
             if(strlen(trim($dados["apelido"])) > 0) {
                 $error = true;
                 $mensagem = 'Você não passou na validação anti-robo.[2]';
