@@ -47,8 +47,6 @@
 			<!-- Form -->
 	</div>
 </div>
-<script src="https://www.google.com/recaptcha/api.js"></script>
-<script src="/scripts/recaptcha.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
       <?php 
