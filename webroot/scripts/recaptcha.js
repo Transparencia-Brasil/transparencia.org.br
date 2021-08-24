@@ -29,7 +29,10 @@ function onSubmitRecaptchaNewsltter(token) {
 }
 
 $(function() {
-    $("form").prepend(
+    $("#frmContato").prepend(
+      '<input type="text" class="campoOculto" name="apelido" value="">'
+    );
+    $("#frmNewsletter").prepend(
       '<input type="text" class="campoOculto" name="apelido" value="">'
     );
 });
