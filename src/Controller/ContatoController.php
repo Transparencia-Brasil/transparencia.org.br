@@ -69,7 +69,7 @@ class ContatoController extends AppController
             $guid_anterior = $this->request->session()->read('guidContatoEnviado');
             $guid = $this->UString->AntiXSSComLimite($dados["guid"], 100);
 
-            if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "contato")) {
+            if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "contato") && strlen(trim($dados["apelido"])) <= 0) {
 
                 // tentativa de reenvio de formulário
                 if($guid == null || ($guid_anterior != null && $guid == $guid_anterior)){

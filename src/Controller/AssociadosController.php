@@ -69,7 +69,8 @@ class AssociadosController extends AppController
 
         if ($this->request->is(['post'])) {
             $dados = $this->request->data;
-            if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "associados-novo")) {
+
+            if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "associados-novo") && strlen(trim($dados["apelido"])) <= 0) {
                 $novoAssociado = new Associado();
             
             // busca dados e valida informações
@@ -431,7 +432,7 @@ class AssociadosController extends AppController
 
         if ($this->request->is(['post', 'put'])) {
             $dados = $this->request->data;
-            if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "associados-entrar")) {
+            if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "associados-entrar") && strlen(trim($dados["apelido"])) <= 0) {
                 $Cpf_db = TableRegistry::get('associados')->find()->where(['CPF' => $Cpf])->first();
                 if (empty($Cpf_db)) {
                     $this->redirect('/associados/login?err=1');
