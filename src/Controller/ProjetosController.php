@@ -65,7 +65,10 @@ class ProjetosController extends AppController
         ini_set("allow_url_fopen", 1);
         $this->render('politica_de_privacidade');
     }
-
+    public function eduPrivacy(){
+        ini_set("allow_url_fopen", 1);
+        $this->render('politica_de_privacidade_edu');
+    }
     public function obratransparente(){
         ini_set("allow_url_fopen", 1);
         $json = file_get_contents('dados/faq-obra_transparente-projeto.json');

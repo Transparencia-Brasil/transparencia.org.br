@@ -96,6 +96,7 @@ Router::connect('/newsletter/validacao', array('controller' => 'Newsletter', 'ac
 
 Router::connect('/projetos/transparencia-algoritmica', array('controller' => 'Projetos', 'action' => 'transparenciaAlgoritmica'));
 Router::connect('/projetos/tadepe/politica-de-privacidade', array('controller' => 'Projetos', 'action' => 'tdpPrivacy'));
+Router::connect('/projetos/chatbotedu/politica-de-privacidade', array('controller' => 'Projetos', 'action' => 'eduPrivacy'));
 
 // atalho SEO para Projetos
 //Router::connect('/projetos/tadepe', array('controller' => 'Projetos', 'action' => 'tadepe'));
