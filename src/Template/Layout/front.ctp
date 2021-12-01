@@ -148,17 +148,28 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
         <div class="row">
           <div class="donate-box text-center">
             <p class="text-gray">Ajude-nos nesta causa, doe para a Transparência Brasil</p>
+            <div class="row">
+              <div class="col-12 col-md-6 ml-md-4 text-center text-md-right">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="hosted_button_id" value="68FLUZYMNX6G4">
+                  <input type="image" class="donation-button img-fluid" src="<?= BASE_URL ?>images/btn-paypal.png" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!" onclick='registrarEvento("botao_<?= str_replace("-", "_", $slug) ?>","clique","botao_paypal")'>
+                  <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+                </form>
+              </div>
+              <div class="col-12 col-md-5 text-center text-md-left pt-4 pt-md-0 pl-md-2">
+              <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+                <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post" target="_blank">
+                  <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                  <input type="hidden" name="currency" value="BRL" />
+                  <input type="hidden" name="receiverEmail" value="doacoes@transparencia.org.br" />
+                  <input type="hidden" name="iot" value="button" />
+                  <input type="image" src="<?= BASE_URL ?>images/btn-pagseguro.png" name="submit" class="donation-button" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                </form>
+              <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+              </div>
+            </div>
             <p>Somos uma entidade sem fins lucrativos que depende de doações para manter atividades de monitoramento do poder público e busca por transparência. Ajude-nos a continuar esse trabalho independente.</p>
-            <a href="/apoie/doacoes">
-              <img class="donate" src="<?= BASE_URL ?>images/ico-doacao.png" onclick='registrarEvento("botao_<?= str_replace("-", "_", $slug) ?>","clique","doacao_pontual")' alt="Pague com PagSeguro - é rápido, grátis e seguro!">
-            </a>
-            <p class="text-gray"> Doe com Paypal</p>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="hosted_button_id" value="68FLUZYMNX6G4">
-              <input type="image" class="donation-button" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!" onclick='registrarEvento("botao_<?= str_replace("-", "_", $slug) ?>","clique","botao_paypal")'>
-              <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
-            </form>
           </div>
         </div>
       </div>
