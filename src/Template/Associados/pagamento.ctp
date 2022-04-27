@@ -46,7 +46,7 @@
       </div>
       <div>
         <p>
-          Para atualizar dados cadastrais ou em caso de dúvida, entre em contato com a Transparência Brasil pelo telefone <a href="tel:+55 (11) 3259-6986">+55 (11) 3259-6986</a> ou pelo e-mail <a href="mailto:lcardoso@transparencia.org.br">lcardoso@transparencia.org.br</a>.
+          Para atualizar dados cadastrais ou em caso de dúvida, entre em contato com a Transparência Brasil pelo telefone <a href="tel:+55 (11) 95050-4257">+55 (11) 95050-4257</a> ou pelo e-mail <a href="mailto:contato@transparencia.org.br">contato@transparencia.org.br</a>.
         </p>
       </div>
     </div>
