@@ -223,7 +223,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
             <!--<p>R. Prof. João Marinho, 161, São Paulo - SP, 04007-010.<br>Tel.: +55 (11) 3259-6986 e +55 (11) 95050-4257.-->
             <p>R. Prof. João Marinho, 161, São Paulo - SP, 04007-010.<br> +55 (11) 95050-4257
               <br />
-              E-mail: <a href="mailto:contato@transparencia.org.br">contato@transparencia.org.br</a>
+              E-mail: <a href="mailto:contato@transparencia.org.br">contato@transparencia.org.br</a> | Imprensa: <a href="mailto:imprensa@transparencia.org.br">imprensa@transparencia.org.br</a>
             </p>
             <small>© <?= date('Y') ?> - TODOS OS DIREITOS RESERVADOS À TRANSPARÊNCIA BRASIL</small>
           </div>
