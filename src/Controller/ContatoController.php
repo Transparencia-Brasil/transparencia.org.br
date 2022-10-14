@@ -27,7 +27,7 @@ class ContatoController extends AppController
                         // 1 => "Projeto Excelências / Congresso", 
                         // 2 => "Projeto Às Claras / financiamento eleitoral", 
                         // 3 => "Projeto Meritíssimos / STF", 
-                        4 => "Solicitação de entrevista", 
+                        // 4 => "Solicitação de entrevista", 
                         // 5 => "Como ajudar a Transparência Brasil", 
                         // 6 => "Outros", 
                         7 => "Informações sobre voluntariado", 
