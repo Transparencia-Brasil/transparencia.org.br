@@ -9,6 +9,7 @@
     <hr/>
     <p>A Transparência Brasil não investiga ou encaminha denúncias de corrupção. Para essas questões, sugerimos entrar em contato com veículos de imprensa, com corregedorias e controladorias estaduais e municipais ou com o Ministério Público local.
     </p>
+    <p><strong>Atendimento à imprensa:</strong <a href="mailto:imprensa@transparencia.org.br">imprensa@transparencia.org.br</a></p>
   </div>
 </div>
   <!-- Título -->
