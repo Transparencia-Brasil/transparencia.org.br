@@ -45,7 +45,7 @@ class UEmailComponent extends Component
 	public static function EmailAdmAvisoNovoAssociado($nome, $email)
 	{
 		
-		$email_destino = "contato@transparencia.org.br";
+		$email_destino = "associados@transparencia.org.br";
 		$assuntoEmail = " [transparencia.org.br] Novo associado para moderação: " . $nome;
 		$replyEmail = $email;
 
