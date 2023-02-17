@@ -1,8 +1,7 @@
 User-Agent: *
-Disallow: 
-Allow: /
 Disallow: /uploads/auditoriascontabilidade/
 Disallow: /uploads/auditoriascontabilidade/*
-
+Disallow: 
+Allow: /
 
 Sitemap: https://www.transparencia.org.br/sitemap.xml
