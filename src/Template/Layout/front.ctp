@@ -61,17 +61,14 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
 
   <script src="/scripts/main.js"></script>
 
-  <!-- Global site tag (gtag.js) - Google Ads: 863777578 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-863777578"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Q93JSV8P7"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'AW-863777578');
-    gtag('config', 'UA-64813818-1');
+  gtag('config', 'G-5Q93JSV8P7');
   </script>
 
   <script type="text/javascript">
