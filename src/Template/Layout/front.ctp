@@ -7,6 +7,16 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
 <html class="no-js" lang="pt-BR">
 
 <head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Q93JSV8P7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5Q93JSV8P7');
+  </script>
   <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -60,16 +70,6 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
   <script src="/scripts/vendor.js"></script>
 
   <script src="/scripts/main.js"></script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Q93JSV8P7"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5Q93JSV8P7');
-  </script>
 
   <script type="text/javascript">
     var base_url = '<?= BASE_URL ?>';
