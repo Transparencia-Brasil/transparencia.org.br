@@ -88,6 +88,7 @@ Router::connect('/apoie/associados', array('controller' => 'Associados', 'action
 Router::connect('/apoie/associados/associar-se', array('controller' => 'Associados', 'action' => 'create'));
 Router::connect('/apoie/associados/confirmacao/:id', array('controller' => 'Associados', 'action' => 'exhibit'),['id' => '[0-9]+']);
 Router::connect('/apoie/associados/editar/:id', array('controller' => 'Associados', 'action' => 'edit'),['id' => '[0-9]+']);
+Router::connect('/associados/pagamento/sucesso', array('controller' => 'Associados', 'action' => 'pagamento_sucesso'));
 Router::connect('/associados/pagamento/:id', array('controller' => 'Associados', 'action' => 'pagamento'),['id' => '[0-9]+']);
 Router::connect('/apoie/associados/sucesso', array('controller' => 'Associados', 'action' => 'sucess'));
 Router::connect('/associados/auth', array('controller' => 'Associados', 'action' => 'auth'));
