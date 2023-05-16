@@ -40,7 +40,7 @@
 				<a href="/apoie/associados/editar/<?=$associado->Codigo?>" class="btn">Editar</a>
 			</div>
 			<div class="btn-primary text-center mgt20">
-				<a href="/apoie/associados/sucesso" class="btn">Confirmar</a>
+				<a href="/associados/pagamento/<?=$associado->Codigo?>" class="btn">Confirmar</a>
 			</div>
     </div>
 			<!-- Form -->
