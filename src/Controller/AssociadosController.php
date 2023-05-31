@@ -185,13 +185,6 @@ class AssociadosController extends AppController
                             TableRegistry::get('Newsletters')->inserir($novoAssociado->Nome, $novoAssociado->Email,$novoAssociado->AceiteNovidades,0,null,null,null,null,null,null,null,$novoAssociado->AceiteRadarTb);
                         }
 
-                            try {
-                                // enviar e-mail
-                                UEmailComponent::EmailAdmAvisoNovoAssociado($novoAssociado->Nome, $novoAssociado->Email);
-                            } catch (\Exception $ex) {
-                                Log::write('error', "Falha ao Enviar o Email: " .  $ex->getMessage());
-                            }
-
                             $this->Flash->success('Informações salvas com sucesso! Você será redirecionado para o site do PagSeguro para fazer sua doação. Obrigado!');                    
                             $this->set('redirectDoacao', true);
                             // cria nova transaçação
@@ -492,6 +485,14 @@ class AssociadosController extends AppController
             $this->redirect(array('action' => 'index'));
             return;
         }
+
+        try {
+            // enviar e-mail
+            UEmailComponent::EmailAdmAvisoNovoAssociado($associado->Nome, $associado->Email);
+        } catch (\Exception $ex) {
+            Log::write('error', "Falha ao Enviar o Email: " .  $ex->getMessage());
+        }
+
         $this->set('estados', $estados);
         $this->set('mensagemErro', $mensagemErro);
         $this->set('comoConheceu', $comoConheceu);
