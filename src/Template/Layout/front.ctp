@@ -99,6 +99,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
             </div>
             <div class="col-lg-9 col-8 pr-0 pt-4">
               <div class="navbar-nav justify-content-end new-social d-none d-lg-block">
+                <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","instagram")' href="https://www.instagram.com/transparenciabrasil/" target="_blank"><img src="<?= BASE_URL ?>images/icon-instagram.png" alt="Instagram"></a>
                 <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","facebook")' href="https://www.facebook.com/pages/Transpar%C3%AAncia-Brasil/280994653587" target="_blank"><img src="<?= BASE_URL ?>images/icon-facebook.png" alt="Facebook"></a>
                 <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","twitter")' href="https://twitter.com/trbrasil" target="_blank"><img src="<?= BASE_URL ?>images/icon-twitter.png" alt="Twitter"></a>
                 <a class="nav-item nav-link" href="https://www.youtube.com/channel/UC0u-wEXIkxqq1hVUMtETfcA" onclick='registrarEvento("home_social","clique","youtube")' target="_blank"><img src="<?= BASE_URL ?>images/icon-youtube.png" alt="Sound Cloud"></a>
