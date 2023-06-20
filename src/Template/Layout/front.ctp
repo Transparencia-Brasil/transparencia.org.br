@@ -88,14 +88,14 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
   if (!isset($showHeader)) {
   ?>
     <header class="new-header">
-      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
         <div class="container pb-2 pt-3 pr-0">
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="row new-menu">
             <div class="col-3">
-             <a href="/"><img src="/img/logos/logo-tb.svg?cache=3" class="d-inline-block logo-image"></a>
+              <a href="/"><img src="/img/logos/logo-tb.svg?cache=3" class="d-inline-block logo-image"></a>
             </div>
             <div class="col-lg-9 col-8 pr-0 pt-4">
               <div class="navbar-nav justify-content-end new-social d-none d-lg-block">
@@ -117,6 +117,10 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
                   <a title="Newsletter" class="nav-item nav-link menu <?= $slug_pai == "newsletter" ? "ativo" : "" ?>" onclick='registrarEvento("menu_superior","clique","newsletter")' href="<?= $this->Url->build(['controller' => 'Newsletter', 'action' => 'index']) ?>">Newsletter</a>
                 </div>
                 <div class="d-block d-lg-none new-social-mobile">
+                  <div id="translate_mob"> <img src="<?= BASE_URL ?>img/trad.png" class="tr_b"> </div>
+                  <div class="trad" id="google_translate_element_mob"></div>
+                </div>                  
+                <div class="d-block d-lg-none new-social-mobile">
                   <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","instagram")' href="https://www.instagram.com/transparenciabrasil/" target="_blank"><img src="<?= BASE_URL ?>images/icon-instagram.png" alt="Instagram"></a>
                   <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","facebook")' href="https://www.facebook.com/pages/Transpar%C3%AAncia-Brasil/280994653587" target="_blank"><img src="<?= BASE_URL ?>images/icon-facebook.png" alt="Facebook"></a>
                   <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","twitter")' href="https://twitter.com/trbrasil" target="_blank"><img src="<?= BASE_URL ?>images/icon-twitter.png" alt="Twitter"></a>
@@ -124,24 +128,31 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
                   <a class="nav-item nav-link" href="https://soundcloud.com/transpar-ncia-brasil" onclick='registrarEvento("home_social","clique","soundcloud")' target="_blank"><img src="<?= BASE_URL ?>images/icon-soundcloud.png" alt="Youtube"></a>
                 </div>
               </div>
+              <div class="col-12 my-2 p-0 text-right d-none d-lg-block">
+                <div id="translate"> <img src="<?= BASE_URL ?>img/trad.png" class="tr_b"> </div>
+                <div class="trad" id="google_translate_element"></div>
+                <script type="text/javascript">
+                function googleTranslateElementInit() {
+                  if (isParentHidden(document.getElementById("translate_mob"))) {
+                    new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+                  } else {
+                    new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element_mob');
+                  }
+                }
+                function isParentHidden(element) {
+                  var parent = element.parentNode;
+                  if (parent) {
+                  return window.getComputedStyle(parent).display === 'none';
+                  }
+                  return false;
+                }                
+                </script>
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+                </script>
+              </div>              
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-        <div class="col-lg-9 col-8 pr-4 pt-4">
-          <div id="translate"> <img src="<?= BASE_URL ?>img/trad.png" class="tr_b"> </div>
-          <div class="trad" id="google_translate_element"></div>
-          <script type="text/javascript">
-            function googleTranslateElementInit() {
-              new google.translate.TranslateElement({
-                pageLanguage: 'pt'
-              }, 'google_translate_element');
-            };
-          </script>
-          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-          </script>
-        </div>
-      </div>
       </nav>
     </header>
 
