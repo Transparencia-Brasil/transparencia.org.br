@@ -117,6 +117,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
                   <a title="Newsletter" class="nav-item nav-link menu <?= $slug_pai == "newsletter" ? "ativo" : "" ?>" onclick='registrarEvento("menu_superior","clique","newsletter")' href="<?= $this->Url->build(['controller' => 'Newsletter', 'action' => 'index']) ?>">Newsletter</a>
                 </div>
                 <div class="d-block d-lg-none new-social-mobile">
+                  <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","instagram")' href="https://www.instagram.com/transparenciabrasil/" target="_blank"><img src="<?= BASE_URL ?>images/icon-instagram.png" alt="Instagram"></a>
                   <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","facebook")' href="https://www.facebook.com/pages/Transpar%C3%AAncia-Brasil/280994653587" target="_blank"><img src="<?= BASE_URL ?>images/icon-facebook.png" alt="Facebook"></a>
                   <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","twitter")' href="https://twitter.com/trbrasil" target="_blank"><img src="<?= BASE_URL ?>images/icon-twitter.png" alt="Twitter"></a>
                   <a class="nav-item nav-link" href="https://www.youtube.com/channel/UC0u-wEXIkxqq1hVUMtETfcA" onclick='registrarEvento("home_social","clique","youtube")' target="_blank"><img src="<?= BASE_URL ?>images/icon-youtube.png" alt="Sound Cloud"></a>
