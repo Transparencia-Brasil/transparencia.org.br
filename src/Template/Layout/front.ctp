@@ -57,7 +57,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
 
   <?= $this->fetch('meta'); ?>
 
-  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/main.css?cache=1">
   <?php
       if ($this->request->here == '/projetos/obratransparente') {
     ?>
