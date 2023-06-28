@@ -1,5 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    Redirect /minhaescolacheck https://www.subscribepage.com/minhaescolacheeeck 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
     php_value upload_max_filesize 20M
