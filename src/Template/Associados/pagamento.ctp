@@ -20,10 +20,13 @@
 				<h2 class="title-pages">Associe-se</h2>
 				<hr/>
 				<p>
-        Faça o pagamento para efetivar ou renovar sua associação.
+        <b>É necessário realizar o pagamento para efetivar ou renovar sua associação.</b>
         </p>
         <p>
         A contribuição financeira mínima é de R$ 50 mensais ou R$ 540 anuais para sócios-participantes (pessoas físicas, votantes). A contribuição pode ser maior, a critério do associado.
+        </p>
+        <p>
+        Após concluir o pagamento, sua associação será enviada para aprovação do nosso Conselho. Caso haja algum problema, nós comunicaremos você e, se necessário, realizaremos a devolução da sua contribuição.
         </p>
         <p>
         Escolha um dos meios de pagamento abaixo. Ambos possibilitam pagamento com cartão de crédito e não é necessário ter cadastro no PagSeguro ou no PayPal.
@@ -50,7 +53,7 @@
         </p>
       </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
       <!-- Form -->
       <div class="col-12 col-md-2 no_pd pt-5">
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
