@@ -120,7 +120,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
                   <div id="translate_mob"> <img src="<?= BASE_URL ?>img/trad.png" class="tr_b"> </div>
                   <div class="trad" id="google_translate_element_mob"></div>
                 </div>                  
-                <div class="d-block d-lg-none new-social-mobile">
+                <div class="d-block d-sm-flex d-lg-none new-social-mobile">
                   <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","instagram")' href="https://www.instagram.com/transparenciabrasil/" target="_blank"><img src="<?= BASE_URL ?>images/icon-instagram.png" alt="Instagram"></a>
                   <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","facebook")' href="https://www.facebook.com/pages/Transpar%C3%AAncia-Brasil/280994653587" target="_blank"><img src="<?= BASE_URL ?>images/icon-facebook.png" alt="Facebook"></a>
                   <a class="nav-item nav-link" onclick='registrarEvento("home_social","clique","twitter")' href="https://twitter.com/trbrasil" target="_blank"><img src="<?= BASE_URL ?>images/icon-twitter.png" alt="Twitter"></a>
