@@ -46,3 +46,4 @@
 </div>
 <!-- Conteudo -->
 <script src="/scripts/publicacoes.js"></script>
+<script src="/scripts/gtag.js"></script>

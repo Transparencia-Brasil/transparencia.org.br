@@ -5,7 +5,8 @@ function pesquisarPublicacoes(a) {
     };
     else if (2 == a) {
         if (busca = $("#Busca").val().toString(), busca.length < 3) return void alert("Digite pelo menos três letras para a busca.");
-        registrarEvento("busca", "clique", busca), url = base_url + "publicacoes/pesquisarPublicacoesPorBusca/", data = {
+        registrarEvento("busca", "clique", busca), url = base_url + "publicacoes/pesquisarPublicacoesPorBusca/", 
+        data = {
             busca: busca
         }
     } else url = base_url + "publicacoes/listarPublicacoes/", data = {};
@@ -34,7 +35,10 @@ $(document).ready(function() {
     }), $("#Ano").change(function() {
         pesquisarPublicacoes(1)
     }), $("#Busca").bind("keydown keyup", function(a) {
-        13 == a.keyCode && $("#btnPesquisar").click()
+        if (13 == a.keyCode) {
+            a.preventDefault();
+            pesquisarPublicacoes(2);
+        }
     }), $("#btnPesquisar").click(function() {
         pesquisarPublicacoes(2)
     }), "#relatorios" == window.location.hash && ($("#Ano option:contains(2015)").attr("selected", !0), $("#Categoria option:contains('RelatÃ³rios')").attr("selected", !0), $("#Categoria").trigger("change"))
