@@ -70,13 +70,12 @@ class ContatoController extends AppController
 
             $guid_anterior = $this->request->session()->read('guidContatoEnviado');
             $guid = $this->UString->AntiXSSComLimite($dados["guid"], 100);            
-
             if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "contato") && strlen(trim($dados["apelido"])) <= 0) {
 
                 // tentativa de reenvio de formulário
                 if($guid == null || ($guid_anterior != null && $guid == $guid_anterior)){
                     $erro = true;
-                    $mensagem = 'Erro ao enviar contato.[3]';
+                    $mensagem = 'Este formulário já foi enviado. Favor clicar no link do contato para enviar novamente.[3]';
                     $this->request->data = [];
                 }else{
        		
@@ -110,17 +109,17 @@ class ContatoController extends AppController
 
                                 // evita reenvio de dados
                                 $this->request->session()->write('guidContatoEnviado', $guid);
-
-                                $contato = new Contato();
                                 $this->request->data = [];
                                 $mensagem = 'Mensagem enviada com sucesso.';
                                 
                                 try {
                                     // enviar e-mail
-                                    UEmailComponent::EmailAdmAvisoContato($contato->Nome, $contato->Email);
+                                    UEmailComponent::EmailAdmAvisoContato($contato->Nome, $contato->Email, $this->assuntos[$contato->CodigoAssunto], $contato->Mensagem);
                                 } catch (\Exception $ex) {
                                     Log::write('error', "Falha ao Enviar o Email: " .  $ex->getMessage());
                                 }
+
+                                $contato = new Contato();
                             }
                         }
                     } else {

@@ -81,7 +81,7 @@ class UEmailComponent extends Component
 		return UEmailComponent::EnviarEmail("", $email_destino, $assuntoEmail, $conteudo, true, $replyEmail, 'default');		
 	}
 
-	public static function EmailAdmAvisoContato($nome, $email)
+	public static function EmailAdmAvisoContato($nome, $email,$assunto,$mensagem)
 	{
 		
 		$email_destino = "imprensa@transparencia.org.br";
@@ -96,8 +96,8 @@ class UEmailComponent extends Component
 		$conteudo = str_replace("{URL}",BASE_URL."painel-ctl",$conteudo);
 		$conteudo = str_replace("{NOME}", $nome, $conteudo);
 		$conteudo = str_replace("{EMAIL}", $email, $conteudo);
-		
-		
+		$conteudo = str_replace("{ASSUNTO}", $assunto, $conteudo);
+		$conteudo = str_replace("{MENSAGEM}", $mensagem, $conteudo);
 
 		return UEmailComponent::EnviarEmail("", $email_destino, $assuntoEmail, $conteudo, true, "", 'default');
 	}
