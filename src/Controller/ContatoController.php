@@ -4,6 +4,8 @@ namespace App\Controller;
 use Cake\ORM\TableRegistry;
 use App\Model\Entity\Contato;
 use App\Model\Entity\Newsletter;
+use App\Controller\Component\UEmailComponent;
+use Cake\Log\Log;
 
 class ContatoController extends AppController
 {
@@ -67,7 +69,7 @@ class ContatoController extends AppController
             $contato = new Contato();
 
             $guid_anterior = $this->request->session()->read('guidContatoEnviado');
-            $guid = $this->UString->AntiXSSComLimite($dados["guid"], 100);
+            $guid = $this->UString->AntiXSSComLimite($dados["guid"], 100);            
 
             if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "contato") && strlen(trim($dados["apelido"])) <= 0) {
 
@@ -112,6 +114,13 @@ class ContatoController extends AppController
                                 $contato = new Contato();
                                 $this->request->data = [];
                                 $mensagem = 'Mensagem enviada com sucesso.';
+                                
+                                try {
+                                    // enviar e-mail
+                                    UEmailComponent::EmailAdmAvisoContato($contato->Nome, $contato->Email);
+                                } catch (\Exception $ex) {
+                                    Log::write('error', "Falha ao Enviar o Email: " .  $ex->getMessage());
+                                }
                             }
                         }
                     } else {
