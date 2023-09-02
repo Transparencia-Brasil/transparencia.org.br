@@ -8,16 +8,34 @@
 			<div class="col-12 no_pd">
 				<h2 class="title-pages">Associe-se</h2>
 				<hr/>
-				<p>O Artigo 3º do estatuto da Transparência Brasil prevê três tipos de associados:<br /> 
-				&nbsp;&nbsp;• Sócios-participantes (pessoas físicas, votantes);<br /> 
-				&nbsp;&nbsp;• Institucionais (organizações da sociedade civil, cujos representantes têm os mesmos direitos dos sócios-participantes);<br /> 
-				&nbsp;&nbsp;• Apoiadores (empresas, não-votantes).<br />
+				<p>Para ser associada ou associado é necessário compartilhar do objetivo da Transparência Brasil de promover a transparência e 
+					integridade dos órgãos públicos, e a participação social nos processos de elaboração e monitoramento das políticas públicas.
 				</p>
-				<p>A inclusão de novos sócio-participantes é dada por meio da aprovação no Conselho Deliberativo da entidade. Para tanto, é necessário estar ciente das normas para associação, preencher a ficha abaixo e comprometer-se a uma contribuição financeira mínima de R$ 50 mensais ou de R$ 540 anuais (10% de desconto sobre o valor anualizado). A contribuição pode ser maior, a critério do associado.
+				<p>
+				Ao se associar, você não responderá pelas obrigações da TB, devendo apenas cumprir <a href="/quem_somos#estatuto"> nosso estatuto</a>,
+				 manter suas informações cadastrais atualizadas e ter vontade de fortalecer a organização.
+				  Você também pode se desligar quando desejar.
 				</p>
-				<p>Para sócios-institucionais ou apoiadores, a contribuição mínima é de R$ 1.000 mensais. Os interessados deverão enviar e-mail para <a class="#" href="mailto:doacoes@transparencia.org.br"
-					 class="linkExterno">doacoes@transparencia.org.br</a> para mais instruções.
+				<p>
+					O artigo 3º do estatuto da Transparência Brasil prevê três tipos de associados:
 				</p>
+				<ul>
+					<li>Sócios-participantes (pessoas físicas, votantes);</li>
+					<li>Institucionais (organizações da sociedade civil, cujos representantes têm os mesmos direitos dos sócios-participantes);</li>
+					<li>Apoiadores (empresas, não-votantes).</li>
+				</ul>
+				<p>
+				A inclusão de novos sócio-participantes é dada por meio da aprovação pelo Conselho Deliberativo da entidade.
+				 Para tanto, é necessário estar ciente das normas para associação, preencher a ficha abaixo e comprometer-se a uma 
+				 contribuição financeira mínima de R$ 50 mensais ou de R$ 540 anuais (10% de desconto sobre o valor anualizado).
+				  A contribuição pode ser maior, a critério do associado.
+				</p>
+
+				<p>
+				Para sócios-institucionais ou apoiadores, a contribuição mínima é de R$ 1.000 mensais. 
+				Os interessados deverão enviar e-mail para <a href="mailto:doacoes@transparencia.org.br">doacoes@transparencia.org.br</a> para mais informações.
+				</p>
+
 				<p>
 					<strong>Saiba mais:<br /></strong>
 					<a href="#" data-toggle="modal" data-target=".normas">Normas para associação à Transparência Brasil</a><br />
@@ -93,7 +111,8 @@
 							<?=$this->Form->select('UF', $estados, ['id' => 'UF','class' => 'custom-select full-w', 'tabindex' => '3']) ?>
 						</div>
 						<div class="col-12 pd10">
-							<?=$this->Form->input('Cidade', ['id' => 'Cidade', 'class' => 'custom-select full-w', 'tabindex' => '5']) ?>
+							<label class="label-input" for="inlineFormCustomSelect">Cidade</label>
+							<?=$this->Form->select('Cidade', array(), ['id' => 'Cidade','class' => 'custom-select full-w', 'tabindex' => '5']) ?>							
 						</div>
 						<div class="col-12 pd10">
 							<label for="Telelefone">Telefone</label>
@@ -167,14 +186,39 @@
 <!-- Conteudo -->
 <script type="text/javascript">
     $("#CodigoComoConheceuTB").on('change',function(ev) {
-    //Se está checado faz aparecer os campos, caso contrário esconda os campos
-    console.log($(this).children("option:selected"). val());
-    if ($(this).children("option:selected"). val() == 10) {
-        $('.press').css("display", "block");
-    } else {
-        $('.press').css("display", "none");
-    }
-  });
+		//Se está checado faz aparecer os campos, caso contrário esconda os campos
+		console.log($(this).children("option:selected"). val());
+		if ($(this).children("option:selected"). val() == 10) {
+			$('.press').css("display", "block");
+		} else {
+			$('.press').css("display", "none");
+		}
+  	});
+
+	$("#UF").on("change", function(ev) {
+	  var selectedUF = $("#UF").val();
+
+	  $('#Cidade')
+    		.empty()
+    		.append('<option selected="selected" value="__">Carregando..</option>')
+
+	  $.get("/dados/municipios.json", function(muns, jqxhr) {
+		var munsDaUF = muns.filter(function(u) {
+			return u.UF == selectedUF;
+		});
+
+		$('#Cidade')
+    		.empty();
+
+		munsDaUF.forEach(function(mun) {
+			var optionMun = $("<option>")
+				.attr("value", mun.Nome)
+				.html(mun.Nome);
+
+			$('#Cidade').append(optionMun);
+		});
+	  });
+	});
 </script>
 
 <!-- Modal -->
