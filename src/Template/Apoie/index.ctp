@@ -68,7 +68,7 @@
         ICONE
     </div>
     <div class="col">
-        <h3 class="apoie-title"><a href="https://docs.google.com/forms/d/e/1FAIpQLScloWXPsVKJ4Vrr8kyaFcx_B33TKL5BBd95ysTfWeB3sWli7w/viewform" class="btn btn-apoie">RENOVE SUA ASSOCIAÇÃO OU ATUALIZE SEU CADASTRO</a></h3>
+        <h3 class="apoie-title"><a href="/associados/login" class="btn btn-apoie">RENOVE SUA ASSOCIAÇÃO OU ATUALIZE SEU CADASTRO</a></h3>
         <p>Deixou de ser associado(a) da Transparência Brasil ou sua associação está próxima de expirar? 
             Renove agora mesmo e continue sua participação em atividades, previstas no estatuto, 
             e contribua com o fortalecimento do nosso trabalho independente!</p>
