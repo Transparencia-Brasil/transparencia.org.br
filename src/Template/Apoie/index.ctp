@@ -3,54 +3,92 @@
   $this->assign('description', 'Com sua doação, podemos manter a organização com sua atuação independente.');
 ?>
 
-
 <!-- Título -->
 <div class="container content-box">
   <div class="container">
-      <div class="row">
-        <div class="col-12 px-0 pb-3">
-        <img src="images/topos/camara.jpg" width="100%" class="img-fluid" alt="Apoie a Transparência Brasil">
-        </div>
+  <div class="row">
+    <div class="col pt-4"></div>
+  </div>
+      <div class="row pt-5">
         <div class="col-12 no_pd">
         <h2 class="title-pages">Apoie a Transparência Brasil</h2>
         <hr/>
-        <p>A Transparência Brasil é uma organização independente, sem fins lucrativos que depende do apoio da sociedade para manter atividades de monitoramento do poder público e busca por transparência.</p>
-        <p>Com sua doação, podemos manter a organização com sua atuação independente e você também colabora com o desenvolvimento de novos projetos que visam a aumentar o controle social sobre a administração pública.</p>
-      </div>
+        <p>
+            A Transparência Brasil é uma organização independente e sem fins lucrativos que conta com o apoio da sociedade para manter atividades de monitoramento, 
+            transparência e integridade do poder público. 
+          <b> Sua contribuição é essencial para continuarmos atuando! </b>
+        </p>
+        </div>
   </div>
   <!-- Título -->
 
   <!-- Conteudo -->
-<div class="row">
-
-    <div class="col-sm-6">
-        <div class="card">
-            <div class="card-block">
-                <h3 class="card-title">Faça uma doação pontual!</h3>
-                <p class="card-text">Doe e contribua com nosso trabalho de combate à corrupção e fortalecimento do controle social por meio do uso de tecnologia.</p>
-                <p class="card-text">Ajude a Transparência Brasil a continuar cobrando por mais transparência e a criar novas ferramentas que facilitem a fiscalização das contas e serviços públicos.</p>
-                <div class="card-block px-0">
-                <div class="btn-primary">
-                <a href="/apoie/doacoes" class="btn">Fazer uma doação pontual</a>
-                </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+<div class="row apoie-button">
+    <div class="col-sm-2 apoie-icon">
+        ICONE
     </div>
+    <div class="col">
+        <h3 class="apoie-title"><a href="/apoie/associados" class="btn btn-apoie">ASSOCIE-SE</a></h3>
+        <p>Ao se associar, você, sua organização da sociedade civil ou sua empresa fortalecem uma das mais respeitadas organizações de combate 
+            à corrupção e promoção da transparência pública, além de participarem diretamente na estrutura de governança da Transparência Brasil.</p>
 
-    <div class="col-sm-6">
-        <div class="card">
-            <div class="card-block">
-                <h3 class="card-title">Associe-se!</h3>
-                <p class="card-text">A promoção da transparência e do acesso à informação é uma medida indispensável para o fortalecimento da democracia e para a melhoria da gestão pública.</p>
-                <p class="card-text">Ao se tornar um associado, você fortalece uma das mais respeitadas organizações de combate à corrupção e contribui com sua estruturação.</p>
-                <div class="btn-primary">
-                <a href="/apoie/associados" class="btn">Associar-se</a>
-                </div>
-            </div>
-        </div>
+        <p>A associação de pessoas físicas é feita por meio de contribuição mensal ou anual e dá a você o poder de:</p>
+
+        <ul>
+            <li>Participar com voz e voto na Convenção, a Assembleia Geral que, dentre outras atribuições, elege os Conselhos Fiscal e Deliberativo da TB;</li>
+            <li>Contribuir com sugestões em processos institucionais, como planejamento estratégico;</li>
+            <li>Ocupar cargos eletivos no Conselho Fiscal e Conselho Deliberativo;</li>
+            <li>Acessar em primeira mão informações sobre atividades internas, projetos futuros e articulações da TB com outras organizações.</li>
+        </ul>
+
+        <p>Empresas apoiadoras não têm direito a voto nem a cargos em Conselhos.</p>
+
+        <h5>Para onde vai a minha contribuição?</h5>
+
+        <p>Ao se associar à TB, você garante a permanência de atividades transversais a todos os nossos projetos, 
+            como iniciativas para aperfeiçoar propostas de lei e políticas públicas, e para pressionar órgãos públicos pelo 
+            cumprimento dos deveres de transparência e integridade.
+        </p>
+
+        <p>Sua contribuição também assegura a continuidade de nossa interlocução com órgãos públicos com vistas a 
+            colaborar com eles para o aprimoramento de sua integridade e transparência e, conforme necessário,
+             provocá-los a agir em casos de violações.
+        </p>
+
+        <p>A produção de análises que revelam gargalos no acesso a informações e na eficiência do gasto público e
+             a atuação da Transparência Brasil em demandas judiciais (como a que proibiu o Orçamento Secreto) 
+             também são financiadas, em parte, pelas anuidades.
+        </p>
     </div>
+</div>
 
+<div class="row apoie-button">
+    <div class="col-sm-2 apoie-icon">
+        ICONE
+    </div>
+    <div class="col">
+        <h3 class="apoie-title"><a href="https://docs.google.com/forms/d/e/1FAIpQLScloWXPsVKJ4Vrr8kyaFcx_B33TKL5BBd95ysTfWeB3sWli7w/viewform" class="btn btn-apoie">RENOVE SUA ASSOCIAÇÃO OU ATUALIZE SEU CADASTRO</a></h3>
+        <p>Deixou de ser associado(a) da Transparência Brasil ou sua associação está próxima de expirar? 
+            Renove agora mesmo e continue sua participação em atividades, previstas no estatuto, 
+            e contribua com o fortalecimento do nosso trabalho independente!</p>
+
+        <p>Você pode atualizar seus dados cadastrais a partir <a href="https://docs.google.com/forms/d/e/1FAIpQLScloWXPsVKJ4Vrr8kyaFcx_B33TKL5BBd95ysTfWeB3sWli7w/viewform"> deste formulário.</a></p>
+    </div>
+</div>
+</div>
+
+
+
+<div class="row apoie-button">
+    <div class="col-sm-2 apoie-icon">
+        ICONE
+    </div>
+    <div class="col">
+        <h3 class="apoie-title"><a href="/apoie/doacoes" class="btn btn-apoie">FAÇA UMA DOAÇÃO PONTUAL</a></h3>
+        <p>Contribua com o valor que desejar para garantir a continuidade do nosso trabalho de controle social,
+             criação de novas ferramentas que facilitem a fiscalização das contas e serviços públicos e promoção da democracia!</p>
+    </div>
 </div>
 
 <!-- Conteudo -->
