@@ -431,7 +431,7 @@ class AssociadosController extends AppController
                     $this->redirect('/associados/login?err=1');
                 } else {
                     $id = $Cpf_db->Codigo;
-                    $this->redirect('/associados/pagamento/'.$id);
+                    $this->redirect('/associados/pagamento/'.$id.'?type=renovacao');
                 }
             } else {
                 $this->redirect('/associados/login?err=2');
@@ -487,8 +487,13 @@ class AssociadosController extends AppController
         }
 
         try {
-            // enviar e-mail
-            UEmailComponent::EmailAdmAvisoNovoAssociado($associado->Nome, $associado->Email);
+            $type = $this->request->query('type');
+            if ($type == 'renovacao') {
+                UEmailComponent::EmailAdmAvisoRenovacaoAssociado($associado->Nome, $associado->Email);
+            } else {
+                // enviar e-mail
+                UEmailComponent::EmailAdmAvisoNovoAssociado($associado->Nome, $associado->Email);
+            }
         } catch (\Exception $ex) {
             Log::write('error', "Falha ao Enviar o Email: " .  $ex->getMessage());
         }
