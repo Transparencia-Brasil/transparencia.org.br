@@ -26,7 +26,7 @@
   <div class="container">
 <div class="row apoie-button">
     <div class="col-sm-2 apoie-icon">
-        ICONE
+        <img src="/images/icon-apoie-adicionar-usuario.svg">
     </div>
     <div class="col">
         <h3 class="apoie-title"><a href="/apoie/associados" class="btn btn-apoie">ASSOCIE-SE</a></h3>
@@ -65,7 +65,7 @@
 
 <div class="row apoie-button">
     <div class="col-sm-2 apoie-icon">
-        ICONE
+        <img src="/images/icon-apoie-atualizar-usuario.svg">
     </div>
     <div class="col">
         <h3 class="apoie-title"><a href="/associados/login" class="btn btn-apoie">RENOVE SUA ASSOCIAÇÃO OU ATUALIZE SEU CADASTRO</a></h3>
@@ -76,19 +76,16 @@
         <p>Você pode atualizar seus dados cadastrais a partir <a href="https://docs.google.com/forms/d/e/1FAIpQLScloWXPsVKJ4Vrr8kyaFcx_B33TKL5BBd95ysTfWeB3sWli7w/viewform"> deste formulário.</a></p>
     </div>
 </div>
-</div>
-
-
-
 <div class="row apoie-button">
     <div class="col-sm-2 apoie-icon">
-        ICONE
+        <img src="/images/icon-apoie-doacao-pontual.svg">
     </div>
     <div class="col">
         <h3 class="apoie-title"><a href="/apoie/doacoes" class="btn btn-apoie">FAÇA UMA DOAÇÃO PONTUAL</a></h3>
         <p>Contribua com o valor que desejar para garantir a continuidade do nosso trabalho de controle social,
              criação de novas ferramentas que facilitem a fiscalização das contas e serviços públicos e promoção da democracia!</p>
     </div>
+</div>
 </div>
 
 <!-- Conteudo -->
