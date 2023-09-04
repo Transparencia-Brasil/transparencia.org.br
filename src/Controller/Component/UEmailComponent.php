@@ -42,6 +42,28 @@ class UEmailComponent extends Component
 		}
 	}
 
+
+	public static function EmailAdmAvisoRenovacaoAssociado($nome, $email)
+	{
+		
+		$email_destino = "associados@transparencia.org.br";
+		$assuntoEmail = " [transparencia.org.br] Renovação de associado: " . $nome;
+		$replyEmail = $email;
+
+		$arquivo = WWW_ROOT . "emails" . DS . "adm-aviso-renovacao-associado.html";
+
+		$file = new File($arquivo);
+		$conteudo = $file->read();
+
+		$file->close();
+		$conteudo = str_replace("{URL}",BASE_URL."painel-ctl",$conteudo);
+		$conteudo = str_replace("{NOME}", $nome, $conteudo);
+		$conteudo = str_replace("{EMAIL}", $email, $conteudo);
+		
+
+		return UEmailComponent::EnviarEmail("", $email_destino, $assuntoEmail, $conteudo, true, $replyEmail, 'default');
+	}
+
 	public static function EmailAdmAvisoNovoAssociado($nome, $email)
 	{
 		
