@@ -16,7 +16,7 @@
 				<img src="/images/topos/camara.jpg" width="100%" class="img-fluid" alt="Apoie a Transparência Brasil">
 			</div>
 			<div class="col-12 no_pd">
-				<h2 class="title-pages">Associe-se</h2>
+				<h2 class="title-pages">RENOVE SUA ASSOCIAÇÃO</h2>
 				<hr/>
 				<p>Insira seu CPF no campo abaixo para confirmar seus dados:
 				</p>
