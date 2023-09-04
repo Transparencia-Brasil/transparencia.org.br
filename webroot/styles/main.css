@@ -11017,9 +11017,23 @@ footer a:visited {
 
 .btn-apoie {
     background: #F9A124;
-    color: white;
+    color: white !important;
     text-decoration: none;
     font-weight: 600;
     border-radius: 2rem;
-    padding: 0.3rem;
+    padding: 0.8rem;
+    white-space: normal;
+}
+
+@media (min-width: 576px) {
+    .apoie-icon {
+        text-align:right;
+    }
+}
+
+@media (max-width: 575px) {
+    .apoie-icon {
+        text-align:left;
+        margin-bottom: 0.9rem;
+    }
 }
