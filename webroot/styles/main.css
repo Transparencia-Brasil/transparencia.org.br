@@ -3334,6 +3334,48 @@ fieldset[disabled] a.btn {
     text-decoration: none;
 }
 
+.btn-link-apoie {
+    font-weight: 400;
+    color: #F9A124;
+    border-radius: 0;
+    font-size:24px;
+    cursor:pointer;
+}
+
+.btn-link-apoie>img {
+    margin-right: 10px;
+}
+
+.btn-link-apoie,
+.btn-link-apoie.active,
+.btn-link-apoie:active,
+.btn-link-apoie:disabled {
+    background-color: transparent;
+}
+
+.btn-link-apoie,
+.btn-link-apoie:active,
+.btn-link-apoie:focus,
+.btn-link-apoie:hover {
+    border-color: transparent;
+}
+
+.btn-link-apoie:focus,
+.btn-link-apoie:hover {
+    color: #F9A124;
+    /* text-decoration: underline; */
+    background-color: transparent;
+}
+
+.btn-link-apoie:disabled {
+    color: #F9A124;
+}
+
+.btn-link-apoie:disabled:focus,
+.btn-link-apoie:disabled:hover {
+    text-decoration: none;
+}
+
 .btn-group-lg>.btn,
 .btn-lg {
     padding: 0.75rem 1.5rem;

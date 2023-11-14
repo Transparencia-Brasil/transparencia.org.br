@@ -26,12 +26,13 @@
         <div class="row">
             <div class="col-12">
                 <div id="accordion-apoie">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="card m-0">
+                        <div class="card-header collapsed" id="headingOne" style="background-color:rgba(253, 221, 175, 0.3);border-bottom: 1px solid #F9A124;"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h5 class="mb-0" style="width:100%;display:flex;">
+                                <button class="btn btn-link-apoie" data-toggle="collapse"> 
                                     <img src="/images/icon-apoie-adicionar-usuario.svg" width="27px"> ASSOCIE-SE
                                 </button>
+                                <img src="/images/arrow-up.svg" width="27px" style="margin-left:auto;">
                             </h5>
                         </div>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-apoie">
@@ -60,12 +61,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="card m-0">
+                        <div class="card-header collapsed" id="headingTwo" style="background-color:rgba(253, 221, 175, 0.3);border-bottom: 1px solid #F9A124;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
+                            <h5 class="mb-0" style="width:100%;display:flex;">
+                                <button class="btn btn-link-apoie">
                                     <img src="/images/icon-apoie-atualizar-usuario.svg" width="27px"> RENOVE SUA ASSOCIAÇÃO
                                 </button>
+                                <img src="/images/arrow-up.svg" width="27px" style="margin-left:auto;">
                             </h5>
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-apoie">
@@ -75,12 +77,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <div class="card m-0">
+                        <div class="card-header collapsed" id="headingThree" style="background-color:rgba(253, 221, 175, 0.3);border-bottom: 1px solid #F9A124" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <h5 class="mb-0" style="width:100%;display:flex;">
+                                <button class="btn btn-link-apoie">
                                     <img src="/images/icon-apoie-doacao-pontual.svg" width="27px"> FAÇA UMA DOAÇÃO PONTUAL           
                                 </button>
+                                <img src="/images/arrow-up.svg" width="27px" style="margin-left:auto;">
                             </h5>
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-apoie">
@@ -110,12 +113,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header" id="headingFour">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                    <div class="card m-0">
+                        <div class="card-header collapsed" id="headingFour" style="background-color:rgba(253, 221, 175, 0.3);border-bottom: 1px solid #F9A124;" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                            <h5 class="mb-0" style="width:100%;display:flex;">
+                                <button class="btn btn-link-apoie">
                                     <img src="/images/icon-apoie-atualizar-cadastro.svg" width="27px"> ATUALIZE SEU CADASTRO              
                                 </button>
+                                <img src="/images/arrow-up.svg" width="27px" style="margin-left:auto;">
                             </h5>
                         </div>
                         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion-apoie">
