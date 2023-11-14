@@ -11,6 +11,7 @@ class ApoieController extends AppController
     }
 
     public function index() {
+        $this->set('showDonationBox', false);
         $this->set('slug', "apoie");
     }
 
