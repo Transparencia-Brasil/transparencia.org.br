@@ -3334,12 +3334,38 @@ fieldset[disabled] a.btn {
     text-decoration: none;
 }
 
+#accordion-apoie .card-body {
+    padding: 0 20px 0 20px;
+}
+
+#accordion-apoie .arrow {
+    width: 27px;
+}
+
 .btn-link-apoie {
     font-weight: 400;
     color: #F9A124;
     border-radius: 0;
     font-size:24px;
     cursor:pointer;
+}
+
+@media (max-width: 767px) {
+    .btn-link-apoie {
+        font-size:18px !important;
+    }
+    #accordion-apoie .arrow {
+        width: 18px !important;
+    }    
+}
+
+@media (max-width: 500px) {
+    .btn-link-apoie {
+        font-size:12px !important;
+    }
+    #accordion-apoie .arrow {
+        width: 18px !important;
+    }      
 }
 
 .btn-link-apoie>img {

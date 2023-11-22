@@ -22,7 +22,7 @@
   <!-- Título -->
 
     <!-- Conteudo -->
-    <div class="container">
+    <div class="container p-0 m-0">
         <div class="row">
             <div class="col-12">
                 <div id="accordion-apoie">
@@ -32,7 +32,7 @@
                                 <button class="btn btn-link-apoie" data-toggle="collapse"> 
                                     <img src="/images/icon-apoie-adicionar-usuario.svg" width="27px"> ASSOCIE-SE
                                 </button>
-                                <img src="/images/arrow-up.svg" width="27px" style="margin-left:auto;">
+                                <img src="/images/arrow-up.svg" class="arrow" style="margin-left:auto;">
                             </h5>
                         </div>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-apoie">
@@ -67,7 +67,7 @@
                                 <button class="btn btn-link-apoie">
                                     <img src="/images/icon-apoie-atualizar-usuario.svg" width="27px"> RENOVE SUA ASSOCIAÇÃO
                                 </button>
-                                <img src="/images/arrow-up.svg" width="27px" style="margin-left:auto;">
+                                <img src="/images/arrow-up.svg" class="arrow" style="margin-left:auto;">
                             </h5>
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-apoie">
@@ -83,7 +83,7 @@
                                 <button class="btn btn-link-apoie">
                                     <img src="/images/icon-apoie-doacao-pontual.svg" width="27px"> FAÇA UMA DOAÇÃO PONTUAL           
                                 </button>
-                                <img src="/images/arrow-up.svg" width="27px" style="margin-left:auto;">
+                                <img src="/images/arrow-up.svg" class="arrow" style="margin-left:auto;">
                             </h5>
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-apoie">
@@ -119,7 +119,7 @@
                                 <button class="btn btn-link-apoie">
                                     <img src="/images/icon-apoie-atualizar-cadastro.svg" width="27px"> ATUALIZE SEU CADASTRO              
                                 </button>
-                                <img src="/images/arrow-up.svg" width="27px" style="margin-left:auto;">
+                                <img src="/images/arrow-up.svg" class="arrow" style="margin-left:auto;">
                             </h5>
                         </div>
                         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion-apoie">
