@@ -35,7 +35,7 @@
                                 <img src="/images/arrow-up.svg" class="arrow" style="margin-left:auto;">
                             </h5>
                         </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-apoie">
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-apoie">
                             <div class="card-body">
                                 <div class="col-12 text-center pt-3">
                                     <h3 class="apoie-title"><a href="/apoie/doacoes" class="btn btn-apoie">ASSOCIE-SE AQUI</a></h3>
