@@ -189,6 +189,52 @@
                 echo "abrirDoacao();";
         ?>
 
+        // Seleciona todos os elementos de imagem que terminam com arrow-up.svg
+        var arrows = document.querySelectorAll("#accordion-apoie img[src$='arrow-up.svg']");
+        // Seleciona todos os elementos de colapso
+        var collapses = document.querySelectorAll("#accordion-apoie .collapsed");
+        // Cria uma função para mudar o src da imagem de acordo com o estado do colapso
+        function changeFirstArrow (arrow, collapse) {
+            
+            // Se o colapso estiver oculto, muda o src para arrow-down.svg
+            var collapsed = $(collapse).next();
+            if ($(collapsed).hasClass("show") == false) {
+                arrow.src = "/images/arrow-down.svg";
+            }
+            // Se o colapso estiver visível, muda o src para arrow-up.svg
+            else {
+                arrow.src = "/images/arrow-up.svg";
+            }
+        }
+        function changeClickedArrow (arrow, collapse) {
+            // Se o colapso estiver oculto, muda o src para arrow-down.svg
+            if (arrow.src.indexOf("arrow-up.svg") != -1) {
+                arrow.src = "/images/arrow-down.svg";
+            }
+            // Se o colapso estiver visível, muda o src para arrow-up.svg
+            else {
+                arrow.src = "/images/arrow-up.svg";
+            }
+        }        
+        // Percorre os elementos de imagem e de colapso
+        for (let i = 0; i < arrows.length; i++) {
+            // Chama a função para mudar o src da imagem inicialmente
+            changeFirstArrow (arrows[i], collapses[i]);
+            // Adiciona um ouvinte de evento para o evento de colapso
+            collapses[i].addEventListener("click", function(event) {
+                // Muda o src da imagem quando o colapso estiver oculto
+                let img = $(event.currentTarget).find('img')
+                let currentId = event.currentTarget.getAttribute('id')
+                for (let x = 0; x < arrows.length; x++) {
+                    if (collapses[x].getAttribute('id') != currentId) {
+                        arrows[x].src = '/images/arrow-down.svg'
+                    }
+                } 
+                changeClickedArrow(img[1], collapses[i]);
+
+                
+            });
+        }        
     });
 </script>
 <!-- Conteudo -->
