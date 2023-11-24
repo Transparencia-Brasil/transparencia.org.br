@@ -98,7 +98,7 @@
                                         <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
                                         </form>
                                     </div>
-                                    <div class="col-12 col-md-5 text-center text-md-left pt-4 pt-md-0 pl-md-2">
+                                    <div class="col-12 col-md-5 text-center text-md-left pt-4 pt-md-0 pl-md-2 pb-3">
                                     <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
                                         <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post" target="_blank">
                                         <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
@@ -109,7 +109,7 @@
                                         </form>
                                     <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
                                     </div>
-                                    </div>                             
+                                </div>                             
                             </div>
                         </div>
                     </div>
