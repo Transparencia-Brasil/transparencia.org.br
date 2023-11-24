@@ -125,7 +125,7 @@
                         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion-apoie">
                             <div class="card-body">
                                 <div class="col-12 text-center pt-3">
-                                    <h3 class="apoie-title"><a href="/apoie/doacoes" class="btn btn-apoie">ATUALIZE AQUI</a></h3>
+                                    <h3 class="apoie-title"><a href="https://docs.google.com/forms/d/e/1FAIpQLScloWXPsVKJ4Vrr8kyaFcx_B33TKL5BBd95ysTfWeB3sWli7w/viewform" class="btn btn-apoie">ATUALIZE AQUI</a></h3>
                                 </div>
                                 <p>Já contribui para a promoção da democracia sendo associado da Transparência Brasil? Então mantenha seu cadastro atualizado, assim conseguimos manter contato com você sobre novos trabalhos em realização, informações internas e muito mais!
 
