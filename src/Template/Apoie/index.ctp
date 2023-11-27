@@ -72,8 +72,11 @@
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-apoie">
                             <div class="card-body">
+                                <div class="col-12 text-center pt-3">
+                                    <h3 class="apoie-title"><a href="/associados/login/" class="btn btn-apoie">RENOVE AQUI</a></h3>
+                                </div>
                                 <p>Deixou de ser associado(a) da Transparência Brasil ou sua associação está próxima de expirar? Renove agora mesmo e continue sua participação em atividades, previstas no estatuto, e contribua com o fortalecimento do nosso trabalho independente!</p>
-                                <p>Você pode atualizar seus dados cadastrais a partir <a href="/associados/login/" target="_blank">deste formulário</a>.</p>
+                                <p>Você pode atualizar seus dados cadastrais a partir <a href="https://docs.google.com/forms/d/e/1FAIpQLScloWXPsVKJ4Vrr8kyaFcx_B33TKL5BBd95ysTfWeB3sWli7w/viewform" target="_blank">deste formulário</a>.</p>
                             </div>
                         </div>
                     </div>
