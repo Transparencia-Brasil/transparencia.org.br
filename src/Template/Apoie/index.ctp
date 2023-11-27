@@ -38,14 +38,14 @@
                         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-apoie">
                             <div class="card-body">
                                 <div class="col-12 text-center pt-3">
-                                    <h3 class="apoie-title"><a href="/apoie/doacoes" class="btn btn-apoie">ASSOCIE-SE AQUI</a></h3>
+                                    <h3 class="apoie-title"><a href="/associados/" class="btn btn-apoie">ASSOCIE-SE AQUI</a></h3>
                                 </div>
                                 <p>
                                     Ao se associar, você, sua organização da sociedade civil ou sua empresa fortalecem uma das mais respeitadas organizações de combate à corrupção e promoção da transparência pública, além de participarem diretamente na estrutura de governança da Transparência Brasil.
                                 </p>
                                 <p>
                                     A associação de pessoas físicas é feita por meio de contribuição mensal ou anual e dá a você o poder de: 
-                                    <ul>
+                                    <ul style="font-size: 0.87rem;">
                                         <li>Participar com voz e voto na Convenção, a Assembleia Geral que, dentre outras atribuições, elege os Conselhos Fiscal e Deliberativo da TB;</li>
                                         <li>Contribuir com sugestões em processos institucionais, como planejamento estratégico;</li> 
                                         <li>Ocupar cargos eletivos no Conselho Fiscal e Conselho Deliberativo;</li>
@@ -73,7 +73,7 @@
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-apoie">
                             <div class="card-body">
                                 <p>Deixou de ser associado(a) da Transparência Brasil ou sua associação está próxima de expirar? Renove agora mesmo e continue sua participação em atividades, previstas no estatuto, e contribua com o fortalecimento do nosso trabalho independente!</p>
-                                <p>Você pode atualizar seus dados cadastrais a partir <a href="https://docs.google.com/forms/d/e/1FAIpQLScloWXPsVKJ4Vrr8kyaFcx_B33TKL5BBd95ysTfWeB3sWli7w/viewform" target="_blank">deste formulário</a>.</p>
+                                <p>Você pode atualizar seus dados cadastrais a partir <a href="/associados/login/" target="_blank">deste formulário</a>.</p>
                             </div>
                         </div>
                     </div>
