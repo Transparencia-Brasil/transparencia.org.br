@@ -6,7 +6,7 @@ $this->assign('description', 'Com sua doação, podemos manter a organização c
     <div class="container">
         <div class="row">
             <div class="col-12 px-0 pb-3">
-                <img src="/images/topos/camara.jpg" width="100%" class="img-fluid" alt="Apoie a Transparência Brasil">
+                <img src="/images/topos/header-associacao.png" width="100%" class="img-fluid" alt="Apoie a Transparência Brasil">
             </div>
             <div class="col-12 no_pd pb-3">
                 <h2 class="title-pages">Doação confirmada com sucesso!</h2>
