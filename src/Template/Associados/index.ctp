@@ -19,7 +19,7 @@
 				<p>
 					O artigo 3º do estatuto da Transparência Brasil prevê três tipos de associados:
 				</p>
-				<ul>
+				<ul style="font-size: 0.87rem;">
 					<li>Sócios-participantes (pessoas físicas, votantes);</li>
 					<li>Institucionais (organizações da sociedade civil, cujos representantes têm os mesmos direitos dos sócios-participantes);</li>
 					<li>Apoiadores (empresas, não-votantes).</li>
