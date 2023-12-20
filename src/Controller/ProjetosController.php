@@ -79,6 +79,10 @@ class ProjetosController extends AppController
         $this->set('obra_transparente_parceiros', $obj);
         $this->render('projeto_obra_transparente');
     }
+
+    public function maisdefensoria(){
+        $this->render('projeto_maisdefensoria');
+    }    
 }
 
 ?>

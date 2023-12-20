@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mais Defensoria</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link rel="icon" type="image/x-icon" href="./style/img/favicon.ico" />
+    <link rel="stylesheet" href="./style/styles.css" />
+  </head>
+  <body>
+    <div class="maisdef-container">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <button
+            class="maisdef-open-drawer"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <div class="maisdef-hamburguer-menu">
+              <i class="material-icons menu-icon"> menu </i>
+            </div>
+          </button>
+          <img
+            class="maisdef-logo-small"
+            src="./style/img/logo_maisdef.png"
+            alt="Logo"
+          />
+          <div
+            class="offcanvas offcanvas-start"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active active" aria-current="page" href="#"
+                    >O MAIS DEFENSORIA</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Produtos</a>
+                </li>
+                <li class="nav-item dropdown dropdown-center">
+                  <a
+                    class="maisdef-dropdown-item nav-link active dropdown-toggle"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    data-bs-auto-close="outside"
+                  >
+                    Relatórios
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Revisão dos Critérios</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Performance das Ouvidorias</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="https://www.transparencia.org.br/downloads/publicacoes/transparnciaativadoscritriosdeatendimentodasdefensorias.pdf"
+                        >Transparência Ativa</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        target="_blank"
+                        class="dropdown-item"
+                        href="https://www.transparencia.org.br/downloads/publicacoes/transparnciapassivadasdefensoriaspblicas.pdf"
+                        >Canais de Transparência</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Notícias</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    data-bs-dismiss="offcanvas"
+                    onclick="goToPartners()"
+                    >Parceiros</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="maisdef-nav">
+        <ul class="maisdef-nav-list">
+          <li><a href="#" class="green-color">O MAIS DEFENSORIA</a></li>
+          <li><a href="#">Produtos</a></li>
+          <li class="nav-item dropdown dropdown-center">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              data-bs-auto-close="outside"
+            >
+              Publicações
+            </a>
+            <ul class="dropdown-menu">
+              <li class="maisdef-dropdown-item nav-item dropdown dropend">
+                <a
+                  class="maisdef-dropdown-item dropdown-item nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  data-bs-auto-close="outside"
+                >
+                  Relatórios
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">Revisão dos Critérios</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Performance das Ouvidorias
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      class="dropdown-item"
+                      href="https://www.transparencia.org.br/downloads/publicacoes/transparnciaativadoscritriosdeatendimentodasdefensorias.pdf"
+                      >Transparência Ativa</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      class="dropdown-item"
+                      href="https://www.transparencia.org.br/downloads/publicacoes/transparnciapassivadasdefensoriaspblicas.pdf"
+                      >Canais de Transparência
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="maisdef-dropdown-item dropdown-item" href="#"
+                  >Notícias</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="#parceiros">Parceiros</a></li>
+          <img
+            class="maisdef-logo"
+            src="./style/img/logo_maisdef.png"
+            alt="Logo"
+          />
+        </ul>
+      </nav>
+      <section class="maisdef-home-section">
+        <div class="maisdef-home">
+          <div class="maisdef-text-home">
+            <h1>
+              A justiça <span class="maisdef-inclusiva">inclusiva</span> e
+              <span class="maisdef-equitativa">equitativa</span>
+            </h1>
+            <p>
+              O projeto Mais Defensoria, iniciativa financiada pela
+              <a
+                target="_blank"
+                href="https://tinker.org/pt/"
+                class="maisdef-link"
+                >Fundação Tinker</a
+              >, tem o propósito de ampliar o acesso à Justiça, principalmente
+              por cidadãos mais marginalizados. O foco é melhorar a governança
+              das Defensorias Públicas do país, por meio do fornecimento de
+              informações e dados sobre os problemas de acesso ao sistema de
+              justiça e criação de ferramentas para fortalecer a administração
+              dos órgãos.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="maisdef-text-classification">
+          <h4>Classificação:</h4>
+          <table>
+            <tr>
+              <th>Alta Transparência</th>
+              <th>Média de Transparência</th>
+              <th>Baixa Transparência</th>
+              <th>Baixíssima Transparência</th>
+              <th>Sem Transparência</th>
+            </tr>
+            <tr>
+              <td>Descrição detalhada e aponta a resolução.</td>
+              <td>Descrição detalhada e não aponta a resolução.</td>
+              <td>Descrição genérica e aponta a resolução.</td>
+              <td>Descrição genérica e não aponta a resolução.</td>
+              <td>Não apresentam a descrição dos critérios</td>
+            </tr>
+          </table>
+          <div id="dataviz"></div>
+        </div>
+      </section>
+      <section class="maisdef-text-monitoring">
+        <h2>Monitoramento da transparência ativa dos critérios</h2>
+        <div class="maisdef-monitoring-text-block">
+          <div>
+            <p>
+              A delimitação do público-alvo das defensorias torna-se, portanto,
+              um exercício complexo. O desafio passa por estabelecer modelos que
+              traduzam concretamente o termo “necessitados” expresso na
+              Constituição e refletem as capacidades institucionais de cada
+              unidade. Convém ressaltar que as 28 Defensorias Públicas – 26
+              estaduais, do Distrito Federal e da União – não foram criadas ao
+              mesmo tempo e não têm orçamentos proporcionais ou mesmo
+              suficientes para o cumprimento de suas atribuições.
+            </p>
+          </div>
+          <div>
+            <p>
+              Os critérios de atendimento, dada sua complexidade e extensão, dão
+              concretude à missão institucional e devem ser comunicados de forma
+              ampla, objetiva e transparente. Observou-se a completude e o
+              detalhamento da informação e indicação da fonte primária
+              (resolução que regulamenta os critérios de atendimento) para
+              avaliar a transparência ativa de tais informações dada por cada
+              uma das 28 Defensorias Públicas do Brasil.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="maisdef-text-transparency-analisys">
+          <h2>A análise da transparência ativa</h2>
+          <div class="maisdef-split-content">
+            <img src="./style/img/undraw_women.svg" alt="chart women" />
+            <div>
+              <p>
+                O acesso a informações da Defensoria tem o papel fundamental de
+                possibilitar a realização de diagnósticos para o fortalecimento
+                institucional e a ampliação da proteção jurídica dos grupos
+                vulneráveis. Função que ganha ainda mais importância diante do
+                fato de que a instituição tem o menor orçamento entre os órgãos
+                do sistema de Justiça e está presente em apenas 47% das comarcas
+                brasileiras, segundo a Pesquisa Nacional da Defensoria Pública
+                de 2022.
+              </p>
+              <p>
+                É imprescindível o fortalecimento da transparência e
+                accountability das Defensorias para se atingir a garantia do
+                direito de acesso à justiça dos grupos vulneráveis. O projeto
+                suprime a lacuna de ações concretas em prol da transparência e
+                maior controle social das políticas de acesso à Justiça no
+                Brasil.
+              </p>
+              <a
+                class="maisdef-saiba-mais"
+                target="_blank"
+                href="https://www.transparencia.org.br/downloads/publicacoes/transparnciaativadoscritriosdeatendimentodasdefensorias.pdf"
+                >Saiba mais</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="maisdef-text-partners" id="parceiros">
+          <h2>Parceiros</h2>
+          <p>Conheça os principais colaboradores do projeto</p>
+          <div class="maisdef-logo_section">
+            <img src="./style/img/CONDEGE_LOGO.png" alt="logo condege" />
+            <img
+              src="./style/img/conselho_ouvidorias.png"
+              alt="logo conselho nacional de ouvidorias"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
+
+    <script>
+      function goToPartners() {
+        setTimeout(function () {
+          window.location.href = "#parceiros";
+        }, 800);
+      }
+    </script>
+
+    <script>
+      // Defina as dimensões e margens do gráfico
+      var margin = { top: 30, right: 30, bottom: 70, left: 60 };
+      var width = 800
+      var height = 500
+
+        // console.log("innerHeight")
+        // console.log(window.innerHeight)
+        // console.log("margin.top")
+        // console.log(margin.top)
+        // console.log("margin.bottom")
+        // console.log(margin.bottom) 
+        // console.log("Math.min(500, window.innerHeight * 0.6)")       
+        // console.log(Math.min(500, window.innerHeight * 0.6))
+      // Crie o contêiner SVG
+      var svg = d3
+        .select("#dataviz")
+        .append("svg")
+        .attr(
+          "viewBox",
+          `0 0 ${width + margin.left + margin.right} ${
+            height + margin.top + margin.bottom
+          }`
+        )
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      // Adicione um título ao gráfico
+      svg
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", -15)
+        .style("font-size", "18px")
+        .attr("text-anchor", "middle")
+        .text("Primeira Classificação");
+
+      // Parseie os dados
+      d3.csv("./data/data.csv").then(function (data) {
+        console.log("data")
+        console.log(data)
+        // Defina a escala X
+        var x = d3
+          .scaleBand()
+          .range([0, width])
+          .domain(
+            data.map(function (d) {
+              return d.Transparency;
+            })
+          )
+          .padding(0.2);
+
+        // Adicione o eixo X
+        svg
+          .append("g")
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(x))
+          .selectAll("text")
+          .style("font-size", "12px")
+          .style("font-weight", "400")
+          .style("font-family", "Open Sans, sans-serif")
+          .style("line-height", "16px");
+
+        if (window.innerWidth < 768)
+          [
+            svg
+              .selectAll("text")
+              .filter(function (d, i) {
+                return i > 0;
+              })
+              .attr("transform", "translate(-10,0)rotate(-45)")
+              .style("text-anchor", "end"),
+          ];
+
+        // Defina a escala Y
+        var y = d3.scaleLinear().domain([0, 100]).range([height, 0]);
+
+        // Adicione o eixo Y
+        svg
+          .append("g")
+          .call(
+            d3
+              .axisLeft(y)
+              .tickFormat(function (d) {
+                return d + "%";
+              })
+              .tickSize(-width)
+          )
+          .selectAll("text")
+          .style("font-size", "12px")
+          .style("font-weight", "400")
+          .style("font-family", "Open Sans, sans-serif")
+          .style("line-height", "16px");
+
+        // Adicione as barras
+        svg
+          .selectAll("mybar")
+          .data(data)
+          .enter()
+          .append("rect")
+          .attr("x", function (d) {
+            return x(d.Transparency) + x.bandwidth() / 4;
+          })
+          .attr("y", function (d) {
+            return y(d.Percent);
+          })
+          .attr("width", x.bandwidth() / 2)
+          .attr("height", function (d) {
+            return height - y(d.Percent);
+          })
+          .attr("fill", "#1A7F6B");
+
+        svg
+          .selectAll("text.bar-value")
+          .data(data)
+          .enter()
+          .append("text")
+          .attr("class", "bar-value")
+          .attr("x", function (d) {
+            return x(d.Transparency) + x.bandwidth() / 2;
+          })
+          .attr("y", function (d) {
+            return y(d.Percent) - 5;
+          })
+          .attr("text-anchor", "middle")
+          .text(function (d) {
+            return d.Percent + "%";
+          })
+          .attr("font-family", "sans-serif")
+          .attr("font-size", "12px")
+          .attr("fill", "#1A7F6B");
+      });
+    </script>
+  </body>
+</html>

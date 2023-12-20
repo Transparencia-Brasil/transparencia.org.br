@@ -1,0 +1,523 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+section {
+  padding: 40px 10% 40px 10%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  font-family: "Open Sans", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  color: #000;
+  text-align: center !important;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.maisdef-text-home h1 {
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 70px;
+}
+
+.maisdef-text-transparency-analisys h2,
+.maisdef-text-monitoring h2,
+.maisdef-text-partners h2 {
+  color: #4d4d4d;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 44px;
+}
+
+.maisdef-hamburguer-menu,
+.maisdef-logo-small {
+  display: none;
+  pointer-events: none;
+}
+
+nav.navbar {
+  display: none;
+}
+
+.maisdef-dropdown-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-item {
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+.maisdef-nav ul {
+  margin: 0;
+}
+
+.maisdef-open-drawer {
+  background-color: transparent;
+  border: none;
+}
+
+.green-color {
+  color: #10624e !important;
+}
+
+.maisdef-nav ul li a,
+.maisdef-nav ul li select {
+  color: #18191f;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+i.material-icons {
+  position: relative;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.maisdef-logo,
+.maisdef-logo-small {
+  width: 15%;
+}
+
+.maisdef-home-section,
+.maisdef-nav {
+  background-color: #f5f7fa;
+}
+
+.maisdef-home-section {
+  display: flex;
+  justify-content: center;
+  /* height: 75vh; */
+}
+
+.maisdef-split-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5%;
+}
+
+.maisdef-equitativa,
+.maisdef-inclusiva,
+.maisdef-link {
+  color: #10624e;
+}
+
+.maisdef-home {
+  width: 100%;
+  background-image: url("./img/bg.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.maisdef-text-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* height: 90%; */
+  padding:10px 0;
+  max-width: 64%;
+}
+
+.maisdef-text-home p {
+  padding-top: 10%;
+  color: #717171;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.maisdef-text-transparency-analisys h2 {
+  text-align: center;
+}
+
+.maisdef-text-transparency-analisys div div p {
+  color: #717171;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.maisdef-saiba-mais {
+  color: #10624e;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.maisdef-monitoring-text-block {
+  display: flex;
+  gap: 15%;
+}
+
+.maisdef-monitoring-text-block div {
+  display: 1;
+}
+
+.maisdef-monitoring-text-block div p {
+  color: #717171;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.maisdef-text-classification h4 {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.maisdef-text-classification table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.maisdef-text-classification th,
+.maisdef-text-classification td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.maisdef-text-classification th {
+  text-align: left;
+  background-color: #f2f2f2;
+}
+
+#dataviz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#dataviz svg {
+  border-radius: 10px;
+  padding-top: 35px;
+  padding-right: 20px;
+  width: 80%;
+  box-shadow: 0px 4px 8px 0px rgba(171, 190, 209, 04);
+}
+
+.tick line {
+  stroke-opacity: 0.1;
+}
+
+.maisdef-chart_text {
+  color: #000;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.maisdef-text-partners {
+  text-align: center;
+}
+.maisdef-text-partners p {
+  color: #717171;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.maisdef-logo_section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20%;
+}
+
+@media only screen and (max-width: 1024px) {
+  th,
+  td {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .maisdef-logo,
+  .maisdef-logo-small {
+    width: 20%;
+  }
+
+  .maisdef-nav ul li a,
+  .maisdef-nav ul li select {
+    font-size: 16px;
+  }
+
+  .maisdef-text-home h1 {
+    font-size: 48px;
+    line-height: 40px;
+  }
+
+  .maisdef-text-home p,
+  .maisdef-text-transparency-analisys div div p,
+  .maisdef-saiba_mais,
+  .maisdef-monitoring-text-block div p,
+  .maisdef-text-partners p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .maisdef-monitoring-text-block {
+    gap: 10%;
+  }
+
+  #dataviz svg {
+    padding-top: 20px;
+    padding-right: 10px;
+  }
+
+  .maisdef-chart_text {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 15px 2% 15px 2%;
+  }
+
+  ul {
+    justify-content: space-between;
+  }
+
+  .maisdef-split-content {
+    gap: 0;
+  }
+
+  .maisdef-split-content img {
+    width: min(100%, 300px);
+  }
+
+  .maisdef-logo {
+    display: none;
+  }
+
+  nav.navbar,
+  .maisdef-logo-small {
+    display: block;
+  }
+
+  .maisdef-logo-small {
+    width: 30%;
+  }
+
+  .maisdef-hamburguer-menu {
+    cursor: pointer;
+    display: block;
+  }
+
+  .maisdef-menu-icon {
+    font-size: 30px;
+  }
+
+  .maisdef-nav-list li:nth-child(-n + 4) {
+    display: none;
+  }
+
+  .maisdef-text-classification th,
+  .maisdef-text-classification table tr:first-child {
+    display: none;
+  }
+
+  .maisdef-text-classification table,
+  .maisdef-text-classification thead,
+  .maisdef-text-classification tbody,
+  .maisdef-text-classification td,
+  .maisdef-text-classification tr {
+    display: block;
+  }
+
+  .maisdef-text-classification thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .maisdef-text-classification tr {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+
+  .maisdef-text-classification td {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .maisdef-text-classification td::before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .maisdef-text-classification td:nth-of-type(1)::before,
+  .maisdef-text-classification td:nth-of-type(2)::before,
+  .maisdef-text-classification td:nth-of-type(3)::before,
+  .maisdef-text-classification td:nth-of-type(4)::before,
+  .maisdef-text-classification td:nth-of-type(5)::before {
+    font-weight: bold;
+    text-wrap: wrap;
+  }
+
+  .maisdef-text-classification td:nth-of-type(1)::before {
+    content: "Alta Transparência: ";
+  }
+
+  .maisdef-text-classification td:nth-of-type(2)::before {
+    content: "Média de Transparência: ";
+  }
+
+  .maisdef-text-classification td:nth-of-type(3)::before {
+    content: "Baixa Transparência: ";
+  }
+
+  .maisdef-text-classification td:nth-of-type(4)::before {
+    content: "Baixíssima Transparência: ";
+    text-wrap: wrap;
+  }
+
+  .maisdef-text-classification td:nth-of-type(5)::before {
+    content: "Sem Transparência: ";
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  section {
+    padding: 20px 5% 20px 5%;
+    margin-top: 5%;
+  }
+  .maisdef-text-transparency-analisys h2,
+  .maisdef-text-monitoring h2,
+  .maisdef-text-partners h2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .maisdef-home-section {
+    margin-top: 0 !important;
+  }
+
+  .maisdef-text-home h1 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .maisdef-text-home p {
+    padding-top: 20%;
+  }
+
+  .maisdef-home-section {
+    height: 60vh;
+  }
+
+  .maisdef-text-home {
+    max-width: 100%;
+  }
+
+  .maisdef-monitoring-text-block {
+    display: block;
+  }
+
+  .maisdef-split-content {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .maisdef-split-content img {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .maisdef-text-classification h4 {
+    font-size: 16px;
+  }
+
+  .maisdef-text-home p,
+  .maisdef-text-transparency-analisys div div p,
+  .maisdef-saiba_mais,
+  .maisdef-monitoring-text-block div p,
+  .maisdef-text-partners p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  #dataviz svg {
+    padding-top: 15px;
+    padding-right: 5px;
+  }
+
+  .maisdef-chart_text {
+    font-size: 8px;
+    line-height: 12px;
+  }
+
+  .maisdef-logo_section {
+    gap: 0%;
+  }
+
+  .maisdef-logo_section img {
+    width: 50%;
+  }
+
+  .maisdef-saiba-mais {
+    font-size: 14px;
+  }
+
+  .maisdef-logo,
+  .maisdef-logo-small {
+    width: 40%;
+  }
+}
