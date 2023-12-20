@@ -31,4 +31,4 @@ iframe.addEventListener("load", function() {
 </script>
 
 <!-- Child window -->
-<!-- Obra transparente -->
+<!-- Mais defensoria -->
