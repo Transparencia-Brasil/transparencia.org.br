@@ -134,7 +134,25 @@
                                 </p>
                             </div>
                         </div>
-                    </div>                    
+                    </div> 
+                    <div class="card m-0">
+                        <div class="card-header collapsed" id="headingFive" style="background-color:rgba(253, 221, 175, 0.3);border-bottom: 1px solid #F9A124;" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <h5 class="mb-0" style="width:100%;display:flex;">
+                                <button class="btn btn-link-apoie">
+                                    <img src="/images/icon-apoie-shopping.svg" width="27px"> CONHEÇA OS PRODUTOS DA TB              
+                                </button>
+                                <img src="/images/arrow-up.svg" class="arrow" style="margin-left:auto;">
+                            </h5>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion-apoie">
+                            <div class="card-body">
+                                <div class="col-12 text-center pt-3">
+                                    <h3 class="apoie-title"><a href="https://reserva.ink/compromissoestampado" class="btn btn-apoie" target="_blank">ACESSE A NOSSA LOJA</a></h3>
+                                </div>
+                                <p>Conheça a nossa coleção de camisetas <strong>Compromisso Estampado!</strong> Ao vestir a camisa da transparência, você apoia o trabalho da Transparência Brasil e mostra aos outros que você também defende a transparência pública.</p>
+                            </div>
+                        </div>
+                    </div>                                       
                 </div>
             </div>
         </div>
