@@ -21,8 +21,7 @@
           <th>Fonte de financiamento</th>
           <th>Valor</th>
           <th>Período</th>
-          <th>Relatórios</th>
-          <th>Termo de doação</th>
+          <th>Objeto</th>
           <th>Tipo</th>
           <th>Ações</th>
         </tr>
@@ -30,41 +29,27 @@
       <tbody>
       <?php foreach($financiamentos as $financiamento): ?>
       <tr>
-        <td><?=$financiamento->FonteDeFinanciamento ?></td>
+        <td>
+          <?php
+              $arquivos = $financiamento->FinanciamentosArquivos;
+              if (count($arquivos) > 0) {
+                foreach ($arquivos as $arquivo) {
+                  if ($arquivo->Tipo == 'termo-de-doacao') {
+            ?>
+                <li><a href="/uploads/financiamentos/<?=$arquivo->Arquivo?>" target="_blank"><?=$financiamento->FonteDeFinanciamento ?></a></li>
+            <?php
+                  }
+                }
+              } else {
+            ?>
+                <?=$financiamento->FonteDeFinanciamento ?>   
+            <?php                             
+              }
+            ?>
+        </td>
         <td><?=$financiamento->Valor ?></td>
         <td class="center"><?=$financiamento->Periodo ?></td>
-        <td class="center">
-          <ul>
-              <?php
-                $arquivos = $financiamento->FinanciamentosArquivos;
-                if (count($arquivos) > 0) {
-                  foreach ($arquivos as $arquivo) {
-                    if ($arquivo->Tipo == 'relatorio') {
-              ?>
-                <li><a href="/uploads/financiamentos/<?=$arquivo->Arquivo?>" target="_blank"><?=$arquivo->Arquivo?></a></li>
-              <?php
-                    }
-                  }
-                }
-              ?>
-          </ul>
-        </td>
-        <td>
-          <ul>
-              <?php
-                $arquivos = $financiamento->FinanciamentosArquivos;
-                if (count($arquivos) > 0) {
-                  foreach ($arquivos as $arquivo) {
-                    if ($arquivo->Tipo == 'termo-de-doacao') {
-              ?>
-                 <li><a href="/uploads/financiamentos/<?=$arquivo->Arquivo?>" target="_blank"><?=$arquivo->Arquivo?></a></li>
-              <?php
-                    }
-                  }
-                }
-              ?>
-          </ul>
-        </td>
+        <td class="center"><?=$financiamento->Objeto ?></td>
         <td>
           <a href="<?=$financiamento->TipoLink?>" target="_blank"><?=$financiamento->Tipo?></a>
         </td>

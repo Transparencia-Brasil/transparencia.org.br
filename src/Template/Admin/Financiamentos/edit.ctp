@@ -40,6 +40,12 @@
 							  </div>
 							</div>
 							<div class="control-group">
+							  <label class="control-label" for="Objeto">Objeto</label>
+							  <div class="controls">
+									<?=$this->Form->textarea('Financiamentos.Objeto', ['class' => 'span6']);?>
+							  </div>
+							</div>							
+							<div class="control-group">
 							  <label class="control-label" for="Relatorios">Arquivos</label>
 							  <div class="controls">
 									<?= $this->element('jqueryupload', array('arquivos' => $financiamento->FinanciamentosArquivos,'file_path' => $file_path,'show_select' => true)) ?>

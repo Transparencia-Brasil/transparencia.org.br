@@ -1,0 +1,1 @@
+ALTER TABLE financiamentos ADD Objeto text NULL;
