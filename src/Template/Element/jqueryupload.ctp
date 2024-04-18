@@ -80,7 +80,6 @@
         <td>
             <p class="name">Tipo</p>
             <select name="arquivo_tipo">
-                <option value="relatorio">Relatório</option>
                 <option value="termo-de-doacao">Termo de Doação</option>
             </select>
         </td>
