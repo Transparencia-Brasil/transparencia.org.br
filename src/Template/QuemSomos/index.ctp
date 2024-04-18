@@ -521,8 +521,7 @@
                                     <th>Fonte de financiamento</th>
                                     <th>Valor</th>
                                     <th>Período</th>
-                                    <th>Relatórios</th>
-                                    <th>Termo de doação</th>
+                                    <th>Objeto</th>
                                     <th>Tipo</th>
                                 </tr>
                             </thead>
@@ -532,37 +531,27 @@
         foreach ($financiamentos as $financiamento) {
 ?>
                                 <tr>
-                                        <td scope="row"><?=$financiamento->FonteDeFinanciamento?></td>
+                                        <td scope="row">
+                                            <?php
+                                                        $arquivos = $financiamento->FinanciamentosArquivos;
+                                                        if (count($arquivos) > 0) {
+                                                            foreach ($arquivos as $arquivo) {
+                                                                if ($arquivo->Tipo == 'termo-de-doacao') {
+                                            ?>
+                                                                                        <a href="/uploads/financiamentos/<?=$arquivo->Arquivo?>" target="_blank"><?=$financiamento->FonteDeFinanciamento?></a><br><br>
+                                            <?php
+                                                                }
+                                                            }
+                                                        } else {
+                                            ?>
+                                                            <?=$financiamento->FonteDeFinanciamento?>
+                                            <?php                
+                                                        }
+                                            ?>                                            
+                                        </td>
                                         <td><?=$financiamento->Valor?></td>
                                         <td><?=$financiamento->Periodo?></td>
-                                        <td>
-<?php
-            $arquivos = $financiamento->FinanciamentosArquivos;
-            if (count($arquivos) > 0) {
-                foreach ($arquivos as $arquivo) {
-                    if ($arquivo->Tipo == 'relatorio') {
-?>
-                                            <a href="/uploads/financiamentos/<?=$arquivo->Arquivo?>" target="_blank"><?=$arquivo->Arquivo?></a><br><br>
-<?php
-                    }
-                }
-            }
-?>
-                                        </td>
-                                        <td>
-<?php
-            $arquivos = $financiamento->FinanciamentosArquivos;
-            if (count($arquivos) > 0) {
-                foreach ($arquivos as $arquivo) {
-                    if ($arquivo->Tipo == 'termo-de-doacao') {
-?>
-                                            <a href="/uploads/financiamentos/<?=$arquivo->Arquivo?>" target="_blank"><?=$arquivo->Arquivo?></a><br><br>
-<?php
-                    }
-                }
-            }
-?>
-                                        </td>
+                                        <td><?=$financiamento->Objeto?></td>
                                         <td><a href="<?=$financiamento->TipoLink?>" target="_blank"><?=$financiamento->Tipo?></a></td>
                                 </tr>
 <?php
