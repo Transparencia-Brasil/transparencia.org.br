@@ -247,6 +247,10 @@ return [
             'timezone' => 'UTC',
             'cacheMetadata' => true,
             'ssl_ca' => env('MYSQL_ATTR_SSL_CA'),
+            'flags' => [
+                // Outras flags PDO aqui
+                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false
+            ],
             /**
              * Set identifier quoting to true if you are using reserved words or
              * special characters in your table or column names. Enabling this
