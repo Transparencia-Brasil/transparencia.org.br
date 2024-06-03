@@ -24,6 +24,8 @@
 
     <link rel="icon" type="image/x-icon" href="./style/img/favicon.ico" />
     <link rel="stylesheet" href="./style/styles.css" />
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
     <div class="maisdef-container">
@@ -199,133 +201,127 @@
         <div class="maisdef-home">
           <div class="maisdef-text-home">
             <h1>
-              A justiça <span class="maisdef-inclusiva">inclusiva</span> e
-              <span class="maisdef-equitativa">equitativa</span>
+              A justiça <br /> <span class="maisdef-greenscale">inclusiva</span> e
+              <span class="maisdef-greenscale">equitativa</span>
             </h1>
-            <p>
-              O projeto Mais Defensoria, iniciativa financiada pela
-              <a
-                target="_blank"
-                href="https://tinker.org/pt/"
-                class="maisdef-link"
-                >Fundação Tinker</a
-              >, tem o propósito de ampliar o acesso à Justiça, principalmente
-              por cidadãos mais marginalizados. O foco é melhorar a governança
-              das Defensorias Públicas do país, por meio do fornecimento de
-              informações e dados sobre os problemas de acesso ao sistema de
-              justiça e criação de ferramentas para fortalecer a administração
-              dos órgãos.
-            </p>
+            <div class="maisdef-home-content">
+              <p>
+                O projeto Mais Defensoria tem o propósito de ampliar o acesso à Justiça, principalmente por cidadãos mais marginalizados.
+                <br />
+                <br />
+                Nosso foco é melhorar a governança das Defensorias Públicas do país, por meio do fornecimento de informações e dados sobre 
+                os problemas de acesso ao sistema de justiça e criação de ferramentas para fortalecer a administração dos órgãos.
+              </p>
+              <img src="./style/img/home-section-pic.svg" alt="ilustração">
+            </div>
           </div>
         </div>
       </section>
       <section>
         <div class="maisdef-text-classification">
-          <h4>Classificação:</h4>
-          <table>
-            <tr>
-              <th>Alta Transparência</th>
-              <th>Média de Transparência</th>
-              <th>Baixa Transparência</th>
-              <th>Baixíssima Transparência</th>
-              <th>Sem Transparência</th>
-            </tr>
-            <tr>
-              <td>Descrição detalhada e aponta a resolução.</td>
-              <td>Descrição detalhada e não aponta a resolução.</td>
-              <td>Descrição genérica e aponta a resolução.</td>
-              <td>Descrição genérica e não aponta a resolução.</td>
-              <td>Não apresentam a descrição dos critérios</td>
-            </tr>
-          </table>
-          <div id="dataviz"></div>
-        </div>
-      </section>
-      <section class="maisdef-text-monitoring">
-        <h2>Monitoramento da transparência ativa dos critérios</h2>
-        <div class="maisdef-monitoring-text-block">
-          <div>
-            <p>
-              A delimitação do público-alvo das defensorias torna-se, portanto,
-              um exercício complexo. O desafio passa por estabelecer modelos que
-              traduzam concretamente o termo “necessitados” expresso na
-              Constituição e refletem as capacidades institucionais de cada
-              unidade. Convém ressaltar que as 28 Defensorias Públicas – 26
-              estaduais, do Distrito Federal e da União – não foram criadas ao
-              mesmo tempo e não têm orçamentos proporcionais ou mesmo
-              suficientes para o cumprimento de suas atribuições.
-            </p>
+          <div class="maisdef-text-classification-p">
+            <h2 style="color: #4f6f52;">Avaliamos e classificamos a transparência dos critérios de atendimento das Defensorias Públicas em todo país</h2>
+            <h2 class="maisdef-text-ava">
+              Com base nas avaliações feitas pelo projeto Mais Defensoria, 
+              <span>93%</span> das 28 Defensorias Públicas <span>apresentaram falhas de transparência</span> sobre os critérios de
+                elegibilidade para atendimento.
+              
+            </h2>
+            <h4 class="maisdef-relatorio-link">Relatório:
+              <a href="https://www.transparencia.org.br/downloads/publicacoes/transparnciaativadoscritriosdeatendimentodasdefensorias.pdf" target="_blank">
+              Transparência dos critérios para atendimento das defensorias públicas
+              </a>
+          </h4>
           </div>
-          <div>
-            <p>
-              Os critérios de atendimento, dada sua complexidade e extensão, dão
-              concretude à missão institucional e devem ser comunicados de forma
-              ampla, objetiva e transparente. Observou-se a completude e o
-              detalhamento da informação e indicação da fonte primária
-              (resolução que regulamenta os critérios de atendimento) para
-              avaliar a transparência ativa de tais informações dada por cada
-              uma das 28 Defensorias Públicas do Brasil.
-            </p>
+          <div class="maisdef-text-classification-dataviz">
+            <h4 class="maisdef-text-classification-header">Classificação de Transparência de critérios de elegibilidade por estado</h4>
+            <p id="maisdef-graph-text" style="text-align: center;"></p>
+            <div id="dataviz">
+              <div>
+                <div class="maisdef-change-data-btn" title="Mudar avaliação" data-bs-toggle="tooltip" data-bs-title="Alterne entre as avaliações">
+                  <svg onclick="handleDataViz()" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section>
+      <section class="maisdef-green-section">
         <div class="maisdef-text-transparency-analisys">
-          <h2>A análise da transparência ativa</h2>
           <div class="maisdef-split-content">
-            <img src="./style/img/undraw_women.svg" alt="chart women" />
             <div>
-              <p>
-                O acesso a informações da Defensoria tem o papel fundamental de
-                possibilitar a realização de diagnósticos para o fortalecimento
-                institucional e a ampliação da proteção jurídica dos grupos
-                vulneráveis. Função que ganha ainda mais importância diante do
-                fato de que a instituição tem o menor orçamento entre os órgãos
-                do sistema de Justiça e está presente em apenas 47% das comarcas
-                brasileiras, segundo a Pesquisa Nacional da Defensoria Pública
-                de 2022.
-              </p>
-              <p>
-                É imprescindível o fortalecimento da transparência e
-                accountability das Defensorias para se atingir a garantia do
-                direito de acesso à justiça dos grupos vulneráveis. O projeto
-                suprime a lacuna de ações concretas em prol da transparência e
-                maior controle social das políticas de acesso à Justiça no
-                Brasil.
-              </p>
-              <a
-                class="maisdef-saiba-mais"
-                target="_blank"
-                href="https://www.transparencia.org.br/downloads/publicacoes/transparnciaativadoscritriosdeatendimentodasdefensorias.pdf"
-                >Saiba mais</a
-              >
+              <div class="maisdef-bar">
+              </div>
+              <div class="maisdef-avalidados">
+                No site de cada Defensoria Pública, avaliamos:
+                <ul style="margin-top: 1rem; line-height: 35px;">
+                  <li>
+                    A <b>disponibilidade</b> e <b>clareza</b> dos critérios
+                  </li>
+                  <li>
+                    O <b>nível de completude</b> e <b>integridade</b> da informação
+                  </li>
+                  <li>
+                    O <b>grau de detalhamento</b> das descrições
+                  </li>
+                  <li>
+                    <b>Menção e referência</b> à regulação 
+                  </li>
+                  <li>
+                    <b>Acessibilidade</b> das informações
+                  </li>
+                </ul>
+              </div>
+               <h2 class="maisdef-saiba-mais">
+                Os órgãos se mostraram dispostos a entender quais eram as falhas e 
+                solucioná-las, compreendendo a relação entre uma melhor transparência 
+                e a missão da instituição de garantir o acesso à justiça.
+                </h2>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; color: #fbc02d;">
+              <h2>Analisamos a
+                transparência
+                ativa</h2>
+              <a href="https://www.transparencia.org.br/downloads/publicacoes/reavaliacao_transparencia_criterios_defensorias.pdf" target="_blank" style="color: #fff; text-decoration: underline; margin: 2rem 0 2rem 0;">Relatório de transparência ativa</a>
+              <img src="./style/img/undraw_women.svg" alt="chart women" />
             </div>
           </div>
         </div>
       </section>
       <section>
         <div class="maisdef-text-partners" id="parceiros">
-          <h2>Parceiros</h2>
-          <p>Conheça os principais colaboradores do projeto</p>
-          <div class="maisdef-logo_section">
-            <img src="./style/img/CONDEGE_LOGO.png" alt="logo condege" />
-            <img
-              src="./style/img/conselho_ouvidorias.png"
-              alt="logo conselho nacional de ouvidorias"
-            />
+          <div>
+            <h2>Parceiros</h2>
+            <div>
+              <img src="./style/img/CONDEGE_LOGO.png" alt="logo Condege" />
+              <img
+                src="./style/img/conselho_ouvidorias.png"
+                alt="logo conselho nacional de ouvidorias"
+              />
+            </div>
           </div>
-        </div>
+          <div>
+            <h2>Financiador</h2>
+            <div class="maisdef-logo_section">
+              <img src="./style/img/Tinker-Logo-Final1.svg" alt="logo Tinker" />
+            </div>
+          </div>
       </section>
     </div>
+  
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="https://d3js.org/d3.v5.js"></script>
 
     <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
       function goToPartners() {
         setTimeout(function () {
           window.location.href = "#parceiros";
@@ -334,135 +330,156 @@
     </script>
 
     <script>
-      // Defina as dimensões e margens do gráfico
-      var margin = { top: 30, right: 30, bottom: 70, left: 60 };
-      var width = 800
-      var height = 500
+      const graphText = document.getElementById("maisdef-graph-text")
 
-        // console.log("innerHeight")
-        // console.log(window.innerHeight)
-        // console.log("margin.top")
-        // console.log(margin.top)
-        // console.log("margin.bottom")
-        // console.log(margin.bottom) 
-        // console.log("Math.min(500, window.innerHeight * 0.6)")       
-        // console.log(Math.min(500, window.innerHeight * 0.6))
-      // Crie o contêiner SVG
+      const transparencyMetrics = [
+        { transparency: "Sem transparência", color: "#EDF8FB" },
+        { transparency: "Baixíssima transparência", color: "#B2E2E2" },
+        { transparency: "Baixa transparência", color: "#66C2A4" },
+        { transparency: "Média transparência", color: "#2CA25F" },
+        { transparency: "Alta transparência", color: "#006D2C" },
+      ];
+
+      let dataType = "AV1"
+      graphText.innerText = "Primeira avaliação de Transparência"
+
+      function handleDataViz() {
+        dataType = dataType === "AV1" ? "AV2" : "AV1";
+
+        // Animação de fade-in e fade-out
+        graphText.classList.add("fade-in");
+
+        setTimeout(function () {
+          graphText.innerText = dataType === "AV1" ? "Primeira avaliação de Transparência" : "Reavaliação de transparência";
+        }, 500);
+
+        setTimeout(function () {
+          graphText.classList.remove("fade-in");
+        }, 500);
+
+        // Atualizar o preenchimento dos estados de acordo com o novo tipo de dado
+        svg
+          .selectAll("path")
+          .transition()
+          .duration(500)
+          .style("fill", function (d) {
+          return transparencyMetrics[d.properties[dataType]].color;
+        });
+      }
+
+      // Código JavaScript usando D3.js para desenhar um mapa com todos os estados do Brasil
+      const responsive = (big, small) =>{
+        return window.innerWidth > 550 ? big : small
+      }
+
+      var width = responsive(500, window.innerWidth - 50)
+      var height = width;
+      var scale = width * 1.372;
+
       var svg = d3
-        .select("#dataviz")
-        .append("svg")
-        .attr(
-          "viewBox",
-          `0 0 ${width + margin.left + margin.right} ${
-            height + margin.top + margin.bottom
-          }`
-        )
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      .select("#dataviz")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
 
-      // Adicione um título ao gráfico
+      var projection = d3
+      .geoMercator()
+      .center([-55, -15])
+      .scale(scale)
+      .translate([width / 2, height / 2]);
+
+      var path = d3.geoPath().projection(projection);
+
+      var tooltip = d3
+      .select("#dataviz")
+      .append("div")
+      .attr("class", "graph-tooltip")
+      .style("opacity", 0);
+
+      // Carregar o arquivo GeoJSON
+      d3.json("https://raw.githubusercontent.com/Transparencia-Brasil/site-maisdefensoria/main/data/brasil.json?token=GHSAT0AAAAAACMNUFF64CNANMGDHQVP4DCIZSXIMBA").then(function (data) {
+      // Desenhar os estados
       svg
+        .selectAll("path")
+        .data(data.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .style("fill", function (d) {
+          // Preencher cada estado com uma cor diferente
+          return transparencyMetrics[d.properties[dataType]].color;
+        })
+        .style("stroke", "black")
+        .style("stroke-width", 0.4)
+        .on("mousemove", function (event, d) {
+        let [x, y] = d3.pointer(event);
+        tooltip.transition().duration(200).style("opacity", 0.9);
+        tooltip
+          .html(
+            d.properties.NOME_UF +
+            ": " +
+            transparencyMetrics[d.properties[dataType]].transparency
+          ) // Adiciona o nome do estado ao tooltip
+          .style("left", x - 70 + "px")
+          .style("top", y - 50 + "px")
+          .style("font-size", `${responsive(14, 12)}px`);
+        })
+        .on("mouseout", function (d) {
+          // Adiciona o evento de mouseout
+          tooltip.transition().duration(200).style("opacity", 0);
+        });
+
+      // Adicionar a sigla dos estados
+      svg
+        .selectAll(".state-label")
+        .data(data.features)
+        .enter()
         .append("text")
-        .attr("x", width / 2)
-        .attr("y", -15)
-        .style("font-size", "18px")
-        .attr("text-anchor", "middle")
-        .text("Primeira Classificação");
+        .attr("class", "state-label")
+        .attr("transform", function (d) {
+          // Encontra o centro do estado para posicionar o texto
+          var center = path.centroid(d);
+          center[1] += 4; // Adiciona 4 pixels para baixo [y]
+          return "translate(" + center + ")";
+        })
+        .text(function (d) {
+          return d.properties.UF; // Obtém a sigla do estado
+        })
+        .style("pointer-events", "none") // Impede que o evento de mouseover seja ativado no texto
+        .style("font-weight", "normal")
+        .style("font-size", `${responsive(12, 10)}px`)
 
-      // Parseie os dados
-      d3.csv("./data/data.csv").then(function (data) {
-        console.log("data")
-        console.log(data)
-        // Defina a escala X
-        var x = d3
-          .scaleBand()
-          .range([0, width])
-          .domain(
-            data.map(function (d) {
-              return d.Transparency;
-            })
-          )
-          .padding(0.2);
+      // Adicionar a legenda de cores
+      var legend = svg
+        .selectAll(".legend")
+        .data(transparencyMetrics)
+        .enter()
+        .append("g")
+        .attr("class", "legend")
+        .attr("transform", function (d, i) {
+          var legendX = width - responsive(485, 330);
+          var legendY = height - 135 + i * 29;
+          return "translate(" + legendX + "," + legendY + ")";
+        });
 
-        // Adicione o eixo X
-        svg
-          .append("g")
-          .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x))
-          .selectAll("text")
-          .style("font-size", "12px")
-          .style("font-weight", "400")
-          .style("font-family", "Open Sans, sans-serif")
-          .style("line-height", "16px");
+      legend
+        .append("rect")
+        .attr("width", 18)
+        .attr("height", 18)
+        .style("fill", function (d) {
+          return d.color;
+        });
 
-        if (window.innerWidth < 768)
-          [
-            svg
-              .selectAll("text")
-              .filter(function (d, i) {
-                return i > 0;
-              })
-              .attr("transform", "translate(-10,0)rotate(-45)")
-              .style("text-anchor", "end"),
-          ];
-
-        // Defina a escala Y
-        var y = d3.scaleLinear().domain([0, 100]).range([height, 0]);
-
-        // Adicione o eixo Y
-        svg
-          .append("g")
-          .call(
-            d3
-              .axisLeft(y)
-              .tickFormat(function (d) {
-                return d + "%";
-              })
-              .tickSize(-width)
-          )
-          .selectAll("text")
-          .style("font-size", "12px")
-          .style("font-weight", "400")
-          .style("font-family", "Open Sans, sans-serif")
-          .style("line-height", "16px");
-
-        // Adicione as barras
-        svg
-          .selectAll("mybar")
-          .data(data)
-          .enter()
-          .append("rect")
-          .attr("x", function (d) {
-            return x(d.Transparency) + x.bandwidth() / 4;
-          })
-          .attr("y", function (d) {
-            return y(d.Percent);
-          })
-          .attr("width", x.bandwidth() / 2)
-          .attr("height", function (d) {
-            return height - y(d.Percent);
-          })
-          .attr("fill", "#1A7F6B");
-
-        svg
-          .selectAll("text.bar-value")
-          .data(data)
-          .enter()
-          .append("text")
-          .attr("class", "bar-value")
-          .attr("x", function (d) {
-            return x(d.Transparency) + x.bandwidth() / 2;
-          })
-          .attr("y", function (d) {
-            return y(d.Percent) - 5;
-          })
-          .attr("text-anchor", "middle")
-          .text(function (d) {
-            return d.Percent + "%";
-          })
-          .attr("font-family", "sans-serif")
-          .attr("font-size", "12px")
-          .attr("fill", "#1A7F6B");
+      legend
+        .append("text")
+        .attr("x", 24)
+        .attr("y", 9)
+        .attr("dy", ".35em")
+        .text(function (d) {
+          return d.transparency;
+        })
+        .style("font-size", `${responsive(14, 10)}px`)
+        .style("font-weight", "600");
       });
     </script>
   </body>
