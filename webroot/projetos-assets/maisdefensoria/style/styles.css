@@ -1,5 +1,5 @@
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
 }
 
@@ -20,25 +20,6 @@ nav li {
 
 a {
   text-decoration: none;
-}
-
-table {
-  font-family: "Open Sans", sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th,
-td {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  color: #000;
-  text-align: center !important;
-}
-
-th {
-  background-color: #f2f2f2;
 }
 
 .fade-in {
@@ -73,7 +54,7 @@ th {
 
 .maisdef-text-home h1 {
   text-align: center;
-  font-size: 64px;
+  font-size: 48px;
   font-style: normal;
   font-weight: 600;
   line-height: 100%;
@@ -99,7 +80,7 @@ nav.navbar {
 }
 
 nav.maisdef-nav {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .maisdef-dropdown-item {
@@ -194,7 +175,6 @@ i.material-icons {
 
 .maisdef-text-classification-dataviz {
   position: relative;
-  margin-right: 2rem;
 }
 
 .maisdef-change-data-btn {
@@ -282,8 +262,12 @@ i.material-icons {
 .maisdef-text-classification {
   display: flex;
   justify-content: space-evenly;
-  gap: 15%;
+  gap: 10%;
   margin-top: 2rem;
+}
+
+.maisdef-text-classification-p h2 {
+  font-size: 26px;
 }
 
 .maisdef-text-classification-p :nth-child(1) {
@@ -315,7 +299,7 @@ i.material-icons {
 
 .maisdef-chart_text {
   color: #000;
-  font-family: Inter;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -332,6 +316,7 @@ i.material-icons {
   display: flex;
   justify-content: space-around;
   margin: 0px 2rem 0px 2rem;
+  padding-bottom: 20px;
 }
 
 .maisdef-text-partners div {
@@ -377,10 +362,6 @@ i.material-icons {
   .maisdef-text-partners p {
     font-size: 14px;
     line-height: 22px;
-  }
-
-  .maisdef-text-classification-dataviz {
-    margin-right: 0;
   }
 
   .maisdef-home-content {

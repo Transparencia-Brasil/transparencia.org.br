@@ -11,6 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -201,7 +203,7 @@
         <div class="maisdef-home">
           <div class="maisdef-text-home">
             <h1>
-              A justiça <br /> <span class="maisdef-greenscale">inclusiva</span> e
+              A <span class="maisdef-greenscale">justiça</span> <br /> <span class="maisdef-greenscale">inclusiva</span> e
               <span class="maisdef-greenscale">equitativa</span>
             </h1>
             <div class="maisdef-home-content">
@@ -372,7 +374,7 @@
         return window.innerWidth > 550 ? big : small
       }
 
-      var width = responsive(500, window.innerWidth - 50)
+      var width = responsive(450, window.innerWidth - 70)
       var height = width;
       var scale = width * 1.372;
 
@@ -397,7 +399,7 @@
       .style("opacity", 0);
 
       // Carregar o arquivo GeoJSON
-      d3.json("https://raw.githubusercontent.com/Transparencia-Brasil/site-maisdefensoria/main/data/brasil.json?token=GHSAT0AAAAAACMNUFF64CNANMGDHQVP4DCIZSXIMBA").then(function (data) {
+      d3.json("./data/brasil.json").then(function (data) {
       // Desenhar os estados
       svg
         .selectAll("path")
@@ -457,7 +459,7 @@
         .append("g")
         .attr("class", "legend")
         .attr("transform", function (d, i) {
-          var legendX = width - responsive(485, 330);
+          var legendX = width - responsive(450, 340);
           var legendY = height - 135 + i * 29;
           return "translate(" + legendX + "," + legendY + ")";
         });
