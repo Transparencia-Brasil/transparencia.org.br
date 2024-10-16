@@ -16,6 +16,7 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
     gtag('js', new Date());
 
     gtag('config', 'G-5Q93JSV8P7');
+    gtag('config', 'AW-863777578');
   </script>
   <!-- Facebook Pixel Code -->
   <script>
