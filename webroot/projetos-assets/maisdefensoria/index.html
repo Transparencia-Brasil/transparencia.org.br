@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mais Defensoria</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -23,466 +15,1696 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <link rel="icon" type="image/x-icon" href="./style/img/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./style/img/illustrations/favicon.ico"
+    />
     <link rel="stylesheet" href="./style/styles.css" />
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
   </head>
   <body>
-    <div class="maisdef-container">
-      <nav class="navbar">
-        <div class="container-fluid">
-          <button
-            class="maisdef-open-drawer"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-            aria-label="Toggle navigation"
-          >
-            <div class="maisdef-hamburguer-menu">
-              <i class="material-icons menu-icon"> menu </i>
-            </div>
-          </button>
-          <img
-            class="maisdef-logo-small"
-            src="./style/img/logo_maisdef.png"
-            alt="Logo"
-          />
-          <div
-            class="offcanvas offcanvas-start"
-            tabindex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-          >
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active active" aria-current="page" href="#"
-                    >O MAIS DEFENSORIA</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Produtos</a>
-                </li>
-                <li class="nav-item dropdown dropdown-center">
-                  <a
-                    class="maisdef-dropdown-item nav-link active dropdown-toggle"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    data-bs-auto-close="outside"
-                  >
-                    Relatórios
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#"
-                        >Revisão dos Critérios</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#"
-                        >Performance das Ouvidorias</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="https://www.transparencia.org.br/downloads/publicacoes/transparnciaativadoscritriosdeatendimentodasdefensorias.pdf"
-                        >Transparência Ativa</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        class="dropdown-item"
-                        href="https://www.transparencia.org.br/downloads/publicacoes/transparnciapassivadasdefensoriaspblicas.pdf"
-                        >Canais de Transparência</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Notícias</a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    data-bs-dismiss="offcanvas"
-                    onclick="goToPartners()"
-                    >Parceiros</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <section
+      class="container bg-blue"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div class="flex align-end justify-between">
+        <img
+          class="maisdef-logo"
+          src="/style/img/illustrations/logo_maisdef.png"
+          alt="Mais Defensoria"
+        />
+        <h1 class="section-title m-0">
+          Por mais accountability nas defensorias públicas
+        </h1>
+      </div>
+      <p class="body-1 mt-70">
+        O projeto busca fortalecer a transparência das defensorias públicas por
+        meio do acesso a dados de seus serviços prestados, o que permitirá
+        analisar as prioridades das DPs e oferecer à sociedade insumos para
+        participar nas definições estratégicas do órgão, resultando em mais
+        participação e melhor acesso à Justiça.
+      </p>
 
-      <nav class="maisdef-nav">
-        <ul class="maisdef-nav-list">
-          <li><a href="#" class="green-color">O MAIS DEFENSORIA</a></li>
-          <li><a href="#">Produtos</a></li>
-          <li class="nav-item dropdown dropdown-center">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              data-bs-auto-close="outside"
+      <div class="flex justify-center align-center mt-50 mb-50 gap-26">
+        <button
+          class="button body-2 font-bold"
+          onclick="window.location.href = '#indicators'"
+        >
+          Confira os resultados
+        </button>
+      </div>
+
+      <img
+        class="bg-maisdef-logo"
+        src="style\img\illustrations\logo_final2.png"
+        alt="Mais Defensoria"
+      />
+
+      <shape-divider-bottom></shape-divider-bottom>
+    </section>
+
+    <section
+      class="container bg-white"
+      id="indicators"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <h2 class="section-title">Indicadores de atuação | Atendimento</h2>
+      <p class="body-1 mt-35">
+        O Mais Defensoria criou um modelo de indicadores de atendimentos das
+        defensorias públicas para mensurar objetivamente a atuação desses órgãos
+        e servir como instrumento auxiliar ao controle e à participação social.
+      </p>
+      <p class="body-1">
+        São cinco grupos de indicadores, estabelecidos com base nas etapas de
+        atendimento nas defensorias:
+      </p>
+
+      <!-- tabs -->
+      <div>
+        <ul
+          class="nav nav-underline horizontal-tab-list"
+          id="myTab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active body-3 pb-0"
+              id="home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#home-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="home-tab-pane"
+              aria-selected="true"
             >
-              Publicações
-            </a>
-            <ul class="dropdown-menu">
-              <li class="maisdef-dropdown-item nav-item dropdown dropend">
-                <a
-                  class="maisdef-dropdown-item dropdown-item nav-link dropdown-toggle"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  data-bs-auto-close="outside"
-                >
-                  Relatórios
-                </a>
-                <ul class="dropdown-menu">
+              Agendamento
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link body-3 pb-0"
+              id="profile-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#profile-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="profile-tab-pane"
+              aria-selected="false"
+            >
+              Orientações preliminares
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link body-3 pb-0"
+              id="contact-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#contact-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="contact-tab-pane"
+              aria-selected="false"
+            >
+              Avaliação econômica
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link body-3 pb-0"
+              id="disabled-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#disabled-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="disabled-tab-pane"
+              aria-selected="false"
+            >
+              Atendimento jurídico inicial
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link body-3 pb-0"
+              id="atendimento-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#atendimento-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="atendimento-tab-pane"
+              aria-selected="false"
+            >
+              Atendimento de acompanhamento
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="home-tab-pane"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+            tabindex="0"
+          >
+            <p class="body-1 mt-25 font-bold font-italic">
+              “Marco zero” do atendimento nas defensorias
+            </p>
+            <ul class="body-1 item-list-bg-grey">
+              <li>Total de agendamentos;</li>
+              <li>
+                Tempo médio (dias) decorrido entre o agendamento e o
+                atendimento;
+              </li>
+              <li class="flex">
+                <div class="w-full">Número de agendamentos por:</div>
+                <ul class="dashed-list w-full">
+                  <li>Tipos de pessoas atendidas (física ou jurídica);</li>
                   <li>
-                    <a class="dropdown-item" href="#">Revisão dos Critérios</a>
+                    Perfil das pessoas físicas atendidas (gênero, raça/cor,
+                    vrenda, escolaridade, faixa etária);
+                  </li>
+                  <li>UF e cidade de residência das pessoas atendidas;</li>
+                  <li>
+                    Canais de entrada usados para o agendamento (chatbot,
+                    telefone, WhatsApp, presencial);
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#"
-                      >Performance das Ouvidorias
-                    </a>
+                    Modalidade na qual é realizado o atendimento agendado
+                    (on-line ou presencial);
                   </li>
                   <li>
-                    <a
-                      target="_blank"
-                      class="dropdown-item"
-                      href="https://www.transparencia.org.br/downloads/publicacoes/transparnciaativadoscritriosdeatendimentodasdefensorias.pdf"
-                      >Transparência Ativa</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      target="_blank"
-                      class="dropdown-item"
-                      href="https://www.transparencia.org.br/downloads/publicacoes/transparnciapassivadasdefensoriaspblicas.pdf"
-                      >Canais de Transparência
-                    </a>
+                    Unidade à qual o atendimento agendado foi direcionado.
                   </li>
                 </ul>
               </li>
-              <li>
-                <a class="maisdef-dropdown-item dropdown-item" href="#"
-                  >Notícias</a
-                >
+            </ul>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="profile-tab-pane"
+            role="tabpanel"
+            aria-labelledby="profile-tab"
+            tabindex="0"
+          >
+            <p class="body-1 mt-25 font-bold font-italic">
+              Avaliação inicial do caso quanto à competência (se cabe à
+              defensoria ou a outro órgão) e complexidade
+            </p>
+            <ul class="body-1 item-list-bg-grey">
+              <li>Total de atendimentos para orientação preliminar;</li>
+              <li class="flex">
+                <div class="w-full">
+                  Número de atendimentos para orientações preliminares por:
+                </div>
+                <ul class="dashed-list w-full">
+                  <li>Tipos de pessoas atendidas (física ou jurídica);</li>
+                  <li>
+                    Perfil das pessoas físicas atendidas (gênero, raça/cor,
+                    renda, escolaridade, faixa etária);
+                  </li>
+                  <li>UF e cidade de residência das pessoas atendidas;</li>
+                  <li>
+                    Modalidade na qual é realizado o atendimento (on-line ou
+                    presencial);
+                  </li>
+                  <li>
+                    Unidade à qual o atendimento foi direcionado para orientação
+                    preliminar.
+                  </li>
+                  <li>
+                    Desfecho do atendimento (encaminhamento para outro
+                    órgão/avanço para etapa de avaliação da situação
+                    econômico-financeira).
+                  </li>
+                </ul>
               </li>
             </ul>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="contact-tab-pane"
+            role="tabpanel"
+            aria-labelledby="contact-tab"
+            tabindex="0"
+          >
+            <p class="body-1 mt-25 font-bold font-italic">
+              Avaliação da renda familiar e outros marcadores de vulnerabilidade
+            </p>
+            <ul class="body-1 item-list-bg-grey">
+              <li>
+                Total de atendimentos para avaliação da situação econômica;
+              </li>
+              <li>
+                Total de retornos para complementação de documentação
+                realizados;
+              </li>
+              <li>
+                Número de retornos para complementação de documentação
+                realizados por tipo de documentação (comprovante de renda,
+                identificação, relação de parentesco etc.) cuja falta ocasionou
+                um ou mais retornos para complementação.
+              </li>
+              <li class="flex">
+                <div class="w-full">
+                  Número de atendimentos para avaliação econômica por:
+                </div>
+                <ul class="dashed-list w-full">
+                  <li>Tipos de pessoas atendidas (física ou jurídica);</li>
+                  <li>
+                    Perfil (gênero, raça/cor, renda, escolaridade, faixa
+                    etária);
+                  </li>
+                  <li>UF e cidade de residência;</li>
+                  <li>
+                    Modalidade na qual é realizado o atendimento (on-line ou
+                    presencial);
+                  </li>
+                  <li>Unidade responsável pelo atendimento;</li>
+                  <li>
+                    Desfecho do atendimento (aceitação do caso, denegação por
+                    renda ou pedido de complementação de documentação).
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="disabled-tab-pane"
+            role="tabpanel"
+            aria-labelledby="disabled-tab"
+            tabindex="0"
+          >
+            <p class="body-1 mt-25 font-bold font-italic">
+              Primeiro atendimento jurídico de uma demanda (mesmo que
+              apresentada por pessoa já atendida pela DP), para verificação de
+              área, medida jurídica cabível, apresentação de documentação
+              necessária para o caso
+            </p>
+            <ul class="body-1 item-list-bg-grey">
+              <li>Total de atendimentos jurídicos iniciais;</li>
+              <li>Total de abstenções em atendimentos jurídicos iniciais;</li>
+              <li class="flex">
+                <div class="w-full">
+                  Número de atendimentos jurídicos iniciais por:
+                </div>
+                <ul class="dashed-list w-full">
+                  <li>Tipos de pessoas atendidas (física ou jurídica);</li>
+                  <li>
+                    Perfil (gênero, raça/cor, renda, escolaridade, faixa
+                    etária);
+                  </li>
+                  <li>UF e cidade de residência;</li>
+                  <li>
+                    Modalidade na qual é realizado o atendimento (on-line ou
+                    presencial);
+                  </li>
+                  <li>Unidade responsável pelo atendimento;</li>
+                  <li>
+                    Tipo de encaminhamento (denegação do caso, solicitação de
+                    documentação complementar, resolução consensual de
+                    conflitos, medida jurídica cabível, direcionamento a órgão
+                    externo);
+                  </li>
+                  <li>
+                    Enquadramento inicial de área de atuação (cível, criminal,
+                    infância e juventude, execução criminal);
+                  </li>
+                  <li>
+                    Tipo de profissional responsável pelo atendimento
+                    (defensor/a, advogado/a ou entidade conveniado/a);
+                  </li>
+                  <li>
+                    Motivos de denegação (quebra de confiança, medida
+                    manifestamente incabível, etc);
+                  </li>
+                  <li>Duração (em minutos) do atendimento jurídico inicial;</li>
+                  <li>
+                    Classe da medida jurídica adotada (HC, ação popular, pedido
+                    de liminar, medida protetiva etc.);
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="atendimento-tab-pane"
+            role="tabpanel"
+            aria-labelledby="atendimento-tab"
+            tabindex="0"
+          >
+            <p class="body-1 mt-25 font-bold font-italic">
+              Atendimento para prestar informações à pessoa atendida sobre o
+              andamento de sua demanda, ou para apresentação de documentações
+              necessárias
+            </p>
+            <ul class="body-1 item-list-bg-grey">
+              <li>Total de atendimentos de acompanhamento;</li>
+              <li>Total de abstenções em atendimentos de acompanhamento.</li>
+              <li class="flex">
+                <div class="w-full">
+                  Número de atendimentos de acompanhamento por:
+                </div>
+                <ul class="dashed-list w-full">
+                  <li>Tipos de pessoas atendidas (física ou jurídica);</li>
+                  <li>
+                    Perfil (gênero, raça/cor, renda, escolaridade, faixa
+                    etária);
+                  </li>
+                  <li>UF e cidade de residência;</li>
+                  <li>
+                    Modalidade na qual é realizado o atendimento (on-line ou
+                    presencial);
+                  </li>
+                  <li>Unidade responsável pelo atendimento;</li>
+                  <li>
+                    Tipo de atendimento: de continuidade, primeiro atendimento
+                    de acompanhamento ou apresentação de documentação
+                    complementar;
+                  </li>
+                  <li>
+                    Área de atuação (cível, criminal, infância e juventude,
+                    execução criminal);
+                  </li>
+                  <li>
+                    Classes das medidas jurídicas em curso (HC, ação popular,
+                    pedido de liminar, medida protetiva etc.);
+                  </li>
+                  <li>
+                    Tipo de profissional responsável pelo atendimento
+                    (defensor/a, advogado/a ou entidade conveniado/a);
+                  </li>
+                  <li>
+                    Duração (em minutos) do atendimento de acompanhamento.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- end-tabs -->
+    </section>
+
+    <section
+      class="container bg-green"
+      id="sp-analysis"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <shape-divider-top></shape-divider-top>
+
+      <h2 class="section-title white mt-45">
+        Exemplo ilustrativo: indicadores de atendimento
+      </h2>
+      <p class="body-1 mt-35 white">
+        Para ilustrar como os indicadores funcionam e quais informações podem
+        gerar para a gestão e o controle social, o Mais Defensoria elaborou
+        algumas visualizações a partir de uma amostra de dados sobre
+        agendamentos e avaliações econômicas.
+      </p>
+      <!-- tabs -->
+      <div class="mb-65">
+        <ul
+          class="nav nav-underline horizontal-tab-list justify-center"
+          id="myTab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active body-3 pb-0 white"
+              id="home-tab-img"
+              data-bs-toggle="tab"
+              data-bs-target="#home-tab-pane-img"
+              type="button"
+              role="tab"
+              aria-controls="home-tab-pane-img"
+              aria-selected="true"
+            >
+              Agendamento
+            </button>
           </li>
-          <li><a href="#parceiros">Parceiros</a></li>
-          <img
-            class="maisdef-logo"
-            src="./style/img/logo_maisdef.png"
-            alt="Logo"
-          />
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link body-3 pb-0 white"
+              id="contact-tab-img"
+              data-bs-toggle="tab"
+              data-bs-target="#contact-tab-pane-img"
+              type="button"
+              role="tab"
+              aria-controls="contact-tab-pane-img"
+              aria-selected="false"
+            >
+              Avaliação econômica
+            </button>
+          </li>
         </ul>
-      </nav>
-      <section class="maisdef-home-section">
-        <div class="maisdef-home">
-          <div class="maisdef-text-home">
-            <h1>
-              A <span class="maisdef-greenscale">justiça</span> <br /> <span class="maisdef-greenscale">inclusiva</span> e
-              <span class="maisdef-greenscale">equitativa</span>
-            </h1>
-            <div class="maisdef-home-content">
-              <p>
-                O projeto Mais Defensoria tem o propósito de ampliar o acesso à Justiça, principalmente por cidadãos mais marginalizados.
-                <br />
-                <br />
-                Nosso foco é melhorar a governança das Defensorias Públicas do país, por meio do fornecimento de informações e dados sobre 
-                os problemas de acesso ao sistema de justiça e criação de ferramentas para fortalecer a administração dos órgãos.
-              </p>
-              <img src="./style/img/home-section-pic.svg" alt="ilustração">
+        <!-- primeira aba -->
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="home-tab-pane-img"
+            role="tabpanel"
+            aria-labelledby="home-tab-img"
+            tabindex="0"
+          >
+            <div
+              id="carouselPilot"
+              class="carousel carousel-white slide mt-45 w-full"
+            >
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilot"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilot"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilot"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilot"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilot"
+                  data-bs-slide-to="4"
+                  aria-label="Slide 5"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilot"
+                  data-bs-slide-to="5"
+                  aria-label="Slide 6"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\agendamentos\png\agendamentos-por-genero.png"
+                        alt="agendamento por gênero"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\agendamentos\png\agendamentos-por-etnia.png"
+                        alt="agendamento por etnia"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\agendamentos\png\agendamentos-por-faixa-etaria.png"
+                        alt="agendamento por faixa etária"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\agendamentos\png\agendamentos-por-tempo-decorrido.png"
+                        alt="agendamento por tempo decorrido"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\agendamentos\png\agendamentos-por-modalidade-de-atendimento.png"
+                        alt="agendamento por modalidade de atendimento"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\agendamentos\png\tempo-medio-decorrido-por-modalidade.png"
+                        alt="agendamento por tempo médio decorrido por modalidade"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselPilot"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon carousel-control-icons-white"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselPilot"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon carousel-control-icons-white"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- segunda aba -->
+          <div
+            class="tab-pane fade"
+            id="contact-tab-pane-img"
+            role="tabpanel"
+            aria-labelledby="contact-tab-img"
+            tabindex="0"
+          >
+            <div
+              id="carouselPilotEconomic"
+              class="carousel carousel-white slide mt-45 w-full"
+            >
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="4"
+                  aria-label="Slide 5"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="5"
+                  aria-label="Slide 6"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="6"
+                  aria-label="Slide 7"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="7"
+                  aria-label="Slide 8"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="8"
+                  aria-label="Slide 9"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="9"
+                  aria-label="Slide 10"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="10"
+                  aria-label="Slide 11"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="11"
+                  aria-label="Slide 12"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselPilotEconomic"
+                  data-bs-slide-to="12"
+                  aria-label="Slide 13"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-por-genero.png"
+                        alt="avaliação por gênero"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-por-etnia.png"
+                        alt="avaliação por etnia"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-por-genero-e-etnia.png"
+                        alt="avaliação por gênero e etnia"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-concedidas-por-genero-e-etnia.png"
+                        alt="avaliação concedida por gênero e etnia"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-negadas-por-genero-e-etnia.png"
+                        alt="avaliação negadas por gênero e etnia"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-por-faixa-etaria.png"
+                        alt="avaliação por faixa etária"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-por-renda-familiar.png"
+                        alt="avaliação por renda familiar total"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-concedidas-por-renda-familiar-total.png"
+                        alt="avaliação concedida por renda familiar total"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-negadas-por-renda-familiar-total.png"
+                        alt="avaliação negada por renda familiar total"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-por-membros-na-familia.png"
+                        alt="avaliação por membros na família"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-em-familias-com-pcd.png"
+                        alt="avaliação em famílias com PCD"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-por-local.png"
+                        alt="avaliação por local"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="w-full flex align-center justify-center">
+                    <div class="bg-white round-borders-padding">
+                      <img
+                        class="reports-img"
+                        src="style\img\reports\avaliacoes\png\avaliacoes-por-resultado.png"
+                        alt="avaliação por resultado"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselPilotEconomic"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon carousel-control-icons-white"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselPilotEconomic"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon carousel-control-icons-white"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
         </div>
-      </section>
-      <section>
-        <div class="maisdef-text-classification">
-          <div class="maisdef-text-classification-p">
-            <h2 style="color: #4f6f52;">Avaliamos e classificamos a transparência dos critérios de atendimento das Defensorias Públicas em todo país</h2>
-            <h2 class="maisdef-text-ava">
-              Com base nas avaliações feitas pelo projeto Mais Defensoria, 
-              <span>93%</span> das 28 Defensorias Públicas <span>apresentaram falhas de transparência</span> sobre os critérios de
-                elegibilidade para atendimento.
-              
-            </h2>
-            <h4 class="maisdef-relatorio-link">Relatório:
-              <a href="https://www.transparencia.org.br/downloads/publicacoes/transparnciaativadoscritriosdeatendimentodasdefensorias.pdf" target="_blank">
-              Transparência dos critérios para atendimento das defensorias públicas
-              </a>
-          </h4>
-          </div>
-          <div class="maisdef-text-classification-dataviz">
-            <h4 class="maisdef-text-classification-header">Classificação de Transparência de critérios de elegibilidade por estado</h4>
-            <p id="maisdef-graph-text" style="text-align: center;"></p>
-            <div id="dataviz">
+      </div>
+      <!-- end-tabs -->
+
+      <shape-divider-bottom id="transparency-indicators"></shape-divider-bottom>
+    </section>
+
+    <section
+      class="container bg-white"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <h1 class="section-title text-center">
+        Indicadores de transparência das Defensorias
+      </h1>
+      <p class="mt-35 body-1">
+        A transparência das defensorias foi outro dos focos do Mais Defensoria.
+        Além de avaliar como os órgãos divulgam seus critérios de atendimento -
+        informação essencial para dar clareza aos cidadãos sobre seus direitos
+        no acesso à justiça -, o projeto criou uma checklist de transparência
+        ativa. A ferramenta serve para verificar se as defensorias divulgam as
+        informações que deveriam em seus sites, possibilitando o controle social
+        sobre esse aspecto.
+      </p>
+
+      <h2 class="section-subtitle mt-45">
+        Resultados das avaliações de transparência ativa dos critérios de
+        atendimento das Defensorias Públicas de todo o país
+      </h2>
+
+      <!-- tabs -->
+      <div>
+        <ul
+          class="nav nav-underline horizontal-tab-list justify-content-center"
+          id="myTab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active body-3 pb-0"
+              id="first-ava"
+              data-bs-toggle="tab"
+              data-bs-target="#first-ava-pane"
+              type="button"
+              role="tab"
+              aria-controls="first-ava-pane"
+              aria-selected="true"
+            >
+              Primeira avaliação
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link body-3 pb-0"
+              id="second-ava"
+              data-bs-toggle="tab"
+              data-bs-target="#second-ava-pane"
+              type="button"
+              role="tab"
+              aria-controls="second-ava-pane"
+              aria-selected="false"
+            >
+              Segunda avaliação
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="first-ava-pane"
+            role="tabpanel"
+            aria-labelledby="first-ava"
+            tabindex="0"
+          >
+            <div class="flex align-center justify-between mt-25 gap-26">
               <div>
-                <div class="maisdef-change-data-btn" title="Mudar avaliação" data-bs-toggle="tooltip" data-bs-title="Alterne entre as avaliações">
-                  <svg onclick="handleDataViz()" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
-                  </svg>
+                <p class="body-1">
+                  93% das 28 Defensorias Públicas
+                  <span class="underline">
+                    apresentam falhas de transparência
+                  </span>
+                  sobre os critérios de elegibilidade para atendimento.
+                </p>
+                <p class="body-1">
+                  <span class="underline"> Apenas quatro defensorias </span>
+                  (Mato Grosso do Sul, Rio Grande do Sul, São Paulo e Tocantins)
+                  publicaram informações completas sobre seus critérios de
+                  atendimento.
+                </p>
+                <p class="body-1">
+                  Três defensorias
+                  <span class="underline"> não divulgaram </span> nenhuma
+                  informação sobre esses critérios, e a maioria apresenta
+                  informações de forma genérica, sem detalhamento adequado ou
+                  sem indicar a resolução que define os critérios.
+                </p>
+
+                <p class="body-3 opacity-80 mt-25">
+                  Relatório:
+                  <a
+                    target="_blank"
+                    href="https://www.transparencia.org.br/downloads/publicacoes/transparnciaativadoscritriosdeatendimentodasdefensorias.pdf"
+                    >Transparência dos critérios para atendimento das
+                    defensorias públicas</a
+                  >
+                </p>
+              </div>
+
+              <div id="dataviz"></div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="second-ava-pane"
+            role="tabpanel"
+            aria-labelledby="second-ava"
+            tabindex="0"
+          >
+            <div class="flex align-center justify-between mt-25 gap-26">
+              <div>
+                <p class="body-1">
+                  Após a divulgação do primeiro relatório, houve uma mobilização
+                  de várias defensorias para
+                  <span class="underline">melhorar a transparência</span> de
+                  seus critérios de atendimento.
+                </p>
+                <p class="body-1">
+                  O percentual de defensorias que alcançaram “Alta
+                  transparência” subiu de
+                  <span class="underline">14%</span> em abril para
+                  <span class="underline">46%</span> em outubro de 2023.
+                </p>
+                <p class="body-1">
+                  A proporção de defensorias com “Baixíssima transparência” caiu
+                  de <span class="underline">57%</span> para
+                  <span class="underline">39%</span>.
+                </p>
+                <p class="body-1">
+                  A Defensoria de Sergipe, que antes
+                  <span class="underline">não</span> tinha transparência, passou
+                  a ser classificada como
+                  <span class="underline">“Alta transparência”</span>.
+                </p>
+
+                <p class="body-3 opacity-80 mt-25">
+                  Relatório:
+                  <a
+                    target="_blank"
+                    href="https://www.transparencia.org.br/downloads/publicacoes/reavaliacao_transparencia_criterios_defensorias.pdf"
+                    >Reavaliação da transparência dos critérios de atendimento
+                    das defensorias públicas</a
+                  >
+                </p>
+              </div>
+
+              <div id="dataviz2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end tabs -->
+    </section>
+
+    <section
+      class="container bg-blue"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      id="checklist"
+    >
+      <shape-divider-top></shape-divider-top>
+
+      <h1 class="section-title mt-35">
+        Checklist de transparência ativa das defensorias
+      </h1>
+
+      <p class="body-1 mt-35">
+        O checklist é fundamentado em exigências que estão em leis de
+        transparência e correlatas, como a Lei de Responsabilidade Fiscal e a
+        Lei de Defesa do Usuário de Serviço Público. São 12 categorias, que
+        agrupam 54 itens.
+      </p>
+      <p class="body-1">
+        A
+        <a
+          class="link-success"
+          target="_blank"
+          href="https://docs.google.com/spreadsheets/d/1D5nlcrygo1MdBMpflJZedg3Svr7FmgD9xM-_RAf_qNg/edit?usp=sharing"
+        >
+          ferramenta</a
+        >
+        avalia a presença de cada item no site, sua completude e a facilidade de
+        acesso.
+      </p>
+
+      <div
+        id="carouselChecklist"
+        class="carousel carousel-white slide mt-25 mb-65 w-full"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselChecklist"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselChecklist"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <!-- row 1 -->
+            <div class="row">
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">ESTRUTURA ORGANIZACIONAL</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>Organograma</li>
+                    <li>Quem é quem por setor/departamento</li>
+                    <li>Informações gerais sobre a ouvidoria externa/geral</li>
+                    <li>Informações gerais sobre os Núcleos Especializados</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">CONTATOS</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>Endereços e telefones/e-mails das unidades</li>
+                    <li>
+                      Meios de contato do público com a instituição (excluído
+                      atendimento na atividade-fim)
+                    </li>
+                    <li>
+                      Endereço, contatos e horário de atendimento da ouvidoria
+                      externa/geral
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">INSTITUCIONAL</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>Competências</li>
+                    <li>Legislação sobre a Defensoria</li>
+                    <li>Regimento interno da Defensoria</li>
+                    <li>Resoluções, deliberações, instruções normativas</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- row 2 -->
+            <div class="row mt-25">
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">ORÇAMENTO/FINANÇAS</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>
+                      Dados consolidados sobre repasses ou transferências de
+                      recursos recebidos e realizados
+                    </li>
+                    <li>
+                      Dados detalhados sobre repasses ou transferências de
+                      recursos recebidos
+                    </li>
+                    <li>
+                      Dados detalhados sobre repasses ou transferências de
+                      recursos realizados
+                    </li>
+                    <li>
+                      Dados consolidados de execução financeiro-orçamentária
+                    </li>
+                    <li>
+                      Dados detalhados de execução financeiro-orçamentária
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">REMUNERAÇÃO</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>
+                      Dados detalhados e individualizados de remuneração de
+                      defensores(as) ativos
+                    </li>
+                    <li>
+                      Dados detalhados e individualizados de remuneração de
+                      defensores(as) inativos
+                    </li>
+                    <li>
+                      Dados detalhados e individualizados de remuneração de
+                      servidores(as) ativos
+                    </li>
+                    <li>
+                      Dados detalhados e individualizados de remuneração de
+                      servidores(as) inativos
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">ATENDIMENTO</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>Horários de atendimento ao público em cada unidade</li>
+                    <li>
+                      Modalidades de atendimento (virtual e presencial) em cada
+                      unidade
+                    </li>
+                    <li>Critérios para atendimento</li>
+                    <li>Documentos necessários para o atendimento</li>
+                    <li>
+                      Passo-a-passo/Fluxo do atendimento (virtual e presencial)
+                    </li>
+                    <li>Serviços jurídicos prestados</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <!-- row 3 -->
+            <div class="row">
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">GARANTIA DE ACESSO</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>Serviço de Informação ao Cidadão (SIC) físico</li>
+                    <li>Serviço de Informação ao Cidadão (SIC) digital</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">CONVÊNIOS</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>Convênios em vigor: informações gerais e íntegra</li>
+                    <li>
+                      Convênios já encerrados: informações gerais e íntegra
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">FAQ</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>Respostas a perguntas frequentes</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- row 4 -->
+            <div class="row mt-25">
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">AÇÕES E PROGRAMAS</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>Relatórios de atividades da Defensoria</li>
+                    <li>Nº de pessoas que procuraram a Defensoria</li>
+                    <li>
+                      Nº de pessoas atendidas (em cada etapa do atendimento) e
+                      por área de atuação
+                    </li>
+                    <li>Perfil das pessoas atendidas</li>
+
+                    <li>
+                      Planos estratégicos anteriores, atuais e em execução
+                    </li>
+                    <li>
+                      Indicadores sobre a execução de planos estratégicos
+                      anteriores e atuais
+                    </li>
+                    <li>
+                      Indicadores sobre a execução dos programas e/ou projetos
+                      em andamento
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">REQUISITOS DO SITE</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>
+                      Mecanismo de busca em conteúdo de resoluções,
+                      deliberações, portarias, instruções normativas
+                    </li>
+                    <li>Mecanismo de busca no conteúdo do site todo</li>
+                    <li>Ferramentas de acessibilidade digital</li>
+                    <li>
+                      Dados abertos/legíveis por máquina: execução
+                      financeiro-orçamentária
+                    </li>
+                    <li>Dados abertos: repasses e transferências</li>
+                    <li>Dados abertos: remunerações</li>
+                    <li>Dados abertos: licitações e contratos</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="checklist-grid-item">
+                  <h2 class="body-1 text-center">LICITAÇÕES E CONTRATOS</h2>
+
+                  <ul class="body-2 dashed-list">
+                    <li>Informações sobre licitações abertas e concluídas</li>
+                    <li>Contratos em vigor: informações gerais e íntegra</li>
+                    <li>
+                      Contratos já encerrados: informações gerais e íntegra
+                    </li>
+                    <li>
+                      Inclusão de licitações abertas e concluídas no Portal
+                      Nacional de Contratações Públicas
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="maisdef-green-section">
-        <div class="maisdef-text-transparency-analisys">
-          <div class="maisdef-split-content">
-            <div>
-              <div class="maisdef-bar">
-              </div>
-              <div class="maisdef-avalidados">
-                No site de cada Defensoria Pública, avaliamos:
-                <ul style="margin-top: 1rem; line-height: 35px;">
-                  <li>
-                    A <b>disponibilidade</b> e <b>clareza</b> dos critérios
-                  </li>
-                  <li>
-                    O <b>nível de completude</b> e <b>integridade</b> da informação
-                  </li>
-                  <li>
-                    O <b>grau de detalhamento</b> das descrições
-                  </li>
-                  <li>
-                    <b>Menção e referência</b> à regulação 
-                  </li>
-                  <li>
-                    <b>Acessibilidade</b> das informações
-                  </li>
-                </ul>
-              </div>
-               <h2 class="maisdef-saiba-mais">
-                Os órgãos se mostraram dispostos a entender quais eram as falhas e 
-                solucioná-las, compreendendo a relação entre uma melhor transparência 
-                e a missão da instituição de garantir o acesso à justiça.
-                </h2>
+        <button
+          class="carousel-control-prev prev-btn"
+          type="button"
+          data-bs-target="#carouselChecklist"
+          data-bs-slide="prev"
+        >
+          <span
+            class="carousel-control-prev-icon carousel-control-icons-white"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next next-btn"
+          type="button"
+          data-bs-target="#carouselChecklist"
+          data-bs-slide="next"
+        >
+          <span
+            class="carousel-control-next-icon carousel-control-icons-white"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <shape-divider-bottom></shape-divider-bottom>
+    </section>
+
+    <section class="container" data-aos="fade-up" data-aos-duration="1000">
+      <h1 class="section-title">
+        Exemplo ilustrativo: resultados de checklist de transparência ativa
+      </h1>
+
+      <p class="body-1 mt-35">
+        Para ilustrar os resultados que o checklist pode oferecer à gestão e ao
+        controle social, o Mais Defensoria simulou uma análise a um site. Os
+        números apresentados nos quadros a seguir não representam uma defensoria
+        em específico.
+      </p>
+
+      <p class="body-2 font-bold mt-25 mb-0">
+        Quanto à presença dos itens no site da defensoria:
+      </p>
+      <div class="overflow-auto">
+        <table class="table table-striped">
+          <thead>
+            <tr class="body-2">
+              <th scope="col"></th>
+              <th scope="col">Nº de itens verificados no checklist</th>
+              <th scope="col">
+                Cumprimento total (% de itens marcados como "Sim")
+              </th>
+              <th scope="col">
+                Descumprimento (% de itens marcados como "Não")
+              </th>
+            </tr>
+          </thead>
+          <tbody class="body-3">
+            <tr>
+              <td>Institucional</td>
+              <td>4</td>
+              <td>65%</td>
+              <td>35%</td>
+            </tr>
+            <tr>
+              <td>Estrutura organizacional</td>
+              <td>4</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Contatos</td>
+              <td>3</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Atendimento</td>
+              <td>6</td>
+              <td>60%</td>
+              <td>40%</td>
+            </tr>
+            <tr>
+              <td>Orçamento e finanças</td>
+              <td>6</td>
+              <td>33%</td>
+              <td>50%</td>
+            </tr>
+            <tr>
+              <td>Remuneração</td>
+              <td>6</td>
+              <td>67%</td>
+              <td>33%</td>
+            </tr>
+            <tr>
+              <td>Licitações e contratos</td>
+              <td>4</td>
+              <td>75%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Convênios</td>
+              <td>2</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Ações e programas</td>
+              <td>11</td>
+              <td>27%</td>
+              <td>54%</td>
+            </tr>
+            <tr>
+              <td>FAQ</td>
+              <td>1</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Requisitos do site</td>
+              <td>7</td>
+              <td>57%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Garantia de acesso</td>
+              <td>2</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+            <tr class="font-bold">
+              <td>TOTAL</td>
+              <td>56</td>
+              <td>61%</td>
+              <td>24%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="body-2 font-bold mt-35 mb-0">
+        Quanto à facilidade de localizar e acessar os itens no site da
+        defensoria:
+      </p>
+      <div class="overflow-auto">
+        <table class="table table-striped">
+          <thead>
+            <tr class="body-2">
+              <th scope="col"></th>
+              <th scope="col">Nº de itens verificados</th>
+              <th scope="col">Nº de itens presentes (total ou parcialmente)</th>
+              <th scope="col">% Itens presentes de acesso fácil</th>
+              <th scope="col">% Itens presentes de acesso difícil</th>
+            </tr>
+          </thead>
+          <tbody class="body-3">
+            <tr>
+              <td>Institucional</td>
+              <td>4</td>
+              <td>3</td>
+              <td>33%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Estrutura organizacional</td>
+              <td>4</td>
+              <td>4</td>
+              <td>75%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Contatos</td>
+              <td>3</td>
+              <td>3</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Atendimento</td>
+              <td>6</td>
+              <td>5</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Orçamento e finanças</td>
+              <td>6</td>
+              <td>3</td>
+              <td>0%</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>Remuneração</td>
+              <td>6</td>
+              <td>4</td>
+              <td>0%</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>Licitações e contratos</td>
+              <td>4</td>
+              <td>4</td>
+              <td>75%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Convênios</td>
+              <td>2</td>
+              <td>2</td>
+              <td>0%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Ações e programas</td>
+              <td>11</td>
+              <td>5</td>
+              <td>0%</td>
+              <td>80%</td>
+            </tr>
+            <tr>
+              <td>FAQ</td>
+              <td>1</td>
+              <td>1</td>
+              <td>0%</td>
+              <td>0%</td>
+            </tr>
+            <tr>
+              <td>Requisitos do site</td>
+              <td>7</td>
+              <td>7</td>
+              <td>43%</td>
+              <td>14%</td>
+            </tr>
+            <tr>
+              <td>Garantia de acesso</td>
+              <td>2</td>
+              <td>2</td>
+              <td>100%</td>
+              <td>0%</td>
+            </tr>
+            <tr class="font-bold">
+              <td>TOTAL</td>
+              <td>56</td>
+              <td>43</td>
+              <td>37,5%</td>
+              <td>21%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section
+      class="container bg-green flex flex-col align-center"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
+      <shape-divider-top></shape-divider-top>
+
+      <h1 class="section-title white mt-35">Produtos</h1>
+
+      <h2 class="body-1 white mt-35">Publicações</h2>
+
+      <div
+        id="carouselExampleDark"
+        class="carousel carousel-white slide mt-35 mb-50 w-full"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="flex align-center justify-center gap-26">
+              <div class="carousel-item-group"></div>
+
+              <div class="carousel-item-group"></div>
+
+              <div class="carousel-item-group"></div>
             </div>
-            <div style="display: flex; flex-direction: column; align-items: center; color: #fbc02d;">
-              <h2>Analisamos a
-                transparência
-                ativa</h2>
-              <a href="https://www.transparencia.org.br/downloads/publicacoes/reavaliacao_transparencia_criterios_defensorias.pdf" target="_blank" style="color: #fff; text-decoration: underline; margin: 2rem 0 2rem 0;">Relatório de transparência ativa</a>
-              <img src="./style/img/undraw_women.svg" alt="chart women" />
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="flex align-center justify-center gap-26">
+              <div class="carousel-item-group"></div>
             </div>
           </div>
         </div>
-      </section>
-      <section>
-        <div class="maisdef-text-partners" id="parceiros">
-          <div>
-            <h2>Parceiros</h2>
-            <div>
-              <img src="./style/img/CONDEGE_LOGO.png" alt="logo Condege" />
-              <img
-                src="./style/img/conselho_ouvidorias.png"
-                alt="logo conselho nacional de ouvidorias"
-              />
-            </div>
-          </div>
-          <div>
-            <h2>Financiador</h2>
-            <div class="maisdef-logo_section">
-              <img src="./style/img/Tinker-Logo-Final1.svg" alt="logo Tinker" />
-            </div>
-          </div>
-      </section>
-    </div>
-  
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="prev"
+        >
+          <span
+            class="carousel-control-prev-icon carousel-control-icons-white"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="next"
+        >
+          <span
+            class="carousel-control-next-icon carousel-control-icons-white"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="custom-shape-divider-bottom-1736814489">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <section
+      class="container bg-blue pt-25 flex flex-col justify-center align-center gap-26 text-center"
+    >
+      <div class="flex align-end gap-26 mt-25">
+        <div>
+          <img
+            class="partners"
+            src="style\img\illustrations\conselho_ouvidorias.png"
+            alt="Conselho nacional de ouvidorias"
+          />
+          <h1 class="section-title mt-25">Parceiro</h1>
+        </div>
+        <div>
+          <img
+            class="partners"
+            src="style\img\illustrations\Tinker-Logo-Final1.svg"
+            alt="Fundação Tinker"
+          />
+          <h1 class="section-title mt-35">Financiador</h1>
+        </div>
+      </div>
+    </section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="scripts/utils/map.js"></script>
+    <script src="scripts/utils/carousel.js"></script>
+    <script type="module" src="scripts/lib.js"></script>
 
     <script>
-      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
-      function goToPartners() {
-        setTimeout(function () {
-          window.location.href = "#parceiros";
-        }, 800);
-      }
-    </script>
-
-    <script>
-      const graphText = document.getElementById("maisdef-graph-text")
-
-      const transparencyMetrics = [
-        { transparency: "Sem transparência", color: "#EDF8FB" },
-        { transparency: "Baixíssima transparência", color: "#B2E2E2" },
-        { transparency: "Baixa transparência", color: "#66C2A4" },
-        { transparency: "Média transparência", color: "#2CA25F" },
-        { transparency: "Alta transparência", color: "#006D2C" },
-      ];
-
-      let dataType = "AV1"
-      graphText.innerText = "Primeira avaliação de Transparência"
-
-      function handleDataViz() {
-        dataType = dataType === "AV1" ? "AV2" : "AV1";
-
-        // Animação de fade-in e fade-out
-        graphText.classList.add("fade-in");
-
-        setTimeout(function () {
-          graphText.innerText = dataType === "AV1" ? "Primeira avaliação de Transparência" : "Reavaliação de transparência";
-        }, 500);
-
-        setTimeout(function () {
-          graphText.classList.remove("fade-in");
-        }, 500);
-
-        // Atualizar o preenchimento dos estados de acordo com o novo tipo de dado
-        svg
-          .selectAll("path")
-          .transition()
-          .duration(500)
-          .style("fill", function (d) {
-          return transparencyMetrics[d.properties[dataType]].color;
-        });
-      }
-
-      // Código JavaScript usando D3.js para desenhar um mapa com todos os estados do Brasil
-      const responsive = (big, small) =>{
-        return window.innerWidth > 550 ? big : small
-      }
-
-      var width = responsive(450, window.innerWidth - 70)
-      var height = width;
-      var scale = width * 1.372;
-
-      var svg = d3
-      .select("#dataviz")
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height);
-
-      var projection = d3
-      .geoMercator()
-      .center([-55, -15])
-      .scale(scale)
-      .translate([width / 2, height / 2]);
-
-      var path = d3.geoPath().projection(projection);
-
-      var tooltip = d3
-      .select("#dataviz")
-      .append("div")
-      .attr("class", "graph-tooltip")
-      .style("opacity", 0);
-
-      // Carregar o arquivo GeoJSON
-      d3.json("./data/brasil.json").then(function (data) {
-      // Desenhar os estados
-      svg
-        .selectAll("path")
-        .data(data.features)
-        .enter()
-        .append("path")
-        .attr("d", path)
-        .style("fill", function (d) {
-          // Preencher cada estado com uma cor diferente
-          return transparencyMetrics[d.properties[dataType]].color;
-        })
-        .style("stroke", "black")
-        .style("stroke-width", 0.4)
-        .on("mousemove", function (event, d) {
-        let [x, y] = d3.pointer(event);
-        tooltip.transition().duration(200).style("opacity", 0.9);
-        tooltip
-          .html(
-            d.properties.NOME_UF +
-            ": " +
-            transparencyMetrics[d.properties[dataType]].transparency
-          ) // Adiciona o nome do estado ao tooltip
-          .style("left", x - 70 + "px")
-          .style("top", y - 50 + "px")
-          .style("font-size", `${responsive(14, 12)}px`);
-        })
-        .on("mouseout", function (d) {
-          // Adiciona o evento de mouseout
-          tooltip.transition().duration(200).style("opacity", 0);
-        });
-
-      // Adicionar a sigla dos estados
-      svg
-        .selectAll(".state-label")
-        .data(data.features)
-        .enter()
-        .append("text")
-        .attr("class", "state-label")
-        .attr("transform", function (d) {
-          // Encontra o centro do estado para posicionar o texto
-          var center = path.centroid(d);
-          center[1] += 4; // Adiciona 4 pixels para baixo [y]
-          return "translate(" + center + ")";
-        })
-        .text(function (d) {
-          return d.properties.UF; // Obtém a sigla do estado
-        })
-        .style("pointer-events", "none") // Impede que o evento de mouseover seja ativado no texto
-        .style("font-weight", "normal")
-        .style("font-size", `${responsive(12, 10)}px`)
-
-      // Adicionar a legenda de cores
-      var legend = svg
-        .selectAll(".legend")
-        .data(transparencyMetrics)
-        .enter()
-        .append("g")
-        .attr("class", "legend")
-        .attr("transform", function (d, i) {
-          var legendX = width - responsive(450, 340);
-          var legendY = height - 135 + i * 29;
-          return "translate(" + legendX + "," + legendY + ")";
-        });
-
-      legend
-        .append("rect")
-        .attr("width", 18)
-        .attr("height", 18)
-        .style("fill", function (d) {
-          return d.color;
-        });
-
-      legend
-        .append("text")
-        .attr("x", 24)
-        .attr("y", 9)
-        .attr("dy", ".35em")
-        .text(function (d) {
-          return d.transparency;
-        })
-        .style("font-size", `${responsive(14, 10)}px`)
-        .style("font-weight", "600");
-      });
+      // Inicializando o AOS
+      AOS.init();
     </script>
   </body>
 </html>

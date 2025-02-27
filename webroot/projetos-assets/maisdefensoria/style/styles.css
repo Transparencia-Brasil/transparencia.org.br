@@ -1,38 +1,11 @@
-body {
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-}
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-section {
-  padding: 40px 2% 40px 2%;
-}
-
-nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0;
-}
-
-nav li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-#dataviz {
-  margin: 0 auto;
+#dataviz,
+#dataviz2 {
+  font-family: "Nunito", sans-serif;
   position: relative;
-  display: flex;
-  justify-content: center;
 }
+
 .state-label {
   font-size: 10px;
   font-weight: bold;
@@ -50,553 +23,430 @@ a {
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
+  user-select: none;
 }
 
-.maisdef-text-home h1 {
-  text-align: center;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 100%;
-}
-
-.maisdef-text-monitoring h2,
-.maisdef-text-partners h2 {
-  color: #4d4d4d;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 44px;
-}
-
-.maisdef-hamburguer-menu,
-.maisdef-logo-small {
-  display: none;
+/* logo configs */
+.bg-maisdef-logo {
+  position: absolute;
+  top: -750px;
+  left: -210px;
+  rotate: 11.34deg;
+  width: 2000px;
+  opacity: 0.1;
   pointer-events: none;
 }
 
-nav.navbar {
-  display: none;
-}
-
-nav.maisdef-nav {
-  padding-top: 50px;
-}
-
-.maisdef-dropdown-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.dropdown-item {
-  font-size: 14px !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-}
-
-.maisdef-nav ul {
-  margin: 0;
-}
-
-.maisdef-open-drawer {
-  background-color: transparent;
-  border: none;
-}
-
-.green-color {
-  color: #10624e !important;
-  font-weight: bold !important;
-}
-
-.maisdef-nav ul li a,
-.maisdef-nav ul li select {
-  color: #18191f;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 28px;
-}
-
-i.material-icons {
-  position: relative;
-  top: 5px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
 .maisdef-logo {
-  margin-left: 10%;
+  width: 160px;
 }
 
-.maisdef-logo,
-.maisdef-logo-small {
-  width: 15%;
+/* style constants */
+
+:root {
+  --black: #263238;
+  --dark-grey: #4d4d4d;
+  --gray-blue: #dde5ec;
+  --bg-green: #135d66;
+  --white: #ffffff;
+  --button-green: #388e3b;
 }
 
-.maisdef-home-section,
-.maisdef-nav {
-  background-color: #fffaf2;
+/* typography */
+.section-title {
+  font-family: "League Spartan", sans-serif;
+  color: var(--black);
+  font-size: 30px;
 }
 
-.maisdef-split-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
-  gap: 10%;
+.section-subtitle {
+  font-family: "League Spartan", sans-serif;
+  color: var(--black);
+  font-size: 22px;
 }
 
-.maisdef-greenscale,
-.maisdef-link {
-  color: #135d66;
-}
-
-.maisdef-home {
-  width: 100%;
-}
-
-.maisdef-text-home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 90%;
-}
-
-.maisdef-text-home p {
-  color: #4d4d4d;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28px;
-}
-
-.maisdef-text-classification-dataviz {
-  position: relative;
-}
-
-.maisdef-change-data-btn {
-  position: absolute;
-  border: 1px solid grey;
-  border-radius: 99%;
-  width: 40px;
-  height: 40px;
-  padding: 5px 0 0 3px;
-  cursor: pointer;
-  top: 50%;
-  left: 20px;
-}
-
-.maisdef-home-content {
-  margin-top: 8rem;
-  display: flex;
-  justify-content: center;
-  gap: 15%;
-}
-
-.maisdef-home-content img {
-  width: 100%;
-}
-
-.maisdef-green-section {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.maisdef-text-transparency-analisys {
-  background-color: #135d66;
-}
-
-.maisdef-text-transparency-analisys div div p {
-  color: #fff;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28px;
-}
-
-.maisdef-bar {
-  height: 5px;
-  width: 100%;
-  background-color: #fbc02d;
-  margin-bottom: 2rem;
-  border-radius: 2rem;
-}
-
-.maisdef-split-content {
-  color: #fff;
-}
-
-.maisdef-text-transparency-analisys img {
-  width: 50%;
-}
-
-.maisdef-saiba-mais {
-  color: #fbc02d;
-  font-size: 18px;
-  font-weight: normal;
-  line-height: 28px;
-  max-width: 540px;
-  text-indent: 2rem;
-}
-
-.maisdef-monitoring-text-block {
-  display: flex;
-  gap: 15%;
-}
-
-.maisdef-monitoring-text-block div {
-  display: 1;
-}
-
-.maisdef-monitoring-text-block div p {
-  color: #717171;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28px;
-}
-
-.maisdef-text-classification {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 10%;
-  margin-top: 2rem;
-}
-
-.maisdef-text-classification-p h2 {
-  font-size: 26px;
-}
-
-.maisdef-text-classification-p :nth-child(1) {
-  font-weight: bold;
-}
-
-.maisdef-text-classification-p :nth-child(2) {
-  margin-top: 5rem;
-  color: #003c43;
-}
-
-.maisdef-text-classification-p :nth-child(2) span {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  color: #003c43;
-  font-weight: bold;
-}
-
-.maisdef-relatorio-link {
-  margin-top: 2rem;
-  font-size: 12px;
-  color: #717171;
-}
-
-.maisdef-relatorio-link a {
-  color: #717171;
-  text-decoration: underline;
-}
-
-.maisdef-chart_text {
-  color: #000;
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
-}
-
-.maisdef-avalidados {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+.body-1 {
+  font-family: "Nunito", sans-serif;
+  color: var(--dark-grey);
   font-size: 18px;
 }
 
-.maisdef-text-partners {
-  display: flex;
-  justify-content: space-around;
-  margin: 0px 2rem 0px 2rem;
-  padding-bottom: 20px;
+.body-2 {
+  font-family: "Nunito", sans-serif;
+  color: var(--dark-grey);
+  font-size: 16px;
+
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.maisdef-text-partners div {
+.body-3 {
+  font-family: "Nunito", sans-serif;
+  color: var(--dark-grey);
+  font-size: 14px;
+}
+
+.text-center {
   text-align: center;
 }
 
-.maisdef-text-partners p {
-  color: #717171;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
+.font-bold {
+  font-weight: bold;
 }
 
-.maisdef-logo_section {
-  margin-top: 2rem;
+.font-italic {
+  font-style: italic;
 }
 
-@media only screen and (max-width: 1024px) {
-  .maisdef-logo,
-  .maisdef-logo-small {
-    width: 20%;
+/* layout */
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 56px 140px;
+  position: relative;
+  overflow: hidden;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.carousel-item-group {
+  cursor: pointer;
+  max-width: 186px;
+}
+
+.carousel-img {
+  width: 185px;
+  border: 2px solid var(--gray-blue);
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.round-borders-padding {
+  width: fit-content;
+  border-radius: 8px;
+  padding: 12px 24px;
+}
+
+.reports-img {
+  max-width: 600px;
+}
+
+.item-list-bg-grey {
+  padding-left: 0px;
+}
+
+.item-list-bg-grey > li {
+  list-style: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  /* background-color: var(--gray-blue); */
+  /* border-radius: 8px; */
+  padding: 6px 8px 12px 8px;
+  margin-bottom: 12px;
+}
+
+.nav-underline .nav-link.active,
+.nav-underline .show > .nav-link {
+  border-bottom-color: var(--button-green);
+}
+
+/* buttons */
+.button {
+  color: var(--white);
+  background-color: var(--button-green);
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2e7d32;
+  transition: background-color 0.3s ease;
+}
+
+.button:active {
+  background-color: #1b5e20;
+  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease;
+  transform: scale(0.95);
+}
+
+/* colors */
+.white {
+  color: var(--white) !important;
+}
+
+.bg-blue {
+  background-color: var(--gray-blue);
+}
+
+.bg-green {
+  background-color: var(--bg-green);
+}
+
+.prev-btn {
+  left: -100px;
+}
+
+.next-btn {
+  right: -100px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--black);
+  border-radius: 50%;
+}
+
+.carousel-control-prev-icon {
+  background-size: 95%;
+  background-position: left;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaGV2cm9uLWxlZnQiPjxwYXRoIGQ9Im0xNSAxOC02LTYgNi02Ii8+PC9zdmc+);
+}
+
+.carousel-control-next-icon {
+  background-size: 94%;
+  background-position: right;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaGV2cm9uLXJpZ2h0Ij48cGF0aCBkPSJtOSAxOCA2LTYtNi02Ii8+PC9zdmc+);
+}
+
+.carousel-indicators {
+  bottom: -40px;
+}
+
+.checklist-grid-item {
+  padding: 12px 8px 0px 0px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 16px;
+  height: 100%;
+}
+
+/* responsive */
+@media (max-width: 375px) {
+  .reports-img {
+    width: 210px !important;
   }
 
-  .maisdef-nav ul li a,
-  .maisdef-nav ul li select {
-    font-size: 16px;
+  .prev-btn {
+    left: -18px;
   }
 
-  nav.maisdef-nav {
-    padding-top: 0;
-  }
-
-  .maisdef-text-home h1 {
-    font-size: 48px;
-    line-height: 40px;
-  }
-
-  .maisdef-text-home p,
-  .maisdef-text-transparency-analisys div div p,
-  .maisdef-saiba_mais,
-  .maisdef-monitoring-text-block div p,
-  .maisdef-text-partners p {
-    font-size: 14px;
-    line-height: 22px;
-  }
-
-  .maisdef-home-content {
-    margin-top: 0;
-    display: block;
-  }
-
-  .maisdef-home-content p {
-    padding-top: 0;
-    margin-top: 2rem;
-  }
-
-  .maisdef-home-content img {
-    padding-top: 1rem;
-    width: fit-content;
-  }
-
-  .maisdef-home-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20%;
-  }
-
-  .maisdef-monitoring-text-block {
-    gap: 10%;
-  }
-
-  .maisdef-text-classification-p :nth-child(3) {
-    margin-top: 0;
-    margin-bottom: 4rem;
-  }
-
-  .maisdef-text-classification {
-    flex-direction: column;
-  }
-
-  .maisdef-text-classification-p :nth-child(2) {
-    margin-top: 0;
-  }
-
-  .maisdef-text-partners {
-    text-align: center;
-    flex-direction: column-reverse;
-    justify-content: center;
-  }
-
-  .maisdef-logo_section {
-    margin-bottom: 4rem;
-  }
-
-  .maisdef-chart_text {
-    font-size: 10px;
-    line-height: 14px;
+  .next-btn {
+    right: -18px;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  section {
-    padding: 15px 2% 15px 2%;
+@media (max-width: 425px) and (min-width: 376px) {
+  .reports-img {
+    width: 255px !important;
   }
 
-  ul {
-    justify-content: space-between;
+  .prev-btn {
+    left: -25px;
   }
 
-  .maisdef-text-classification-p {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  .next-btn {
+    right: -25px;
   }
+}
 
-  .maisdef-split-content {
-    flex-direction: column-reverse;
-    gap: 0%;
-  }
-
-  .maisdef-text-transparency-analisys img {
-    width: min(100%, 200px);
-  }
-
-  .maisdef-home-content p {
-    padding-top: 2rem;
-    font-size: 18px;
+@media (max-width: 768px) {
+  .reports-img {
+    max-width: 530px;
   }
 
   .maisdef-logo {
-    display: none;
+    width: 175px;
+    margin-bottom: 45px;
   }
 
-  nav.navbar {
-    background-color: #fffaf2;
+  .container {
+    padding: 36px 24px;
   }
 
-  nav.navbar,
-  .maisdef-logo-small {
-    display: block;
-  }
-
-  .maisdef-logo-small {
-    width: 30%;
-  }
-
-  .maisdef-change-data-btn > svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .maisdef-change-data-btn {
-    width: 32px;
-    height: 32px;
-    padding: 1px 0 0 6px;
-    cursor: pointer;
-    top: 45%;
-    left: 20px;
-  }
-
-  .maisdef-hamburguer-menu {
-    cursor: pointer;
-    display: block;
-  }
-
-  .maisdef-menu-icon {
-    font-size: 30px;
-  }
-
-  .maisdef-nav-list li:nth-child(-n + 4) {
-    display: none;
-  }
-
-  .maisdef-home-content {
-    display: flex;
+  .flex {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20%;
   }
 
-  .maisdef-home-content img {
-    width: fit-content;
+  .align-end {
+    align-items: center !important;
+  }
+
+  .mt-45 {
+    margin-top: 30px !important;
+  }
+
+  .mt-70,
+  .mt-90 {
+    margin-top: 35px !important;
+  }
+
+  .gap-26 {
+    gap: 16px;
+  }
+
+  .partners {
+    width: 75%;
+  }
+
+  .prev-btn {
+    left: -50px;
+  }
+
+  .next-btn {
+    right: -50px;
   }
 }
 
-@media only screen and (max-width: 550px) {
-  #dataviz {
-    justify-content: initial;
-  }
+/* css helpers */
+.flex {
+  display: flex;
+}
 
-  section {
-    padding: 20px 5% 20px 5%;
-    margin-top: 5%;
-  }
-  .maisdef-text-transparency-analisys h2,
-  .maisdef-text-monitoring h2,
-  .maisdef-text-partners h2 {
-    font-size: 20px;
-    line-height: 24px;
-  }
+.flex-col {
+  flex-direction: column;
+}
 
-  .maisdef-home-section {
-    margin-top: 0 !important;
-  }
+.align-center {
+  align-items: center;
+}
 
-  .maisdef-text-home h1 {
-    font-size: 32px;
-    line-height: 38px;
-  }
+.align-start {
+  align-items: flex-start;
+}
 
-  .maisdef-text-home p {
-    padding-top: 2rem;
-  }
+.align-end {
+  align-items: flex-end;
+}
 
-  .maisdef-text-home {
-    max-width: 100%;
-  }
+.justify-center {
+  justify-content: center;
+}
 
-  .maisdef-monitoring-text-block {
-    display: block;
-  }
+.justify-between {
+  justify-content: space-between;
+}
 
-  .maisdef-split-content {
-    flex-direction: column-reverse;
-    gap: 0;
-  }
+.justify-around {
+  justify-content: space-around;
+}
 
-  .maisdef-split-content img {
-    margin-top: 5%;
-    margin-bottom: 5%;
-  }
+.justify-evenly {
+  justify-content: space-evenly;
+}
 
-  .maisdef-text-classification-p h2 {
-    font-size: 22px;
-  }
+.gap-26 {
+  gap: 26px;
+}
 
-  .maisdef-text-ava {
-    font-size: 18px !important;
-  }
+.overflow-auto {
+  overflow: auto;
+}
 
-  .maisdef-text-classification h4 {
-    font-size: 10px;
-  }
+.m-0 {
+  margin: 0;
+}
 
-  .maisdef-text-classification-header {
-    font-size: 18px !important;
-  }
+.m-auto {
+  margin: auto;
+}
 
-  .maisdef-text-home p,
-  .maisdef-text-transparency-analisys div div p,
-  .maisdef-saiba_mais,
-  .maisdef-monitoring-text-block div p,
-  .maisdef-text-partners p {
-    font-size: 14px;
-    line-height: 20px;
-  }
+.mt-25 {
+  margin-top: 25px;
+}
 
-  .maisdef-chart_text {
-    font-size: 8px;
-    line-height: 12px;
-  }
+.mt-35 {
+  margin-top: 35px;
+}
 
-  .maisdef-logo_section {
-    gap: 0%;
-  }
+.mt-45 {
+  margin-top: 45px;
+}
 
-  .maisdef-logo_section img {
-    width: 50%;
-  }
+.mt-50 {
+  margin-top: 50px;
+}
 
-  .maisdef-saiba-mais {
-    font-size: 14px;
-  }
+.mt-65 {
+  margin-top: 65px;
+}
 
-  .maisdef-logo,
-  .maisdef-logo-small {
-    width: 40%;
+.mt-70 {
+  margin-top: 70px;
+}
+
+.mt-90 {
+  margin-top: 90px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mb-65 {
+  margin-bottom: 65px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.horizontal-tab-list {
+  text-wrap: nowrap;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
+}
+
+.opacity-80 {
+  opacity: 0.7;
+}
+
+.dashed-list {
+  padding-left: 22px;
+  list-style-type: "- ";
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* shape divider */
+
+.custom-shape-divider-bottom-1736814489 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1736814489 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 34px;
+}
+
+.custom-shape-divider-bottom-1736814489 .shape-fill {
+  fill: #dde5ec;
 }
