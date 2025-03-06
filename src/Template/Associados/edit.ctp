@@ -13,7 +13,7 @@
 				&nbsp;&nbsp;• Institucionais (organizações da sociedade civil, cujos representantes têm os mesmos direitos dos sócios-participantes);<br /> 
 				&nbsp;&nbsp;• Apoiadores (empresas, não-votantes).<br />
 				</p>
-				<p>A inclusão de novos sócio-participantes é dada por meio da aprovação no Conselho Deliberativo da entidade. Para tanto, é necessário estar ciente das normas para associação, preencher a ficha abaixo e comprometer-se a uma contribuição financeira mínima de R$ 50 mensais ou de R$ 540 anuais (10% de desconto sobre o valor anualizado). A contribuição pode ser maior, a critério do associado.
+				<p>A inclusão de novos sócio-participantes é dada por meio da aprovação no Conselho Deliberativo da entidade. Para tanto, é necessário estar ciente das normas para associação, preencher a ficha abaixo e comprometer-se a uma contribuição financeira mínima de R$ <?= env('MONTHLY_PRICE')?> mensais ou de R$ <?= env('YEARLY_PRICE')?> anuais (10% de desconto sobre o valor anualizado). A contribuição pode ser maior, a critério do associado.
 				</p>
 				<p>Para sócios-institucionais ou apoiadores, a contribuição mínima é de R$ 1.000 mensais. Os interessados deverão enviar e-mail para <a class="#" href="mailto:doacoes@transparencia.org.br"
 					 class="linkExterno">doacoes@transparencia.org.br</a> para mais instruções.
@@ -55,7 +55,7 @@
 						</div>
 						<div class="col-md-3 pd10">
 							<label class="label-input">Selecione o tipo de contribuição:</label><br>
-							<?= $this->Form->radio('Associados.TipoAssinatura', ['anual' => 'Anual R$ 540,00','mensal' => 'Mensal R$ 50,00'])?>
+							<?= $this->Form->radio('Associados.TipoAssinatura', ['anual' => 'Anual R$ '. env('YEARLY_PRICE').',00','mensal' => 'Mensal R$ '. env('MONTHLY_PRICE').',00'])?>
 						</div>
 					</div>
 					<div class="col-md-4 pdl0">

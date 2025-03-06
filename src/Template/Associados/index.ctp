@@ -27,7 +27,7 @@
 				<p>
 				A inclusão de novos sócio-participantes é dada por meio da aprovação pelo Conselho Deliberativo da entidade.
 				 Para tanto, é necessário estar ciente das normas para associação, preencher a ficha abaixo e comprometer-se a uma 
-				 contribuição financeira mínima de R$ 50 mensais ou de R$ 540 anuais (10% de desconto sobre o valor anualizado).
+				 contribuição financeira mínima de R$ <?=env('MONTHLY_PRICE')?> mensais ou de R$ <?=env('YEARLY_PRICE')?> anuais (10% de desconto sobre o valor anualizado).
 				  A contribuição pode ser maior, a critério do associado.
 				</p>
 
@@ -75,7 +75,7 @@
 						</div>
 						<div class="col-md-3 pd10">
 							<label class="label-input">Selecione o tipo de contribuição:</label><br>
-							<?= $this->Form->radio('TipoContribuicao', ['1' => 'Anual R$ 540,00','2' => 'Mensal R$ 50,00'])?>
+							<?= $this->Form->radio('TipoContribuicao', ['1' => 'Anual R$ '. env('MONTHLY_PRICE') . ',00','2' => 'Mensal R$ '.env('YEARLY_PRICE') . ',00'])?>
 						</div>
 					</div>
 					<div class="col-md-4 pdl0">
