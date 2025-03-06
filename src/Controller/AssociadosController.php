@@ -139,27 +139,27 @@ class AssociadosController extends AppController
 
                 switch ($dados["TipoContribuicao"]) {
                 case 1:
-                    $novoAssociado->Valor = 540;
+                    $novoAssociado->Valor = env('YEARLY_PRICE');
                     $novoAssociado->TipoAssinatura = 'Anual';
                     break;
                 case 2:
-                    $novoAssociado->Valor = 50;
+                    $novoAssociado->Valor = env('MONTHLY_PRICE');
                     $novoAssociado->TipoAssinatura = 'Mensal';
                     break;
                 case 3:
-                    if ($dados["OutroValor"] > 50) {
+                    if ($dados["OutroValor"] > env('MONTHLY_PRICE')) {
                         $novoAssociado->Valor = $dados["OutroValor"];
                     } else {
-                        $mensagemErro .= "Valor inserido é menor que R$ 50,00.";
+                        $mensagemErro .= "Valor inserido é menor que R$ ". env('MONTHLY_PRICE') . ",00.";
                         $erroValidacao = true;
                     }
                     $novoAssociado->TipoAssinatura = 'Mensal';
                     break;
                 case 4:
-                    if ($dados["OutroValor"] > 540) {
+                    if ($dados["OutroValor"] > env('YEARLY_PRICE')) {
                         $novoAssociado->Valor = $dados["OutroValor"];
                     } else {
-                        $mensagemErro .= "Valor inserido é menor que R$ 540,00.";
+                        $mensagemErro .= "Valor inserido é menor que R$ ". env('YEARLY_PRICE') . ",00.";
                         $erroValidacao = true;
                     }
                     $novoAssociado->TipoAssinatura = 'Anual';
@@ -282,10 +282,10 @@ class AssociadosController extends AppController
 
             switch ($this->request->data['Associados']["TipoAssinatura"]) {
                 case 'anual':
-                    $associado->Valor = 540;
+                    $associado->Valor = env('YEARLY_PRICE');
                     break;
                 case 'mensal':
-                    $associado->Valor = 50;
+                    $associado->Valor = env('MONTHLY_PRICE');
                     break;
             }
 

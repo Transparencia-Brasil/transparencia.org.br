@@ -14,6 +14,7 @@ services:
       - .env
     environment:
       - "DB_PORT=${DB_PORT}"
+      - "BASE_URL=${BASE_URL}"
       - "DB_HOST=${MYSQL_HOST}"
       - "APP_DEBUG=${MYSQL_HOST}"
       - "APP_URL=${APP_URL}"
@@ -29,6 +30,8 @@ services:
       - "MYSQL_ATTR_SSL_CA=${MYSQL_ATTR_SSL_CA}"
       - "GOOGLE_RECAPTCHA_KEY=${GOOGLE_RECAPTCHA_KEY}"
       - "GOOGLE_RECAPTCHA_SECRET=${GOOGLE_RECAPTCHA_SECRET}"
+      - "MONTHLY_PRICE=${MONTHLY_PRICE}"
+      - "YEARLY_PRICE=${YEARLY_PRICE}"      
     ports:
         - 8080:8080
         - 8001:8001
@@ -43,7 +46,7 @@ services:
     volumes_from:
       - app
     ports:
-      - 8000:80
+      - 80:80
 
   # The Database
   database:
