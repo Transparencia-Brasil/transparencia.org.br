@@ -367,7 +367,7 @@
                     <p class="card-text ml-5 mt-0">
                         § 1º. O(A) membro(a) do Conselho Deliberativo abster-se-á de votar matérias em 
                         que esteja envolvido seu interesse pessoal, de associados(as) e familiares; <br />
-                        § 2º. As decisões do Conselho Deliberativo serão tomadas pela maioria dos que participarem de suas reuniões.<br />
+                        § 2º. As decisões do Conselho Deliberativo serão tomadas pela maioria dos que participarem de suas reuniões;<br />
                         § 3º. Das decisões do Conselho Deliberativo caberá recurso à Convenção. 
                     </p>
 
