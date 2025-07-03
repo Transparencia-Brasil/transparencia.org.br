@@ -122,7 +122,7 @@ class ContatoController extends AppController
                                 
                                 try {
                                     // enviar e-mail
-                                    UEmailComponent::EmailAdmAvisoContato($contato->Nome, $contato->Email, $this->assuntos[$contato->CodigoAssunto], $contato->Mensagem);
+                                    UEmailComponent::EmailAdmAvisoContato($contato->Nome, $contato->Email, $this->assuntos[$contato->CodigoAssunto], $contato->Mensagem,$novidades_label, $optin_radar_tb_label);
                                 } catch (\Exception $ex) {
                                     Log::write('error', "Falha ao Enviar o Email: " .  $ex->getMessage());
                                 }
