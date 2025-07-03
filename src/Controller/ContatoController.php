@@ -57,7 +57,6 @@ class ContatoController extends AppController
     }
 
     public function novoContato(){
-
         /*$token = $this->request->param('_csrfToken');
 
         if(!isset($token))
@@ -89,6 +88,15 @@ class ContatoController extends AppController
 
                     $novidades = $this->UNumero->ValidarNumero($dados["novidades"]) > 0 ? 1 : 0;
                     $optin_radar_tb = $this->UNumero->ValidarNumero($dados["optin_radar_tb"]) > 0 ? 1 : 0;
+
+                    $encontrado = TableRegistry::get('Newsletters')->find()->where(["email" => $contato->Email])->first();
+                    if ($encontrado != null) {
+                        $novidades_label = $encontrado->Optin_newsletter == 1 ? "Sim (Banco de dados)" : "Não (Banco de dados)";
+                        $optin_radar_tb_label = $encontrado->optin_radar_tb == 1 ? "Sim (Banco de dados)" : "Não (Banco de dados)";
+                    } else {
+                        $novidades_label = $novidades == 1 ? "Sim (Formulário Contato)" : "Não (Formulário Contato)";
+                        $optin_radar_tb_label = $optin_radar_tb == 1 ? "Sim (Formulário Contato)" : "Não (Formulário Contato)";
+                    }
 
                     $mensagem = "";
                     $erro = false;
