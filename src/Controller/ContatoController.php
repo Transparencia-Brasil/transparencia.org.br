@@ -68,7 +68,7 @@ class ContatoController extends AppController
             $contato = new Contato();
 
             $guid_anterior = $this->request->session()->read('guidContatoEnviado');
-            $guid = $this->UString->AntiXSSComLimite($dados["guid"], 100);            
+            $guid = $this->UString->AntiXSSComLimite($dados["guid"], 100);  
             if ($this->Recaptcha->ValidarToken($dados["token"], $dados["actionOrigem"], "contato") && strlen(trim($dados["apelido"])) <= 0) {
 
                 // tentativa de reenvio de formulário
@@ -89,15 +89,6 @@ class ContatoController extends AppController
                     $novidades = $this->UNumero->ValidarNumero($dados["novidades"]) > 0 ? 1 : 0;
                     $optin_radar_tb = $this->UNumero->ValidarNumero($dados["optin_radar_tb"]) > 0 ? 1 : 0;
 
-                    $encontrado = TableRegistry::get('Newsletters')->find()->where(["email" => $contato->Email])->first();
-                    if ($encontrado != null) {
-                        $novidades_label = $encontrado->Optin_newsletter == 1 ? "Sim (Banco de dados)" : "Não (Banco de dados)";
-                        $optin_radar_tb_label = $encontrado->optin_radar_tb == 1 ? "Sim (Banco de dados)" : "Não (Banco de dados)";
-                    } else {
-                        $novidades_label = $novidades == 1 ? "Sim (Formulário Contato)" : "Não (Formulário Contato)";
-                        $optin_radar_tb_label = $optin_radar_tb == 1 ? "Sim (Formulário Contato)" : "Não (Formulário Contato)";
-                    }
-
                     $mensagem = "";
                     $erro = false;
                     if($contato != null)
@@ -110,11 +101,15 @@ class ContatoController extends AppController
                             $contato->Respondido = 0;
                             if($contatos->save($contato))
                             {
-                                // insere um novo usuário de newsletter
-                                if($novidades || $optin_radar_tb) {
-                                TableRegistry::get('Newsletters')->inserir($contato->Nome, $contato->Email,$novidades,0,null,null,null,null,null,null,null,$optin_radar_tb);
-                                }
 
+                                $encontrado = TableRegistry::get('Newsletters')->find()->where(["email" => $contato->Email])->first();
+                                if ($encontrado != null) {
+                                    TableRegistry::get('Newsletters')->update($contato->Nome, $contato->Email,$novidades,0,null,null,null,null,null,null,null,$optin_radar_tb);
+                                } else {
+                                    TableRegistry::get('Newsletters')->inserir($contato->Nome, $contato->Email,$novidades,0,null,null,null,null,null,null,null,$optin_radar_tb);
+                                }                        
+                                $novidades_label = $novidades == 1 ? "Sim" : "Não";
+                                $optin_radar_tb_label = $optin_radar_tb == 1 ? "Sim" : "Não";
                                 // evita reenvio de dados
                                 $this->request->session()->write('guidContatoEnviado', $guid);
                                 $this->request->data = [];
