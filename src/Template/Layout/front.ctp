@@ -246,8 +246,8 @@ $slug = isset($slug) ? $slug : isset($slug_pai) ? $slug_pai : "";
       <div class="container">
         <div class="row">
           <div class="details">
-            <!--<p>R. Prof. João Marinho, 161, São Paulo - SP, 04007-010.<br>Tel.: +55 (11) 3259-6986 e +55 (11) 95050-4257.-->
-            <p>R. Prof. João Marinho, 161, São Paulo - SP, 04007-010.<br> +55 (11) 95050-4257
+            <p>Rua Cristiano Viana, 61-67, cj. 15, Pinheiros, São Paulo-SP - CEP: 05411-000
+              <br> +55 (11) 95050-4257
               <br />
               E-mail: <a href="mailto:contato@transparencia.org.br">contato@transparencia.org.br</a> | Imprensa: <a href="mailto:imprensa@transparencia.org.br">imprensa@transparencia.org.br</a>
             </p>
